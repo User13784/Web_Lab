@@ -1,14 +1,38 @@
-\# Vladislav Chizhakov
+---
 
 
 
-\## Contact Information
+\## About Me
 
-\- \*\*Phone:\*\* +375299474656
+I study at the Belarusian-Russian University with a degree in Software Engineering. I am responsible, attentive to detail and quickly master new technologies.
 
-\- \*\*Email:\*\* chijakovvlad@gmail.com
 
-\- \*\*Telegram:\*\* @vladGGc
 
-\- \*\*GitHub:\*\* https://github.com/User13784/Web\_Lab2
+> "The best way to predict the future is to create it."
+
+
+
+---
+
+
+
+\## Skills
+
+
+
+\### Languages
+
+\- \*\*C#\*\* 
+
+\- \*\*HTML\*\* 
+
+\- \*\*CSS\*\* 
+
+
+
+\### Tools
+
+\- \*\*Git\*\* - version control
+
+\- \*\*Visual Studio\*\* - IDE
 
