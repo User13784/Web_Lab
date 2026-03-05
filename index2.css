@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+}
+
+.vertical-line {
+  width: 165px;
+  background-color: #002A32;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 19px;
+}
+
+.logo-container {
+  width: 100px;
+}
+
+.logo-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.header {
+  flex-grow: 1;
+  background-image: url(bg.png);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 19px 30px 0 30px;
+}
+
+.header-line {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  gap: 500px; 
+}
+
+
+.nav-left {
+  display: flex;
+  gap: 30px; 
+  margin-left: 20px; 
+}
+
+
+.nav-right {
+  display: flex;
+  gap: 40px; 
+  margin-right: auto; 
+}
+
+.nav-item-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.nav-item-with-icon:hover .nav-icon {
+  opacity: 1;
+}
+
+.nav-item {
+  color: #3E5860;
+  text-decoration: none;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  color: #002A32;
+}
+
+.home
+{
+  margin-top: 152px;
+  width: 45px;
+  height: 58.23px;
+  left: 61px;
+}
+.home-text
+{
+  color: #B6DCFF;
+   text-decoration: none;
+}
+.shop-text
+{
+  margin-top: 59px;
+  color: #B6DCFF;
+  text-decoration: none;
+}
+.blog-text
+{
+  color: #B6DCFF;
+}
+
+.about-us
+{
+  color: #B6DCFF;
+}
+
+.gallery-text
+{
+  color: #B6DCFF;
+}
+
+.location-text
+{
+  color: #B6DCFF;
+}
