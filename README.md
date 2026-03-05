@@ -1,2 +1,2 @@
-# Web_Lab3
+# Web_Lab
 Laboratory works
