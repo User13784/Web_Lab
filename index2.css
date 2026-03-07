@@ -569,12 +569,14 @@ body {
 }
 
 .image-container2 {
+    position: relative; 
+
   padding-top: 41%;
   width: 100vw;
-  height: 900px;
+  height: 600px;
   display: flex;
   padding-bottom: 40%;
-    }
+}
 
     .image-container2 img
     {
@@ -594,6 +596,7 @@ body {
       width: 480px;
       text-align: center;
       padding-top: 9%;
+      padding-left: 20px;
      
     }
 
@@ -625,17 +628,241 @@ body {
       background-color: transparent;
      }
 
-     .content-block
-     {
-      position: relative;
-      width: 129px;
-      height: 148px;
-      margin-top: 20%;
-      background-color: #71B3C6D9;
-      opacity: 85%;
-      text-align: center;
-      font-size: 25px;
-      font-weight: 600;
-      padding-top: 60px;
-      color: #FFFFFF;
-     }
+     .living-badge {
+  position: absolute;
+  bottom: 140px;
+  right: 46.5%;
+  width: 130px;
+  height: 150px;
+  background-color:#71B3C6D9;
+  opacity: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.living-badge span {
+  color: white;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.image-container3
+{
+       position: relative;
+
+  padding-top: 4%;
+  width: 100vw;
+  height: 1000px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.image-container3 img
+{
+  width: 900px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  padding-right: 150px;
+  padding-left: 30px;
+}
+
+.content2
+{
+  margin-top: 9%;
+  width: 406px;
+  height: 225px;
+  text-align: center;
+  margin-right: 80px;
+}
+
+.content2 h2
+{
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 133%;
+  color: #264A51;
+}
+
+.content2 p
+{
+  font-size: 16px;
+  font-weight: 400;
+line-height: 173%;
+color: #335E74;
+}
+
+.content2 button
+{
+  width: 143px;
+  height: 45px;
+  margin-top: 28px;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 2x solid #264A51;
+}
+
+.living-badge2
+{
+ position: absolute;
+  bottom: 400px;
+  right: 47%;
+  width: 130px;
+  height: 150px;
+  background-color:#71B3C6D9;
+  opacity: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.living-badge2 span
+{
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 35%;
+  color: #FFFFFF;
+}
+
+.image-container4
+{
+  position: relative;
+  width: 100vw;
+  height: 900px;
+display: flex;
+}
+
+.image-container4 img
+{
+  position: relative;
+   width: 700px;
+  height: 600px;
+  margin-left: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.content3
+{
+  margin-top: 100px;
+  margin-left: 120px;
+  width: 406px;
+  height: 225px;
+
+}
+
+.content3 h2
+{
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 133%;
+  color: #264A51;
+    text-align: center;
+
+}
+
+.content3 p
+{
+  font-weight: 400px;
+  font-size: 16px;
+  line-height: 173%;
+  letter-spacing: 4.5%;
+  color: #335E74;
+  text-align: center;
+}
+
+.content3 button
+{
+  width: 143px;
+  height: 45px;
+  border: 2px solid #264A51;
+  border-radius: 3px;
+  margin-top: 28px;
+  background-color: transparent;
+  color: #264A51;
+  margin-left: 130px;
+
+}
+
+.living-badge3
+{
+  position: absolute;
+  width: 129px;
+  height: 148px;
+  background-color: #71B3C6D9;
+  opacity: 85%;
+ bottom: 370px;
+  right: 48%;
+  display: flex;
+    align-items: center;
+  justify-content: center;
+}
+
+.living-badge3 span
+{
+  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 35px;
+  color: #FFFFFF;
+}
+
+.image-container5
+{
+ width: 100vw;
+  height: 1000px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.image-container5 img
+{
+  position: relative;
+  width: 700px;
+  height: 600px;
+  margin-right: 150px;
+}
+
+.content4
+{
+   margin-top: 100px;
+   margin-right: 120px;
+  width: 500px;
+  height: 225px;
+}
+.content4 h2
+{
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 133%;
+  letter-spacing: 4.5%;
+  color: #264A51;
+  text-align: center;
+}
+
+.content4 p
+{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 173%;
+  letter-spacing: 4.5%;
+  color: #335E74;
+  text-align: center;
+}
+
+.content4 button
+{
+  width: 145px;
+  height: 45px;
+  border: 3px solid #264A51;
+  border-radius: 3px;
+  background-color: transparent;
+  text-align: center;
+  color: #264A51;
+    margin-top: 28px;
+  margin-left: 175px;
+}
