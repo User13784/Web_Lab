@@ -1,512 +1,3 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Greenery</title>
-  </head>
-  <body>
-    <!-- Левая вертикальная панель (только на первом экране) -->
-    <div class="vertical-line">
-      <div class="logo-container">
-        <img src="logo.png" alt="logo" />
-      </div>
-      
-      <!-- Меню с иконками и текстом под ними -->
-      <div class="menu-container">
-        <div class="menu-item">
-          <a href="#">
-            <img src="home.png" alt="home">
-            <span>Home</span>
-          </a>
-        </div>
-        
-        <div class="menu-item">
-          <a href="#">
-            <img src="shop.png" alt="shop">
-            <span>Shop</span>
-          </a>
-        </div>
-        
-        <div class="menu-item">
-          <a href="#">
-            <img src="blog.png" alt="blog">
-            <span>Blog</span>
-          </a>
-        </div>
-        
-        <div class="menu-item">
-          <a href="#">
-            <img src="about_us.png" alt="about us">
-            <span>About Us</span>
-          </a>
-        </div>
-        
-        <div class="menu-item">
-          <a href="#">
-            <img src="gallery.png" alt="gallery">
-            <span>Gallery</span>
-          </a>
-        </div>
-        
-        <div class="menu-item">
-          <a href="#">
-            <img src="location.png" alt="location">
-            <span>Location</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Первый экран с фоном -->
-    <div class="hero-section">
-      <div class="container">
-        <div class="header-line">
-          <div class="nav-left">
-            <div class="nav-item-with-icon">
-              <img src="human.png" alt="user" class="nav-icon">
-              <a class="nav-item" href="#">LOGIN</a>
-            </div>
-            
-            <div class="nav-item-with-icon">
-              <img src="door.png" alt="door" class="nav-icon">
-              <a class="nav-item" href="#">SIGN UP</a>
-            </div>
-          </div>
-
-          <div class="nav-right">
-            <div class="nav-item-with-icon">
-              <img src="email.png" alt="email" class="nav-icon">
-              <a class="nav-item" href="#">MAILING LIST</a>
-            </div>
-            
-            <div class="nav-item-with-icon">
-              <img src="symbol.png" alt="share" class="nav-icon">
-              <a class="nav-item" href="#">SHARE</a>
-            </div>
-            
-            <div class="nav-item-with-icon">
-              <img src="cart.png" alt="cart" class="nav-icon">
-              <a class="nav-item" href="#">CART</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="feature-text-container">
-          <div class="feature-text">
-            <p>Spacial Favric Last<br>Longer Sofa.</p>
-          </div>
-          <div class="feature-arrow">
-            <svg width="150" height="200" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                  <polygon points="0 0, 10 3, 0 6" fill="white" />
-                </marker>
-              </defs>
-              <path d="M130 180 L130 30" stroke="white" stroke-width="2" fill="none"/>
-              <path d="M130 30 L20 30" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-              <circle cx="130" cy="180" r="5" fill="white" stroke="white" stroke-width="2"/>
-            </svg>
-          </div>
-        </div>
-
-        <div class="hero-content">
-          <p class="hero-small">Save The Weekend</p>
-          <p class="hero-medium">Awesome design</p>
-          <p class="hero-large">Best Furniture For<br>Your Interior.</p>
-          <a href="#" class="hero-button">Explore More</a>
-        </div>
-
-        <div class="slider-dots">
-          <span class="dot"></span>
-          <span class="dot active"></span>
-          <span class="dot"></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Остальной контент без отступа слева -->
-    <div class="content-wrapper">
-      <!-- БЛОК С ФОТОГРАФИЯМИ -->
-      <div class="gallery-block">
-        <div class="container">
-          <img src="photo1.png" alt="photo 1">
-          <img src="photo2.png" alt="photo 2">
-          <img src="photo3.png" alt="photo 3">
-          <img src="photo4.png" alt="photo 4">
-          <img src="photo5.png" alt="photo 5">
-          <img src="photo6.png" alt="photo 6">
-        </div>
-      </div>
-
-      <div class="container2">
-        <div class="header2-text">
-          <h1>Our Products</h1>
-        </div>
-
-        <div class="menu-text">
-          <div class="sofa">
-            <span>Single Sofa</span>
-          </div>
-          <div class="room">
-            <span>Living Room</span>
-          </div>
-          <div class="kitchen">
-            <span>Kitchen</span>
-          </div>
-          <div class="bed-room">
-            <span>Bed Room</span>
-          </div>
-          <div class="bath-room">
-            <span>Bath Room</span>
-          </div>
-          <div class="decorations">
-            <span>Decorations</span>
-          </div>
-          <div class="Ceramics">
-            <span>Ceramics</span>
-          </div>
-        </div>
-
-        <div class="main-picture">
-          <!-- Picture 1 -->
-          <div class="product-card">
-            <div class="picture1"> 
-              <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-                <div class="badge badge-new">New</div>
-                <div class="badge badge-out">Out of stock</div>
-              </div>
-              <img src="chair.png" alt="">
-              <div class="bottom-element">
-                <div class="square">
-                  <img src="search.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="diagram.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="heart.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="store.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Single Sofa</h3>
-              <p class="product-price">£423.00</p>
-              <div class="product-rating">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Picture 2 -->
-          <div class="product-card">
-            <div class="picture2"> 
-              <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-              </div>
-              <img src="chair2.png" alt="">
-              <div class="bottom-element2">
-                <div class="square">
-                  <img src="search.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="diagram.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="heart.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="store.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Single Sofa</h3>
-              <p class="product-price">£423.00</p>
-              <div class="product-rating">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">☆</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Picture 3 -->
-          <div class="product-card">
-            <div class="picture3"> 
-              <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-                <div class="badge badge-new">New</div>
-              </div>
-              <img src="chair3.png" alt="">
-              <div class="bottom-element3">
-                <div class="square">
-                  <img src="search.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="diagram.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="heart.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="store.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Single Sofa</h3>
-              <p class="product-price">£423.00</p>
-              <div class="product-rating">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Picture 4 -->
-          <div class="product-card">
-            <div class="picture4"> 
-              <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-                <div class="badge badge-new">New</div>
-              </div>
-              <img src="chair4.png" alt="">
-              <div class="bottom-element4">
-                <div class="square">
-                  <img src="search.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="diagram.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="heart.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="store.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Single Sofa</h3>
-              <p class="product-price">£423.00</p>
-              <div class="product-rating">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Picture 5 -->
-          <div class="product-card">
-            <div class="picture5"> 
-              <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-                <div class="badge badge-new">New</div>
-              </div>
-              <img src="chair5.png" alt="">
-              <div class="bottom-element5">
-                <div class="square">
-                  <img src="search.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="diagram.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="heart.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="store.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Single Sofa</h3>
-              <p class="product-price">£423.00</p>
-              <div class="product-rating">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Picture 6 -->
-          <div class="product-card">
-            <div class="picture6"> 
-              <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-                <div class="badge badge-new">New</div>
-              </div>
-              <img src="chair6.png" alt="">
-              <div class="bottom-element6">
-                <div class="square">
-                  <img src="search.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="diagram.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="heart.png" alt="">
-                </div>
-                <div class="square">
-                  <img src="store.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Single Sofa</h3>
-              <p class="product-price">£423.00</p>
-              <div class="product-rating">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Первый блок с изображением и текстом 50% OFF -->
-      <div class="image-container">
-        <img src="bg2.jpg" alt="Background">
-        <div class="text-overlay">
-          <h1>50% OFF</h1>
-          <h2>Weekend Trendy Sofa</h2>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-            literature from 45 BC, making it over 2000 years old. Richard McClintock, 
-            a Latin.</p>
-          <button>View Items</button>
-        </div>
-      </div>
-
-      <!-- Второй блок с изображением -->
-      <!-- ВТОРОЙ БЛОК (где должен быть Living) -->
-      <div class="image-container2">
-        <img src="bg3.jpg" alt="Living Room">
-        <div class="content">
-          <h2>Living Room Items</h2>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-          It has roots in a piece of classical Latin literature from 45  professor at 
-          Hampden-Sydney College in Virginia, looked up one of the more obscure 
-          Latin words, consectetur.</p>
-          <button>Read More</button>
-        </div>
-            <!-- СЮДА добавлять блок Living -->
-        <div class="living-badge">
-          <span>Living</span>
-        </div>
-      </div>
-
-      <div class="image-container3">
-        <img src="bg4.jpg" alt="">
-        <div class="content2">
-          <h2>Trendy Dining Table</h2>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-            literature from 45 BC, making it over 2000 years old. Richard McClintock, 
-            a Latin.</p>
-          <button>View Items</button>
-        </div>
-
-        <div class="living-badge2">
-          <span>Dining</span>
-        </div> 
-      </div>
-
-      <div class="image-container4">
-        <img src="bg5.jpg" alt="">
-        <div class="content3">
-             <h2>Modern Bed</h2>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-            literature from 45 BC, making it over 2000 years old. Richard McClintock, 
-            a Latin.</p>
-          <button>View Items</button>
-        </div>
-
-        <div class="living-badge3">
-          <span>Bed</span>
-        </div>
-      </div>
-
-      <div class="image-container5">
-        <img src="bg6.jpg" alt="">
-        <div class="content4">
-          <h2>Populer kitchen Items</h2>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-            literature from 45 BC, making it over 2000 years old. Richard McClintock, 
-            a Latin.</p>
-            <button>View Items</button>
-        </div>
-
-        <div class="living-badge4">
-          <span>Kitchen</span>
-        </div>
-      </div>
-
-      <div class="subscribe">
-          <div class="blue"></div>
-        <img src="bg7.jpg" alt="">
-        <div class="content5">
-          <h2>Get 30% Off</h2>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply  years old. 
-            Richard McClintock, a Latin.</p>
-            <div class="input">
-              <span>Enter Your Email</span>
-              <button>Subscrive</button>
-            </div>
-            
-        </div>
-
-        <div class="bottom-design">
-          <div class="content6">
-            <img src="photo3.png" alt="">
-            <p>Contrary to popular belief, Lorem 
-Ipsum is not simply  years old Latin.</p>
-            <ul class="circle">
-              <li>
-                <div class="facebook-circle">
-                  <img src="facebook.png" alt="">
-                </div>
-              </li>
-              <li><img src="instagram.png" alt=""></li>
-              <li><img src="twitter.png" alt=""></li>
-              <li><img src="youtube.png" alt=""></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div> <!-- Закрытие content-wrapper -->
-  </body>
-</html>
-
-
-
-
-
-
-
 * {
   margin: 0;
   padding: 0;
@@ -517,7 +8,6 @@ body {
   min-height: 100vh;
 }
 
-/* ===== ЛЕВАЯ ПАНЕЛЬ ===== */
 .vertical-line {
   width: 165px;
   background-color: #002A32;
@@ -591,7 +81,6 @@ body {
   color: #ffffff;
 }
 
-/* ===== ОБЩИЕ СТИЛИ ===== */
 .hero-section,
 .gallery-block,
 .features-block,
@@ -610,7 +99,6 @@ body {
   padding: 0 30px;
 }
 
-/* ===== ПЕРВЫЙ ЭКРАН ===== */
 .hero-section {
   background-image: url(bg.png);
   min-height: 100vh;
@@ -794,7 +282,6 @@ body {
   background-color: rgba(38, 74, 81, 0.3);
 }
 
-/* ===== ГАЛЕРЕЯ С ФОТОГРАФИЯМИ ===== */
 .gallery-block {
   padding: 80px 0;
   background-color: #f5f5f5;
@@ -814,7 +301,6 @@ body {
   vertical-align: middle;
 }
 
-/* ===== OUR PRODUCTS БЛОК ===== */
 .container2 {
   margin-left: auto;
   margin-right: auto;
@@ -857,7 +343,6 @@ body {
   font-weight: 600;
 }
 
-/* ===== ОСНОВНОЙ БЛОК С КАРТИНКАМИ ===== */
 .main-picture {
   border: 7px solid white;
   margin-top: 20px;
@@ -1011,7 +496,6 @@ body {
   height: 36px;
 }
 
-/* ===== ПЕРВЫЙ БЛОК С ИЗОБРАЖЕНИЕМ (50% OFF) ===== */
 .image-container {
   margin: 30px 0px;
   position: relative;
@@ -1084,9 +568,8 @@ body {
   color: white;
 }
 
-/* ===== ВТОРОЙ БЛОК С ИЗОБРАЖЕНИЕМ (Living Room) ===== */
 .image-container2 {
-    position: relative; /* Обязательно! */
+    position: relative; 
 
   padding-top: 41%;
   width: 100vw;
@@ -1432,7 +915,7 @@ display: flex;
   height: 700px;
   background-color: #5D9BC9B0;
   opacity: 69%;
-  z-index: 1; /* Перед картинкой, но под контентом */
+  z-index: 1; 
   pointer-events: none;
 }
 
@@ -1453,7 +936,7 @@ display: flex;
 
 .content5 p
 {
-   width: 400px; /* Фиксированная ширина */
+   width: 400px; 
   position: absolute;
   font-weight: 400;
   font-size: 16px;
