@@ -989,42 +989,153 @@ display: flex;
     top: 0.3%;
 }
 
-.bottom-design
-{
+.bottom-design {
   margin-top: 130px;
   width: 100vw;
   height: 292px;
 }
 
-.bottom-design .content6 img
-{
+.bottom-design .content6 {
   position: relative;
-  width: 95px;
-  height: 43px;
-  left: 190px;
-
+  width: 327px;
+  margin-left: 190px;
 }
 
-.bottom-design .content6 p
-{
-  height: 60px;
-  width: 327px;
-  position: absolute;
+.bottom-design .content6 img {
+  width: 95px;
+  height: 43px;
+  display: block;
+  margin-bottom: 20px;
+  color: #3A5B62;
+}
+
+.bottom-design .content6 p {
   font-weight: 400;
   font-size: 15px;
   line-height: 173%;
   letter-spacing: 4.5%;
   color: #335E74;
-margin-top: 65px;
-margin-left: 190px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.bottom-design .content6 .circle {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  margin-left: -120px;
+}
+
+.circle li {
+  display: inline-block;
+}
+
+.bottom-design .content6 .circle .social-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #264A51;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.bottom-design .content6 .circle .social-circle img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  transition: transform 0.3s ease;
+}
+.bottom-design .content6 .circle .social-circle:hover {
+  background-color: #002A32;
+  transform: translateY(-2px);
+}
+
+.bottom-design .content6 .number1
+{
+    top: 20px;
+  position: absolute;
+  color: #264A51;
+  left: 565px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 81.5%;
+  letter-spacing: 5%;
+  bottom: 400px; 
 
 }
 
-.bottom-design .circle
+.bottom-design .content6 .number2
 {
-  width: 181px;
-  height: 37px;
-  margin-left: 189px;
-  margin-top: 100px;
+    top: 20px;
+  width: 170px;
+  position: absolute;
+  color: #264A51;
+  left: 800px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 81.5%;
+  letter-spacing: 5%;
+  bottom: 400px; 
+
+}
+
+.bottom-design .content6 .number3
+{
+  top: 20px;
+  width: 170px;
+  position: absolute;
+  color: #264A51;
+  left: 1080px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 81.5%;
+  letter-spacing: 5%;
+  bottom: 400px; 
+
+}
+
+.description {
+  position: absolute;
+  left: 565px;
+  bottom: -80px;
+}
+
+.description .text {
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.description .text span {
+
+  width: 110px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 4.5%;
+  color: #335E74;
+}
+
+.description2 {
+  position: absolute;
+  left: 800px;
+  top: 80px;
+}
+
+
+
+.contact-info {
+  margin-top: -20px; 
+}
+
+.contact-info p {
+  margin: 5px 0;
 }
