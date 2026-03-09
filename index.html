@@ -14,6 +14,7 @@
 
       <div class="menu-container">
         <div class="menu-item">
+          <div class="active-indicator"></div> 
           <a href="#">
             <img src="home.png" alt="home">
             <span>Home</span>
@@ -80,30 +81,34 @@
 
             <div class="nav-item-with-icon">
               <img src="symbol.png" alt="share" class="nav-icon">
-              <a class="nav-item" href="#">SHARE</a>
+              <a class="nav-item" href="#">SHARE <span class="red-badge">12K</span></a>
             </div>
 
             <div class="nav-item-with-icon">
               <img src="cart.png" alt="cart" class="nav-icon">
-              <a class="nav-item" href="#">CART</a>
+              <a class="nav-item" href="#">CART  <span class="red-badge">0</span></a>
             </div>
           </div>
         </div>
 
         <div class="feature-text-container">
           <div class="feature-text">
-            <p>Spacial Favric Last<br>Longer Sofa.</p>
+            <div class="feature-text">
+              <p class="line1">Spacial Favric Last</p>
+              <p class="line2">Longer Sofa.</p>
+            </div>
           </div>
           <div class="feature-arrow">
             <svg width="150" height="200" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                  <polygon points="0 0, 10 3, 0 6" fill="white" />
+                <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+                  <polygon points="0 0, 8 2.5, 0 5" fill="white" />
                 </marker>
               </defs>
-              <path d="M130 180 L130 30" stroke="white" stroke-width="2" fill="none"/>
-              <path d="M130 30 L20 30" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-              <circle cx="130" cy="180" r="5" fill="white" stroke="white" stroke-width="2"/>
+              <path d="M130 170 L130 12" stroke="white" stroke-width="2" fill="none"/>
+              <path d="M130 12 L70 12" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+              <circle cx="130" cy="170" r="5" fill="white" stroke="white" stroke-width="2"/>
+              <circle cx="130" cy="170" r="2.5" fill="#71B3C6" stroke="none"/>
             </svg>
           </div>
         </div>
@@ -436,24 +441,23 @@
             </div>
 
             <div class="service-hours-box">
-  <div class="hours-row">
-    <span class="day">Mon-Fri :</span>
-    <span class="time">09.00am - 19.00pm</span>
-  </div>
-  <div class="hours-row">
-    <span class="day">Saturday :</span>
-    <span class="time">10.00am - 18.00pm</span>
-  </div>
-  <div class="hours-row">
-    <span class="day">Sunday  :</span>
-    <span class="time">We are Closed</span>
-  </div>
-</div>
+              <div class="hours-row">
+                <span class="day">Mon-Fri :</span>
+                <span class="time">09.00am - 19.00pm</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Saturday :</span>
+                <span class="time">10.00am - 18.00pm</span>
+              </div>
+              <div class="hours-row">
+                <span class="day">Sunday  :</span>
+                <span class="time">We are Closed</span>
+              </div>
+            </div>
 
             <div class="bottom-box">
               <span class="text">2021 Greenery. All Right Reserved</span>
             </div>
-
           </div>
         </div>
       </div>
