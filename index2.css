@@ -448,6 +448,11 @@ body {
   white-space: nowrap;
 }
 
+.menu-text .sofa
+{
+  color: #264A51;
+}
+
 .menu-text div {
   cursor: pointer;
   transition: color 0.3s;
@@ -495,10 +500,12 @@ body {
 
 .picture1 img, .picture2 img, .picture3 img,
 .picture4 img, .picture5 img, .picture6 img {
-  width: 136px;
-  height: 144px;
-  object-fit: cover;
+  height: 140px;       
+  width: auto;         
+  max-width: 100%;     
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
 .bottom-element,
@@ -538,29 +545,32 @@ body {
 
 .product-info {
   text-align: center;
-  padding: 15px 10px 10px 10px;
+  padding: 5px 10px 10px 10px;
   width: 330px;
 }
 
 .product-title {
   color: #264A51;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
   letter-spacing: 0.5px;
 }
 
 .product-price {
   color: #264A51;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
+   margin-top: -5px;  
 }
 
 .product-rating {
   display: flex;
   justify-content: center;
   gap: 3px;
+    font-size: 15px;
+
 }
 
 .star {
@@ -581,14 +591,14 @@ body {
 }
 
 .badge {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 400;
   color: white;
   border: 2px solid white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -599,10 +609,10 @@ body {
 .badge-out {
   background-color: #264A51;
   width: auto;
-  padding: 0 12px;
+  padding: 0 8px;
   border-radius: 4px;
-  font-size: 12px;
-  height: 36px;
+  font-size: 10px;
+  height: 28px;
 }
 
 .image-container {
@@ -624,8 +634,8 @@ body {
 .text-overlay {
   position: absolute;
   text-align: center;
-  left: 158px;
-  top: 450px;
+  left: 210px;
+  top: 390px;
   width: 700px;
   height: 384px;
   z-index: 2;
@@ -635,6 +645,7 @@ body {
   font-weight: 800;
   font-size: 90px;
   letter-spacing: 4.5%;
+  line-height: 133%;
   color: #F3B705;
   opacity: 50%;
   margin-bottom: 10px;
@@ -1261,3 +1272,8 @@ body {
   color: #335E74;
 }
 
+.menu-text .sofa span {
+    border: 2px solid #264A51; 
+    padding: 5px 15px;         
+    border-radius: 2px;      
+}
