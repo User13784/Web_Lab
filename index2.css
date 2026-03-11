@@ -80,7 +80,7 @@ body {
 .vertical-line {
   width: 165px;
   background-color: #002A32;
-  min-height: 850px;
+  min-height: 810px;
   position: absolute;
   left: 0;
   top: 0;
@@ -157,13 +157,14 @@ body {
   text-align: center;
   transition: color 0.3s;
   letter-spacing: 1px;
-   position: relative; 
+   position: relative;  
   top: -2px;      
 }
 
 .menu-item:nth-child(2) {
   margin-top: -1px;  
 }
+
 
 .menu-item:nth-child(3) {
   margin-top: -8px;  
@@ -174,7 +175,7 @@ body {
 }
 
 .menu-item:nth-child(5) {
-  margin-top: 0px;  
+  margin-top: 0px; 
 }
 
 .menu-item:nth-child(6) {
@@ -400,8 +401,7 @@ body {
   font-weight: 500;
   letter-spacing: 0px;
   transition: all 0.3s ease;
-  text-transform: uppercase;
-  padding: 9px 10px;
+  padding: 9px 18px;
   margin-top: -15px;  
   margin-right: 6px;
   border-radius: 3px;
@@ -459,6 +459,8 @@ body {
   margin-left: -50vw;
   margin-right: -50vw;
   overflow-x: auto;  
+   margin-top: -246px;
+   z-index: 1;
 }
 
 .gallery-block .container {
@@ -469,8 +471,8 @@ body {
   width: fit-content;  
   min-width: 100%;  
   margin: 0 auto;
-  padding: 0 30px;
-  gap: 90px;  
+  padding: 5px 30px;
+  gap: 80px;  
 }
 
 .gallery-block img {
@@ -1355,4 +1357,3 @@ body {
   margin-left: 8px; 
   margin-top: 1px;
 }
-
