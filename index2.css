@@ -492,28 +492,61 @@ body {
   background-color: white;
   border: 7px dotted white;
   padding: 40px;
+  margin-top: 40px;     
+  margin-left: 100px;
 }
 
 .header2-text h1 {
   text-align: center;
   color: #264A51;
-  font-size: 36px;
+  font-size: 46px;
   font-weight: 600;
   letter-spacing: 4.5%;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  margin-left: 130px;
 }
 
 .menu-text {
   color: #748289;
   font-size: 17px;
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  justify-content: flex-start;
+  gap: 0px;
   flex-wrap: wrap;
   width: 100%;
   margin: 0 auto 40px auto;
   white-space: nowrap;
+  margin-right: 20px;
+  transform: translate(-57px, -5px);
+}
+
+.sofa {
+  transform: translateX(100px);  
+}
+
+.room {
+  transform: translateX(140px);  
+}
+
+.kitchen {
+  transform: translateX(218px);  
+}
+
+.bed-room {
+  transform: translateX(288px);  
+}
+
+.bath-room {
+  transform: translateX(363px);  
+}
+
+.decorations {
+  transform: translateX(434px);  
+}
+
+.Ceramics {
+  transform: translateX(507px); 
 }
 
 .menu-text .sofa
@@ -544,6 +577,8 @@ body {
   min-height: 786px;
   padding: 10px;
   position: relative;
+    left: 33px;     
+  top: -30px;
 }
 
 .product-card {
@@ -555,8 +590,8 @@ body {
 .picture1, .picture2, .picture3,
 .picture4, .picture5, .picture6 {
   border: 7px solid white;
-  height: 316px;
-  width: 330px;
+  height: 330px;
+  width: 365px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1349,7 +1384,7 @@ body {
 
 .menu-text .sofa span {
     border: 2px solid #264A51; 
-    padding: 5px 15px;         
+    padding: 6px 26px;         
     border-radius: 2px;      
 }
 
