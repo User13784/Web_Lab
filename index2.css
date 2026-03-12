@@ -504,7 +504,7 @@ body {
   letter-spacing: 4.5%;
   margin-top: 15px;
   margin-bottom: 50px;
-  margin-left: 130px;
+  margin-left: 40px;
 }
 
 .menu-text {
@@ -626,7 +626,13 @@ body {
   object-fit: contain;
   margin-top: -20px;
   margin-left: 90px;
+  z-index: 10;
 }
+
+
+
+
+
 
 .product-card:nth-child(4) img {
   height: 150px;  
@@ -655,9 +661,7 @@ body {
   height: 60px;
   margin: 10px 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 8px;
   padding: 0 5px;
 }
 
@@ -677,12 +681,14 @@ body {
   height: 20px;
   object-fit: contain;
   display: block;
+  margin: 0;
 }
 
 .product-info {
   text-align: center;
   padding: 5px 10px 10px 10px;
   width: 330px;
+    position: relative;
 }
 
 .product-title {
@@ -744,24 +750,31 @@ body {
 .badge-new { background-color: #71B3C6; }
 .badge-out {
   background-color: #264A51;
-  width: auto;
-  padding: 0 8px;
+  width: 90px;
+  padding: 0 12px;
   border-radius: 4px;
-  font-size: 10px;
-  height: 28px;
+  font-size: 12px;
+  height: 33px;
+  margin-top: 22px;
+  transform: translateX(10px);
 }
 
 .image-container {
   margin: 30px 0px;
   position: relative;
   width: 100%;
-  min-height: 500px;
+  min-height: 400px;
+  height: 400px;
+
 }
 
 .image-container img {
   width: 100%;
+  margin-top: -21px;
   object-fit: cover;
   position: absolute;
+  height: 730px;
+  
   top: 0;
   left: 0;
   z-index: 1;
@@ -1424,4 +1437,188 @@ body {
 .nav-left .nav-item-with-icon:first-child {
   margin-left: 8px; 
   margin-top: 1px;
+}
+
+.product-card:nth-child(1) .square img {
+  width: 21px;   
+  height: 21px; 
+  object-fit: contain;
+}
+
+.product-card:nth-child(1) .bottom-element .square img {
+  margin-top: 1px;
+  margin-left: -1px;  
+}
+
+.product-card:nth-child(1) .bottom-element {
+  margin-top: 20px;
+  margin-left: -8px;  
+   gap: 16px;
+}
+
+.product-card:nth-child(4) .square img {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+  margin-left: 8px;  
+}
+
+.product-card:nth-child(4) .bottom-element4 {
+  margin-top: 17px;
+  margin-left: -8px;  
+  gap: 16px;  
+}
+
+.product-card:nth-child(4) .bottom-element4 .square img {
+  margin-top: 1px;    
+  margin-left: -1px;
+}
+
+.product-card:nth-child(5) .square img {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+  margin-left: 8px;
+}
+
+.product-card:nth-child(5) .bottom-element5 {
+  margin-top: 12px;    
+  margin-left: -14px;   
+  gap: 16px;           
+}
+
+.product-card:nth-child(5) .bottom-element5 .square img {
+  margin-top: 1px;     
+  margin-left: -1px;   
+}
+
+.product-card:nth-child(2) .bottom-element2 {
+  margin-top: 21px;    
+  margin-left: -15px;    
+  gap: 16px;
+}
+
+.product-card:nth-child(2) .bottom-element2 .square img {
+  width: 21px;
+  height: 21px;
+  margin-top: 1px;
+  margin-left: -1px;
+}
+
+.product-card:nth-child(3) .bottom-element3 {
+  margin-top: 27px;    
+  margin-left: -20px;    
+  gap: 16px;
+}
+
+.product-card:nth-child(3) .bottom-element3 .square img {
+  width: 21px;
+  height: 21px;
+  margin-top: 1px;
+  margin-left: -1px;
+}
+
+.product-card:nth-child(6) .bottom-element6 {
+  margin-top: 20px;    
+  margin-left: -20px;    
+  gap: 16px;
+}
+
+.product-card:nth-child(6) .bottom-element6 .square img {
+  width: 21px;
+  height: 21px;
+  margin-top: 1px;
+  margin-left: -1px;
+}
+
+
+.product-card:nth-child(1) .badge-discount {
+  position: relative;
+  top: 17px;
+  left: -1px;
+}
+
+.product-card:nth-child(1) .badge-new {
+  position: relative;
+  top: 17px;
+  left: -3px;
+}
+
+.product-card:nth-child(1) .badge-out {
+  position: relative;
+  top: 17px; 
+  left: 5px;
+}
+
+.product-card:nth-child(2) .badge-discount {
+  position: relative;
+  top: 17px;
+  right: 5px;
+}
+
+.product-card:nth-child(3) .badge-discount {
+  position: relative;
+  top: 17px;
+  right: 8px;
+}
+
+.product-card:nth-child(3) .badge-new {
+  position: relative;
+  top: 19px;
+  left: -6px;
+}
+
+.product-card:nth-child(4) .badge-discount {
+  position: relative;
+  top: 20px;
+  left: -1px;
+}
+
+.product-card:nth-child(4) .badge-new {
+  position: relative;
+  top: 22px;
+  right: 3px;
+}
+
+.product-card:nth-child(4) .badge-out {
+  position: relative;
+  top: 17px; 
+  left: 5px;
+}
+
+
+.product-card:nth-child(5) .badge-discount {
+  position: relative;
+  top: 23px;
+  left: -6px;
+}
+
+.product-card:nth-child(5) .badge-new {
+  position: relative;
+  top: 20px;
+  left: -6px;
+}
+
+.product-card:nth-child(6) .badge-discount {
+  position: relative;
+  top: 21px;
+  right: 12px;
+}
+
+.product-card:nth-child(6) .badge-new {
+  position: relative;
+  top: 23px;
+  left: -12px;
+}
+
+.product-card:nth-child(-n+3) .product-info {
+  position: relative;
+  top: -6px;    
+  left: 4px;     
+}
+
+.product-card:nth-child(n+4) .product-info {
+  position: relative;
+  top: 1px;    
+  left: 4px;     
 }
