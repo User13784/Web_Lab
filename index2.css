@@ -979,9 +979,10 @@ body {
 
 .image-container5 img {
   position: relative;
-  width: 750px;
-  height: 450px;
-  margin-right: 150px;
+  width: 610px;
+  height: 410px;
+  margin-right: 165px;
+  margin-top: -680px;
 }
 
 .content2 {
@@ -1107,9 +1108,10 @@ margin-top: -5px;
 
 .content4 {
   margin-top: 0;
-  margin-right: 120px;
-  width: 500px;
+  margin-right: 40px;
+  width: 490px;
   padding: 20px;
+   transform: translateY(-345px);
 }
 
 .content4 h2 {
@@ -1120,7 +1122,8 @@ margin-top: -5px;
   color: #264A51;
   text-align: center;
     margin-bottom: 15px;
-
+    margin-left: 16px;
+ white-space: nowrap;
 }
 
 .content4 p {
@@ -1140,21 +1143,23 @@ margin-top: -5px;
   background-color: transparent;
   text-align: center;
   color: #264A51;
-  margin-top: 28px;
-  margin-left: 175px;
+  margin-top: 20px;
+  margin-left: 162px;
+  font-size: 15px;
 }
 
 .living-badge4 {
   position: absolute;
-  width: 129px;
-  height: 148px;
+  width: 120px;
+  height: 133px;
   background-color: #71B3C6D9;
   opacity: 85%;
-  bottom: 220px;
-  right: 49%;
+  bottom: 573px;
+  right: 50%;
   justify-content: center;
   align-items: center;
   display: flex;
+  letter-spacing: 4.5%;
 }
 
 .living-badge4 span {
@@ -1172,9 +1177,10 @@ margin-top: -5px;
 }
 
 .subscribe img {
-  width: 100vw;
-  height: 700px;
+  width: 1500px;
+  height: 560px;
   display: block;
+  margin-top: -390px;
 }
 
 .subscribe::after {
@@ -1183,7 +1189,7 @@ margin-top: -5px;
   top: 0;
   left: 0;
   width: 100%;
-  height: 700px;
+  height: 560px;
   background-color: #5D9BC9B0;
   opacity: 69%;
   z-index: 1;
@@ -1265,6 +1271,7 @@ margin-top: -5px;
   position: relative;
   width: 327px;
   margin-left: 190px;
+  margin-top: 400px;
 }
 
 .bottom-design .content6 img {
