@@ -1373,7 +1373,7 @@ margin-top: -5px;
 .description {
   position: absolute;
   left: 565px;
-  bottom: -35px;
+  bottom: -33px;
 }
 
 .description .text {
@@ -1385,7 +1385,7 @@ margin-top: -5px;
 .description .text span {
   width: 110px;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 2;
   letter-spacing: 4.5%;
   color: #335E74;
@@ -1409,9 +1409,9 @@ margin-top: -5px;
 
 .service-hours-box {
   position: absolute;
-  left: 1080px;
+  left: 1045px;
   top: 80px;
-  width: 270px;
+  width: 236px;
   background-color: #A0C7EA;
   border: 3px solid #A0C7EA;
   border-radius: 10px;
@@ -1709,3 +1709,42 @@ margin-top: -5px;
 letter-spacing: 4.5%;
 }
 
+.description .text span:nth-child(1) {
+  position: relative;
+  top: -6px;
+  left: 2px;
+  transform: translate(0px, 0px);  
+  color: #335E74;  
+}
+
+.description .text span:nth-child(2) {
+  position: relative;
+  top: -18px;         
+  left: -2px;       
+  transform: translate(5px, 3px);
+  color: #264A51;
+  font-weight: 600;
+}
+
+.description .text span:nth-child(3) {
+  position: relative;
+  top: -20px;        
+  left: -7px;       
+  transform: translate(10px, -5px);
+}
+
+.description .text span:nth-child(4) {
+  position: relative;
+  top: -38px;
+  left: 14px;       
+  transform: translate(-10px, 5px);
+}
+
+.description .text span:nth-child(5) {
+  position: relative;
+  top: -36px;
+  left: -14px;
+  transform: translate(15px, -3px);
+  font-size: 16px;
+  font-weight: 700;
+}
