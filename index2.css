@@ -1375,7 +1375,7 @@ margin-top: -5px;
 .description {
   position: absolute;
   left: 565px;
-  bottom: -33px;
+  bottom: -125px;
 }
 
 .description .text {
@@ -1450,13 +1450,13 @@ margin-top: -5px;
 .bottom-box {
   position: relative;
   width: 100vw;
-  margin-left: -190px;
+  margin-left: -195px;
   margin-right: -100px;
   height: 40px;
   top: 170px;
   background-color: #D3E2EF;
   text-align: center;
-  margin-top: -90px;
+  margin-top: -93px;
 }
 
 .bottom-box .text {
@@ -1716,7 +1716,7 @@ letter-spacing: 4.5%;
 
 .description .text span:nth-child(1) {
   position: relative;
-  top: -6px;
+  top: -10px;
   left: 2px;
   transform: translate(0px, 0px);  
   color: #335E74;  
@@ -1724,34 +1724,31 @@ letter-spacing: 4.5%;
 
 .description .text span:nth-child(2) {
   position: relative;
-  top: -18px;         
+  top: -24px;         
   left: -2px;       
   transform: translate(5px, 3px);
   color: #264A51;
-  font-weight: 600;
 }
 
 .description .text span:nth-child(3) {
   position: relative;
-  top: -20px;        
+  top: -26px;        
   left: -7px;       
   transform: translate(10px, -5px);
 }
 
 .description .text span:nth-child(4) {
   position: relative;
-  top: -38px;
+  top: -42px;
   left: 14px;       
   transform: translate(-10px, 5px);
 }
 
 .description .text span:nth-child(5) {
   position: relative;
-  top: -36px;
-  left: -14px;
+  top: -38px;
+  left: -13px;
   transform: translate(15px, -3px);
-  font-size: 16px;
-  font-weight: 700;
 }
 
 .description2 .address {
@@ -1822,3 +1819,17 @@ letter-spacing: 4.5%;
 .hours-row:nth-child(3) .time {
  transform: translateY(-5px) translateX(-26px);
 }
+
+.bottom-box .text::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-image: url('footer_symbol.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 3px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+
