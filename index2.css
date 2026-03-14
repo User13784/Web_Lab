@@ -1204,8 +1204,8 @@ margin-top: -5px;
   letter-spacing: 4.5%;
   color: #264A51;
   text-align: center;
-  top: 30%;
-  left: 40%;
+  top: 22%;
+  left: 41.5%;
   z-index: 2;
     margin-bottom: 15px;
 
@@ -1218,7 +1218,7 @@ margin-top: -5px;
   font-size: 16px;
   line-height: 173%;
   color: #FFFFFF;
-  top: 39%;
+  top: 31%;
   left: 36.5%;
   text-align: center;
   z-index: 2;
@@ -1227,15 +1227,15 @@ margin-top: -5px;
 
 .subscribe .input {
   position: absolute;
-  width: 480px;
+  width: 450px;
   height: 46px;
   border: 2px solid #ACCAE0;
   border-radius: 50px;
-  top: 49%;
-  left: 34.5%;
+  top: 41%;
+  left: 34%;
   z-index: 2;
-  padding-top: 11px;
-  padding-left: 34px;
+  padding-top: 10px;
+  padding-left: 24px;
   background-color: #DAE5EE;
 }
 
@@ -1243,6 +1243,7 @@ margin-top: -5px;
   color: #455E6578;
   letter-spacing: 4.5%;
   font-weight: 400;
+  font-size: 13px;
 }
 
 .subscribe .content5 button {
@@ -1257,7 +1258,7 @@ margin-top: -5px;
   font-weight: 400;
   line-height: 173%;
   letter-spacing: 4.5%;
-  left: 71.5%;
+  left: 72%;
   top: 0.3%;
 }
 
@@ -1297,18 +1298,19 @@ margin-top: -5px;
 .bottom-design .content6 .circle {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 11px;
   justify-content: center;
   padding: 0;
   margin: 0;
-  margin-left: -120px;
+  margin-left: 243px;
+  margin-top: 30px;
 }
 
 .circle li { display: inline-block; }
 
 .bottom-design .content6 .circle .social-circle {
-  width: 40px;
-  height: 40px;
+  width: 37px;
+  height: 37px;
   background-color: #264A51;
   border-radius: 50%;
   position: relative;
@@ -1316,12 +1318,12 @@ margin-top: -5px;
 }
 
 .bottom-design .content6 .circle .social-circle img {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
   filter: brightness(0) invert(1);
   position: absolute;
-  top: 50%;
+  top: 1105%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 0.3s ease;
@@ -1395,6 +1397,7 @@ margin-top: -5px;
   position: absolute;
   left: 550px;
   top: 63px;
+  width: 290px;
 }
 
 .contact-info { margin-top: -10px; }
@@ -1747,4 +1750,35 @@ letter-spacing: 4.5%;
   transform: translate(15px, -3px);
   font-size: 16px;
   font-weight: 700;
+}
+
+.description2 .address {
+  position: relative;
+  top: -5px;
+  left: 0px;
+  transform: translate(0px, 0px);  
+  font-size: 14px;  
+  color: #335E74;
+  margin: 5px 0;
+}
+
+.description2 .phone {
+  position: relative;
+  top: -15px;         
+  left: 4px;       
+  transform: translate(5px, 3px);
+  font-size: 15px;
+  color: #335E74;
+  margin: 5px 0;
+}
+
+.description2 .email {
+  position: relative;
+  top: -20px;        
+  left: 6px;       
+  transform: translate(10px, -5px);
+  font-size: 15px;
+  color: #335E74;
+    margin-top: -22px;  
+  margin-bottom: 5px;
 }
