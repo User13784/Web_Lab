@@ -1782,3 +1782,21 @@ letter-spacing: 4.5%;
     margin-top: -22px;  
   margin-bottom: 5px;
 }
+
+.bottom-design .content6 .circle li:nth-child(2) .social-circle,
+.bottom-design .content6 .circle li:nth-child(3) .social-circle,
+.bottom-design .content6 .circle li:nth-child(4) .social-circle {
+  background-color: transparent;  
+  border: 3px solid #F6FDFF;        
+}
+
+.bottom-design .content6 .circle li:nth-child(2) .social-circle img,
+.bottom-design .content6 .circle li:nth-child(3) .social-circle img,
+.bottom-design .content6 .circle li:nth-child(4) .social-circle img {
+  filter: none;  
+  
+    width: 18px;    
+  height: 18px;
+  transform: translate(-50%, 260%);
+}
+
