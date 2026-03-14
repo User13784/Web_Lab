@@ -1456,17 +1456,19 @@ margin-top: -5px;
   top: 170px;
   background-color: #D3E2EF;
   text-align: center;
+  margin-top: -90px;
 }
 
 .bottom-box .text {
   line-height: 40px;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 10px;
   letter-spacing: 4.5%;
   display: block;
   text-align: center;
   width: 100%;
   color: #335E74;
+  margin-left: 200px;
 }
 
 .menu-text .sofa span {
@@ -1800,3 +1802,23 @@ letter-spacing: 4.5%;
   transform: translate(-50%, 260%);
 }
 
+.hours-row:nth-child(1) .day {
+    transform: translateY(5px) translateX(-2px);
+}
+.hours-row:nth-child(1) .time {
+    transform: translateY(4px) translateX(4px);
+}
+
+.hours-row:nth-child(2) .day {
+    transform: translateY(0px) translateX(-2px);
+}
+.hours-row:nth-child(2) .time {
+    transform: translateY(-0px) translateX(4px);
+}
+
+.hours-row:nth-child(3) .day {
+    transform: translateY(-4px) translateX(-2px);
+}
+.hours-row:nth-child(3) .time {
+ transform: translateY(-5px) translateX(-26px);
+}
