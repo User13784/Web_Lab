@@ -63,7 +63,7 @@ body {
 
 .image-container2 .content {
   height: 250px;
-  width: 490px;
+  width: 510px;
   text-align: center;
  transform: translateY(-155px);  
  margin-left: -40px; 
@@ -160,13 +160,17 @@ body {
 }
 
 .menu-item span {
-    color: #CAD3DB;
+    color: #8999A1;
   font-size: 14px;
   text-align: center;
   transition: color 0.3s;
   letter-spacing: 1px;
    position: relative;  
   top: -2px;      
+}
+
+.menu-item:first-child span {
+  color: #B6DCFF; 
 }
 
 .menu-item:nth-child(2) {
@@ -382,6 +386,7 @@ body {
   font-size: 56px;
   font-weight: 600;
   line-height: 1.2;
+  margin-left: -1px;
 }
 
 .hero-medium, .hero-large, .hero-button
@@ -939,7 +944,7 @@ body {
   margin-right: 8px;
   display: flex;
   align-items: center;
-  padding-right: 150px;
+  padding-right: 160px;
   padding-left: 30px;
     position: relative;
   top: -170px;  
@@ -1000,27 +1005,30 @@ body {
   line-height: 133%;
   color: #264A51;
 margin-top: -5px;
+margin-left: 10px;
 }
 
 .content2 p {
-  width: 406px;
-  font-size: 16px;
+  width: 384px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 173%;
   color: #335E74;
   margin-top: 12px;
   margin-bottom: 8px;
+  margin-left: 10px;
 }
 
 .content2 button {
   width: 143px;
   height: 45px;
   margin-top: 18px;
-  margin-left: 35px;
+  margin-left: 50px;
   border-radius: 3px;
   background-color: transparent;
   border: 2px solid #264A51;
   margin-bottom: 4px;
+  letter-spacing: 4.5%;
 }
 
 .living-badge2 {
@@ -1060,11 +1068,12 @@ margin-top: -5px;
   text-align: center;
   margin-bottom: 15px;
   letter-spacing: 4.5%;
+  margin-left: 5px;
 }
 
 .content3 p {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 173%;
   letter-spacing: 4.5%;
   color: #335E74;
@@ -1104,6 +1113,7 @@ margin-top: -5px;
   font-size: 25px;
   line-height: 35px;
   color: #FFFFFF;
+  margin-right: 2px;
 }
 
 .content4 {
@@ -1127,12 +1137,15 @@ margin-top: -5px;
 }
 
 .content4 p {
+  width: 424px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 173%;
   letter-spacing: 4.5%;
   color: #335E74;
   text-align: center;
+  margin-bottom: 3px;
+  margin-left: 15px;
 }
 
 .content4 button {
@@ -1150,11 +1163,11 @@ margin-top: -5px;
 
 .living-badge4 {
   position: absolute;
-  width: 120px;
-  height: 133px;
+  width: 122px;
+  height: 138px;
   background-color: #71B3C6D9;
   opacity: 85%;
-  bottom: 573px;
+  bottom: 576px;
   right: 50%;
   justify-content: center;
   align-items: center;
@@ -1168,16 +1181,19 @@ margin-top: -5px;
   line-height: 35%;
   color: #FFFFFF;
   text-align: center;
+  margin-top: 14px;
+  margin-left: 3px;
 }
 
 .subscribe {
   position: relative;
   width: 100vw;
   height: 800px;
+  margin-bottom: 0; 
 }
 
 .subscribe img {
-  width: 1500px;
+  width: 1440px;
   height: 560px;
   display: block;
   margin-top: -390px;
@@ -1215,11 +1231,11 @@ margin-top: -5px;
   width: 400px;
   position: absolute;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 173%;
   color: #FFFFFF;
-  top: 31%;
-  left: 36.5%;
+  top: 31.5%;
+  left: 36%;
   text-align: center;
   z-index: 2;
   letter-spacing: 4.5%;
@@ -1228,7 +1244,7 @@ margin-top: -5px;
 .subscribe .input {
   position: absolute;
   width: 450px;
-  height: 46px;
+  height: 47px;
   border: 2px solid #ACCAE0;
   border-radius: 50px;
   top: 41%;
@@ -1249,7 +1265,7 @@ margin-top: -5px;
 .subscribe .content5 button {
   position: absolute;
   width: 138px;
-  height: 44px;
+  height: 46px;
   border: 2px solid #264A51E3;
   border-radius: 50px;
   background-color: #264A51E3;
@@ -1259,20 +1275,22 @@ margin-top: -5px;
   line-height: 173%;
   letter-spacing: 4.5%;
   left: 72%;
-  top: 0.3%;
+  top: -3%;
 }
 
 .bottom-design {
   margin-top: 130px;
   width: 100vw;
   height: 292px;
+  position: relative;
+  overflow: visible; 
 }
 
 .bottom-design .content6 {
   position: relative;
   width: 327px;
   margin-left: -5px;
-  margin-top: 495px;
+  margin-top: 498px;
 }
 
 .bottom-design .content6 img {
@@ -1286,13 +1304,13 @@ margin-top: -5px;
 
 .bottom-design .content6 p {
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 173%;
   letter-spacing: 4.5%;
   color: #335E74;
-  margin-bottom: 25px;
-  width: 93%;
-  transform: translateX(195px) translateY(11px);
+  margin-bottom: 28px;
+  width: 80%;
+  transform: translateX(195px) translateY(6px);
 }
 
 .bottom-design .content6 .circle {
@@ -1335,7 +1353,7 @@ margin-top: -5px;
 }
 
 .bottom-design .content6 .number1 {
-  top: 20px;
+  top: 18px;
   position: absolute;
   color: #264A51;
   left: 565px;
@@ -1375,7 +1393,7 @@ margin-top: -5px;
 .description {
   position: absolute;
   left: 565px;
-  bottom: -125px;
+  bottom: -72px;
 }
 
 .description .text {
@@ -1449,7 +1467,7 @@ margin-top: -5px;
 
 .bottom-box {
   position: relative;
-  width: 100vw;
+  width: 114vw;
   margin-left: -195px;
   margin-right: -100px;
   height: 40px;
@@ -1458,6 +1476,7 @@ margin-top: -5px;
   text-align: center;
   margin-top: -93px;
 }
+
 
 .bottom-box .text {
   line-height: 40px;
@@ -1574,6 +1593,9 @@ margin-top: -5px;
   margin-left: -1px;
 }
 
+.product-card:nth-child(6) .product-price {
+  margin-left: -9px;
+}
 
 .product-card:nth-child(1) .badge-discount {
   position: relative;
@@ -1674,30 +1696,33 @@ margin-top: -5px;
   text-align: center;
   line-height: 200%;
   letter-spacing: 4.5%;
-  margin-left: 30px;
+  margin-left: 4 px;
 }
 
 .image-container2 .content p {
   font-weight: 400;
-  font-size: 16.5px;    
+  font-size: 15px;    
   color: #335E74;
   line-height: 173%;
-  letter-spacing: 4.5;
+  letter-spacing: 4.5%;
+  margin-top: 5px;
 }
 
 .image-container2 .content button {
-  margin-top: 18px;       
+  margin-top: 25px;       
   width: 140px;
-  margin-right: -10px;
+  margin-right: 6px;
   height: 45px;
   border-radius: 2px;
   border: 2px solid #264A51;
   background-color: transparent;
+  font-size: 14px; 
+  letter-spacing: 4.5%;
 }
 
 .image-container3 .content2 {
   margin-top: 0;
-  width: 406px;
+  width: 405px;
   text-align: center;
   margin-right: 80px;
   padding: 20px;
@@ -1753,17 +1778,18 @@ letter-spacing: 4.5%;
 
 .description2 .address {
   position: relative;
-  top: -5px;
-  left: 0px;
+  top: -2px;
+  left: 4px;
   transform: translate(0px, 0px);  
   font-size: 14px;  
   color: #335E74;
   margin: 5px 0;
+  max-width: 220px; 
 }
 
 .description2 .phone {
   position: relative;
-  top: -15px;         
+  top: -8px;         
   left: 4px;       
   transform: translate(5px, 3px);
   font-size: 15px;
@@ -1780,6 +1806,7 @@ letter-spacing: 4.5%;
   color: #335E74;
     margin-top: -22px;  
   margin-bottom: 5px;
+  margin-top: -14px;
 }
 
 .bottom-design .content6 .circle li:nth-child(2) .social-circle,
@@ -1800,24 +1827,24 @@ letter-spacing: 4.5%;
 }
 
 .hours-row:nth-child(1) .day {
-    transform: translateY(5px) translateX(-2px);
+    transform: translateY(1px) translateX(-2px);
 }
 .hours-row:nth-child(1) .time {
-    transform: translateY(4px) translateX(4px);
+    transform: translateY(1px) translateX(5px);
 }
 
 .hours-row:nth-child(2) .day {
-    transform: translateY(0px) translateX(-2px);
+    transform: translateY(-4px) translateX(-2px);
 }
 .hours-row:nth-child(2) .time {
-    transform: translateY(-0px) translateX(4px);
+    transform: translateY(-4px) translateX(5px);
 }
 
 .hours-row:nth-child(3) .day {
-    transform: translateY(-4px) translateX(-2px);
+    transform: translateY(-8px) translateX(-2px);
 }
 .hours-row:nth-child(3) .time {
- transform: translateY(-5px) translateX(-26px);
+ transform: translateY(-8px) translateX(-27px);
 }
 
 .bottom-box .text::before {
@@ -1831,5 +1858,64 @@ letter-spacing: 4.5%;
     margin-right: 3px;
     vertical-align: middle;
     margin-bottom: 3px;
+}
+
+.gallery-block .container img:nth-child(1) {
+    transform: translateX(15px); 
+}
+
+.gallery-block .container img:nth-child(2) {
+    transform: translateX(35px); 
+}
+
+.gallery-block .container img:nth-child(3) {
+    transform: translateX(28px); 
+}
+
+.gallery-block .container img:nth-child(4) {
+    transform: translateX(8px); 
+}
+
+.description2 p {
+  font-size: 13px !important;
+}
+
+.copyright-bar {
+  width: 100vw;
+  height: 48px;
+  background-color: #D3E2EF;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    margin-top: 125px;
+}
+
+.copyright-bar .text {
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 4.5%;
+  color: #335E74;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+transform: translate(0px, -5px); 
+}
+
+.copyright-bar .text::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-image: url('footer_symbol.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: -3px;
+  margin-top: 1px;
 }
 
