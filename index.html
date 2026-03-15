@@ -12,7 +12,7 @@
         <img src="logo.png" alt="logo" />
       </div>
 
-      <div class="menu-container">
+      <nav class="menu-container" aria-label="Sidebar navigation">
         <div class="menu-item">
           <div class="active-indicator"></div> 
           <a href="#">
@@ -55,10 +55,10 @@
             <span>Location</span>
           </a>
         </div>
-      </div>
+      </nav>
     </div>
 
-    <div class="hero-section">
+    <header class="hero-section">
       <div class="container">
         <div class="header-line">
           <div class="nav-left">
@@ -126,10 +126,10 @@
           <span class="dot"></span>
         </div>
       </div>
-    </div>
+    </header>
 
-    <div class="content-wrapper">
-      <div class="gallery-block">
+    <main>
+      <section class="gallery-block" aria-label="Brand gallery">
         <div class="container">
           <img src="photo1.png" alt="photo 1">
           <img src="photo2.png" alt="photo 2">
@@ -138,15 +138,14 @@
           <img src="photo5.png" alt="photo 5">
           <img src="photo6.png" alt="photo 6">
         </div>
-      </div>
+      </section>
 
-      <div class="container2">
+      <section class="container2" aria-label="Our products">
         <div class="header2-text">
           <h1>Our Products</h1>
         </div>
 
-        <div class="menu-text">
-          
+        <nav class="menu-text" aria-label="Product categories">
           <div class="sofa"><span>Single Sofa</span></div>
           <div class="room"><span>Living Room</span></div>
           <div class="kitchen"><span>Kitchen</span></div>
@@ -154,10 +153,10 @@
           <div class="bath-room"><span>Bath Room</span></div>
           <div class="decorations"><span>Decorations</span></div>
           <div class="Ceramics"><span>Ceramics</span></div>
-        </div>
+        </nav>
 
         <div class="main-picture">
-          <div class="product-card">
+          <article class="product-card">
             <div class="picture1">
               <div class="corner-badges">
                 <div class="badge badge-discount">-20%</div>
@@ -183,9 +182,9 @@
                 <span class="star">★</span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="product-card">
+          <article class="product-card">
             <div class="picture2">
               <div class="corner-badges">
                 <div class="badge badge-discount">-20%</div>
@@ -209,9 +208,9 @@
                 <span class="star">☆</span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="product-card">
+          <article class="product-card">
             <div class="picture3">
               <div class="corner-badges">
                 <div class="badge badge-discount">-20%</div>
@@ -236,13 +235,14 @@
                 <span class="star">★</span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="product-card">
+          <article class="product-card">
             <div class="picture4">
               <div class="corner-badges">
                 <div class="badge badge-discount">-20%</div>
                 <div class="badge badge-new">New</div>
+                 <div class="badge badge-out">Out of stock</div>  
               </div>
               <img src="chair4.png" alt="">
               <div class="bottom-element4">
@@ -263,9 +263,9 @@
                 <span class="star">★</span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="product-card">
+          <article class="product-card">
             <div class="picture5">
               <div class="corner-badges">
                 <div class="badge badge-discount">-20%</div>
@@ -290,9 +290,9 @@
                 <span class="star">★</span>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="product-card">
+          <article class="product-card">
             <div class="picture6">
               <div class="corner-badges">
                 <div class="badge badge-discount">-20%</div>
@@ -317,11 +317,11 @@
                 <span class="star">★</span>
               </div>
             </div>
-          </div>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <div class="image-container">
+      <section class="image-container" aria-label="Promotion 50% off">
         <img src="bg2.jpg" alt="Background">
         <div class="text-overlay">
           <h1>50% OFF</h1>
@@ -329,9 +329,9 @@
           <p>Contrary to popular belief, Lorem Ipsum is not simply random text. literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin.</p>
           <button>View Items</button>
         </div>
-      </div>
+      </section>
 
-      <div class="image-container2">
+      <section class="image-container2" aria-label="Living room items">
         <img src="bg3.jpg" alt="Living Room">
         <div class="content">
           <h2>Living Room Items</h2>
@@ -341,9 +341,9 @@
         <div class="living-badge">
           <span>Living</span>
         </div>
-      </div>
+      </section>
 
-      <div class="image-container3">
+      <section class="image-container3" aria-label="Trendy dining table">
         <img src="bg4.jpg" alt="">
         <div class="content2">
           <h2>Trendy Dining Table</h2>
@@ -353,9 +353,9 @@
         <div class="living-badge2">
           <span>Dining</span>
         </div>
-      </div>
+      </section>
 
-      <div class="image-container4">
+      <section class="image-container4" aria-label="Modern bed">
         <img src="bg5.jpg" alt="">
         <div class="content3">
           <h2>Modern Bed</h2>
@@ -365,9 +365,9 @@
         <div class="living-badge3">
           <span>Bed</span>
         </div>
-      </div>
+      </section>
 
-      <div class="image-container5">
+      <section class="image-container5" aria-label="Popular kitchen items">
         <img src="bg6.jpg" alt="">
         <div class="content4">
           <h2>Populer kitchen Items</h2>
@@ -377,91 +377,91 @@
         <div class="living-badge4">
           <span>Kitchen</span>
         </div>
+      </section>
+    </main>
+
+    <footer class="subscribe">
+      <div class="blue"></div>
+      <img src="bg7.jpg" alt="">
+      <div class="content5">
+        <h2>Get 30% Off</h2>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply years old. Richard McClintock, a Latin.</p>
+        <div class="input">
+          <span>Enter Your Email</span>
+          <button>Subscrive</button>
+        </div>
       </div>
 
-      <div class="subscribe">
-        <div class="blue"></div>
-        <img src="bg7.jpg" alt="">
-        <div class="content5">
-          <h2>Get 30% Off</h2>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply years old. Richard McClintock, a Latin.</p>
-          <div class="input">
-            <span>Enter Your Email</span>
-            <button>Subscrive</button>
+      <div class="bottom-design">
+        <div class="content6">
+          <img src="photo3.png" alt="">
+          <p>Contrary to popular belief, Lorem Ipsum is not simply years old Latin.</p>
+          
+          <ul class="circle">
+            <li>
+              <div class="social-circle facebook">
+                <img src="facebook.png" alt="Facebook">
+              </div>
+            </li>
+            <li>
+              <div class="social-circle instagram">
+                <img src="instagram.png" alt="Instagram">
+              </div>
+            </li>
+            <li>
+              <div class="social-circle twitter">
+                <img src="twitter.png" alt="Twitter">
+              </div>
+            </li>
+            <li>
+              <div class="social-circle youtube">
+                <img src="youtube.png" alt="YouTube">
+              </div>
+            </li>
+          </ul>
+
+          <h3 class="number1">Explore</h3>
+          <h3 class="number2">Contact Us</h3>
+          <h3 class="number3">Survice Hours</h3>
+
+          <div class="description">
+            <div class="text">
+              <span>About Us</span>
+              <span>Survices</span>
+              <span>Our Team</span>
+              <span>Trendy</span>
+              <span>Gallery</span>
+            </div>
+          </div>
+
+        <div class="description2">
+          <p class="address">45 Tooring High SL London SA17 United kingdoom</p>
+          <div class="contact-info">
+            <p class="phone">018123456789</p>
+            <p class="email">petroger456@gmail.com</p>
           </div>
         </div>
 
-        <div class="bottom-design">
-          <div class="content6">
-            <img src="photo3.png" alt="">
-            <p>Contrary to popular belief, Lorem Ipsum is not simply years old Latin.</p>
-            
-            <ul class="circle">
-              <li>
-                <div class="social-circle facebook">
-                  <img src="facebook.png" alt="Facebook">
-                </div>
-              </li>
-              <li>
-                <div class="social-circle instagram">
-                  <img src="instagram.png" alt="Instagram">
-                </div>
-              </li>
-              <li>
-                <div class="social-circle twitter">
-                  <img src="twitter.png" alt="Twitter">
-                </div>
-              </li>
-              <li>
-                <div class="social-circle youtube">
-                  <img src="youtube.png" alt="YouTube">
-                </div>
-              </li>
-            </ul>
-
-            <h3 class="number1">Explore</h3>
-            <h3 class="number2">Contact Us</h3>
-            <h3 class="number3">Survice Hours</h3>
-
-            <div class="description">
-              <div class="text">
-                <span>About Us</span>
-                <span>Survices</span>
-                <span>Our Team</span>
-                <span>Trendy</span>
-                <span>Gallery</span>
-              </div>
+          <div class="service-hours-box">
+            <div class="hours-row">
+              <span class="day">Mon-Fri &nbsp;&nbsp;:</span>
+              <span class="time">09.00am - 19.00pm</span>
             </div>
-
-            <div class="description2">
-              <p class="address">45 Tooring High SL London SA17 United kingdoom</p>
-              <div class="contact-info">
-                <p>018123456789</p>
-                <p>petroger456@gmail.com</p>
-              </div>
+            <div class="hours-row">
+              <span class="day">Saturday :</span>
+              <span class="time">10.00am - 18.00pm</span>
             </div>
-
-            <div class="service-hours-box">
-              <div class="hours-row">
-                <span class="day">Mon-Fri :</span>
-                <span class="time">09.00am - 19.00pm</span>
-              </div>
-              <div class="hours-row">
-                <span class="day">Saturday :</span>
-                <span class="time">10.00am - 18.00pm</span>
-              </div>
-              <div class="hours-row">
-                <span class="day">Sunday  :</span>
-                <span class="time">We are Closed</span>
-              </div>
-            </div>
-
-            <div class="bottom-box">
-              <span class="text">2021 Greenery. All Right Reserved</span>
+            <div class="hours-row">
+              <span class="day">Sunday &nbsp;&nbsp;&nbsp;:</span>
+              <span class="time">We are Closed</span>
             </div>
           </div>
         </div>
       </div>
-    </div> 
+    </footer>
+
+    <div class="copyright-bar">
+      <span class="text">2021 Greenery. All Right Reserved</span>
+    </div>
   </body>
 </html>
