@@ -1593,8 +1593,29 @@ margin-left: 10px;
   margin-left: -1px;
 }
 
-.product-card:nth-child(6) .product-price {
-  margin-left: -9px;
+.product-card:nth-child(1) .product-info {
+  transform: translateX(2px);  
+
+}
+
+.product-card:nth-child(2) .product-info {
+  transform: translateX(-1px);  
+}
+
+.product-card:nth-child(3) .product-info {
+  transform: translateX(-3px);  
+}
+
+.product-card:nth-child(4) .product-info {
+  transform: translateX(2px);  
+}
+
+.product-card:nth-child(5) .product-info {
+  transform: translateX(-0px);  
+}
+
+.product-card:nth-child(6) .product-info {
+  transform: translateX(-3px);  
 }
 
 .product-card:nth-child(1) .badge-discount {
@@ -1742,9 +1763,13 @@ letter-spacing: 4.5%;
 .description .text span:nth-child(1) {
   position: relative;
   top: -10px;
-  left: 2px;
+  left: -5px ; 
   transform: translate(0px, 0px);  
   color: #335E74;  
+}
+
+.menu-item:nth-child(4) span {
+  margin-left: 6px; 
 }
 
 .description .text span:nth-child(2) {
