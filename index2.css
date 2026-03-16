@@ -35,7 +35,14 @@ body {
 
 .image-container .text-overlay h1 { font-family: 'Dosis', sans-serif; font-weight: 800; }
 .image-container .text-overlay h2 { font-family: 'Dosis', sans-serif; font-weight: 600; }
-.image-container .text-overlay p { font-family: 'Mukta', sans-serif; font-weight: 400; }
+.image-container .text-overlay p 
+{ font-family: 'Mukta', sans-serif; 
+  font-weight: 400; 
+    margin-top: 23px;  
+
+}
+
+
 
 .image-container2 .content h2,
 .image-container3 .content2 h2,
@@ -59,6 +66,18 @@ body {
 .image-container5 .content4 button {
   font-weight: 600;
   color: #264A51;
+}
+
+.image-container4 .content3 button {
+  padding-top: 12px; 
+  padding-bottom: 5px; 
+  font-size: 14px;
+  margin-left: 140px;
+}
+
+.image-container5 .content4 button {
+  font-size: 14px;
+  transform: translate(-2px, 3px); 
 }
 
 .image-container2 .content {
@@ -477,8 +496,8 @@ body {
 }
 
 .gallery-block .container {
-  display: flex;
-  flex-wrap: nowrap;  
+  display: grid;
+  grid-template-columns: repeat(6, auto); 
   justify-content: center;
   align-items: center;
   width: fit-content;  
@@ -832,7 +851,7 @@ body {
   margin: 0 auto 20px auto;
   word-wrap: break-word;
   overflow-wrap: break-word;
-   margin-top: 23px;
+   margin-top: 20px;
 }
 
 .text-overlay button {
@@ -1747,8 +1766,9 @@ margin-left: 10px;
   text-align: center;
   margin-right: 80px;
   padding: 20px;
-  transform: translateY(-175px);  
+  transform: translateY(-172px);  
   margin-left: 150px;  
+  letter-spacing: 4.5%;
 }
 
 .image-container3 .content2 h2 {
@@ -1777,7 +1797,7 @@ letter-spacing: 4.5%;
   top: -24px;         
   left: -2px;       
   transform: translate(5px, 3px);
-  color: #264A51;
+  color: #335E74;
 }
 
 .description .text span:nth-child(3) {
@@ -1797,7 +1817,7 @@ letter-spacing: 4.5%;
 .description .text span:nth-child(5) {
   position: relative;
   top: -38px;
-  left: -13px;
+  left: -11px;
   transform: translate(15px, -3px);
 }
 
@@ -1810,6 +1830,10 @@ letter-spacing: 4.5%;
   color: #335E74;
   margin: 5px 0;
   max-width: 220px; 
+}
+
+.description .text span:first-child {
+  margin-left: 8px;  
 }
 
 .description2 .phone {
