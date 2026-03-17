@@ -1421,12 +1421,28 @@ margin-left: 10px;
 }
 
 .description .text span {
-  width: 110px;
+  width: 100px;
+  display: block;
+  color: #335E74;
   font-weight: 400;
   font-size: 14px;
-  line-height: 2;
+  line-height: 1.2;
   letter-spacing: 1px;
-  color: #335E74;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;  /* для работы z-index */
+  padding: 8px 12px;    /* увеличиваем область клика */
+  background-color: rgba(255, 255, 255, 0.01); /* невидимый фон для клика */
+  z-index: 10;          /* поднимаем выше других элементов */
+  white-space: nowrap;
+  margin-bottom: -4px;  /* текст в одну строку */
+  
+}
+
+.description .text span:hover {
+  color: #264A51;
+  transform: translateX(5px);
+  font-weight: 600;
 }
 
 .description2 {
@@ -1783,7 +1799,7 @@ letter-spacing: 2px;
 .description .text span:nth-child(1) {
   position: relative;
   top: -10px;
-  left: -5px ; 
+  left: -15px ; 
   transform: translate(0px, 0px);  
   color: #335E74;  
 }
@@ -1794,8 +1810,8 @@ letter-spacing: 2px;
 
 .description .text span:nth-child(2) {
   position: relative;
-  top: -24px;         
-  left: -2px;       
+  top: -22px;         
+  left: -13px;       
   transform: translate(5px, 3px);
   color: #335E74;
 }
@@ -1803,21 +1819,21 @@ letter-spacing: 2px;
 .description .text span:nth-child(3) {
   position: relative;
   top: -26px;        
-  left: -7px;       
+  left: -18px;       
   transform: translate(10px, -5px);
 }
 
 .description .text span:nth-child(4) {
   position: relative;
   top: -42px;
-  left: 14px;       
+  left: 3px;       
   transform: translate(-10px, 5px);
 }
 
 .description .text span:nth-child(5) {
   position: relative;
-  top: -38px;
-  left: -11px;
+  top: -40px;
+  left: -24px;
   transform: translate(15px, -3px);
 }
 
@@ -1966,5 +1982,38 @@ transform: translate(0px, -5px);
   background-repeat: no-repeat;
   margin-right: -3px;
   margin-top: 1px;
+}
+
+.text-overlay button:hover,
+.image-container2 .content button:hover,
+.content2 button:hover,
+.content3 button:hover,
+.content4 button:hover,
+.subscribe .content5 button:hover {
+  background-color: #264A51;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(202, 211, 219, 0.3);
+  transition: all 0.3s ease;
+}
+
+.square {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.square:hover {
+  background-color: #264A51;  
+  transform: scale(1.1);       
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.square:hover img {
+  filter: brightness(1.2);     
+  transform: scale(1.1);       
+}
+
+.square img {
+  transition: all 0.3s ease;
 }
 
