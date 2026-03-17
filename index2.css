@@ -85,7 +85,7 @@ body {
   width: 510px;
   text-align: center;
  transform: translateY(-155px);  
- margin-left: -40px; 
+ margin-left: -44px; 
 }
 
 .image-container2 .living-badge span,
@@ -395,7 +395,7 @@ body {
   font-size: 21px;
   font-weight: 400;
   opacity: 0.9;
-  letter-spacing: 4.5%;
+  letter-spacing: 1px;
   line-height: 1.2;
 }
 
@@ -471,7 +471,6 @@ body {
 
 .dot.active {
   background-color: #677F8B;
-  border-color: #677F8B;
   transform: scale(1.2);
 }
 
@@ -521,7 +520,6 @@ body {
   margin-right: auto;
   width: 1200px;
   min-height: 958px;
-  background-color: white;
   border: 7px dotted white;
   padding: 40px;
   margin-top: 40px;     
@@ -533,7 +531,7 @@ body {
   color: #264A51;
   font-size: 46px;
   font-weight: 600;
-  letter-spacing: 4.5%;
+  letter-spacing: 2px;
   margin-top: 15px;
   margin-bottom: 50px;
   margin-left: 40px;
@@ -815,7 +813,7 @@ body {
 .text-overlay {
   position: absolute;
   text-align: center;
-  left: 100px;
+  left: 98px;
   top: 170px;
   width: 700px;
   height: 384px;
@@ -825,7 +823,7 @@ body {
 .text-overlay h1 {
   font-weight: 800;
   font-size: 90px;
-  letter-spacing: 4.5%;
+  letter-spacing: 2px;
   line-height: 133%;
   color: #F3B705;
   opacity: 50%;
@@ -834,7 +832,7 @@ body {
 
 .text-overlay h2 {
   font-weight: 600;
-  letter-spacing: 4.5%;
+  letter-spacing: 3px;
   font-size: 60px;
   color: #264A51;
   margin-bottom: 15px;
@@ -844,7 +842,7 @@ body {
 .text-overlay p {
   font-weight: 300;
   font-size: 15px;
-  letter-spacing: 4.5%;
+  letter-spacing: 0.8px;
   color: #335E74;
   width: 400px;
   line-height: 1.6;
@@ -1035,7 +1033,8 @@ margin-left: 10px;
   color: #335E74;
   margin-top: 12px;
   margin-bottom: 8px;
-  margin-left: 10px;
+  margin-left: 16px;
+  letter-spacing: 0.6px;
 }
 
 .content2 button {
@@ -1047,7 +1046,7 @@ margin-left: 10px;
   background-color: transparent;
   border: 2px solid #264A51;
   margin-bottom: 4px;
-  letter-spacing: 4.5%;
+  letter-spacing: 1px;
 }
 
 .living-badge2 {
@@ -1086,7 +1085,7 @@ margin-left: 10px;
   color: #264A51;
   text-align: center;
   margin-bottom: 15px;
-  letter-spacing: 4.5%;
+  letter-spacing: 2px;
   margin-left: 5px;
 }
 
@@ -1094,11 +1093,11 @@ margin-left: 10px;
   font-weight: 400;
   font-size: 15px;
   line-height: 173%;
-  letter-spacing: 4.5%;
+  letter-spacing: 1px;
   color: #335E74;
   text-align: center;
   margin-bottom: 8px;
-  letter-spacing: 4.5%;
+  letter-spacing: 0.8px;
 }
 
 .content3 button {
@@ -1147,11 +1146,11 @@ margin-left: 10px;
   font-weight: 600;
   font-size: 46px;
   line-height: 133%;
-  letter-spacing: 4.5%;
+  letter-spacing: 2px;
   color: #264A51;
   text-align: center;
     margin-bottom: 15px;
-    margin-left: 16px;
+    margin-left: 14px;
  white-space: nowrap;
 }
 
@@ -1160,7 +1159,7 @@ margin-left: 10px;
   font-weight: 400;
   font-size: 15px;
   line-height: 173%;
-  letter-spacing: 4.5%;
+  letter-spacing: 1px;
   color: #335E74;
   text-align: center;
   margin-bottom: 3px;
@@ -1186,12 +1185,12 @@ margin-left: 10px;
   height: 138px;
   background-color: #71B3C6D9;
   opacity: 85%;
-  bottom: 576px;
-  right: 50%;
+  bottom: 575px;
+  right: 49.9%;
   justify-content: center;
   align-items: center;
   display: flex;
-  letter-spacing: 4.5%;
+  letter-spacing: 2px;
 }
 
 .living-badge4 span {
@@ -1236,7 +1235,7 @@ margin-left: 10px;
   font-weight: 600;
   font-size: 46px;
   line-height: 133%;
-  letter-spacing: 4.5%;
+  letter-spacing: 2px;
   color: #264A51;
   text-align: center;
   top: 22%;
@@ -1257,7 +1256,7 @@ margin-left: 10px;
   left: 36%;
   text-align: center;
   z-index: 2;
-  letter-spacing: 4.5%;
+  letter-spacing: 0.7px;
 }
 
 .subscribe .input {
@@ -1276,7 +1275,7 @@ margin-left: 10px;
 
 .subscribe .input span {
   color: #455E6578;
-  letter-spacing: 4.5%;
+  letter-spacing: 0.5px;
   font-weight: 400;
   font-size: 13px;
 }
@@ -1292,7 +1291,7 @@ margin-left: 10px;
   font-size: 17px;
   font-weight: 400;
   line-height: 173%;
-  letter-spacing: 4.5%;
+  letter-spacing: 1px;
   left: 72%;
   top: -3%;
 }
@@ -1325,7 +1324,7 @@ margin-left: 10px;
   font-weight: 400;
   font-size: 14px;
   line-height: 173%;
-  letter-spacing: 4.5%;
+  letter-spacing: 0.6px;
   color: #335E74;
   margin-bottom: 28px;
   width: 80%;
@@ -1379,7 +1378,7 @@ margin-left: 10px;
   font-size: 25px;
   font-weight: 700;
   line-height: 81.5%;
-  letter-spacing: 5%;
+  letter-spacing: 2px;
   bottom: 400px;
 }
 
@@ -1392,7 +1391,7 @@ margin-left: 10px;
   font-size: 25px;
   font-weight: 700;
   line-height: 81.5%;
-  letter-spacing: 5%;
+  letter-spacing: 1px;
   bottom: 400px;
 }
 
@@ -1405,7 +1404,7 @@ margin-left: 10px;
   font-size: 25px;
   font-weight: 700;
   line-height: 81.5%;
-  letter-spacing: 5%;
+  letter-spacing: 1px;
   bottom: 400px;
 }
 
@@ -1426,7 +1425,7 @@ margin-left: 10px;
   font-weight: 400;
   font-size: 14px;
   line-height: 2;
-  letter-spacing: 4.5%;
+  letter-spacing: 1px;
   color: #335E74;
 }
 
@@ -1501,7 +1500,7 @@ margin-left: 10px;
   line-height: 40px;
   font-weight: 400;
   font-size: 10px;
-  letter-spacing: 4.5%;
+  letter-spacing: 1px;
   display: block;
   text-align: center;
   width: 100%;
@@ -1735,8 +1734,8 @@ margin-left: 10px;
   line-height: 133%;
   text-align: center;
   line-height: 200%;
-  letter-spacing: 4.5%;
-  margin-left: 4 px;
+  letter-spacing: 1px;
+  margin-left: 4px;
 }
 
 .image-container2 .content p {
@@ -1744,7 +1743,7 @@ margin-left: 10px;
   font-size: 15px;    
   color: #335E74;
   line-height: 173%;
-  letter-spacing: 4.5%;
+  letter-spacing: 0.7px;
   margin-top: 5px;
 }
 
@@ -1757,7 +1756,8 @@ margin-left: 10px;
   border: 2px solid #264A51;
   background-color: transparent;
   font-size: 14px; 
-  letter-spacing: 4.5%;
+  letter-spacing: 0.3px;
+    margin-left: 8px;
 }
 
 .image-container3 .content2 {
@@ -1768,7 +1768,7 @@ margin-left: 10px;
   padding: 20px;
   transform: translateY(-172px);  
   margin-left: 150px;  
-  letter-spacing: 4.5%;
+  letter-spacing: 1px;
 }
 
 .image-container3 .content2 h2 {
@@ -1777,7 +1777,7 @@ margin-left: 10px;
   line-height: 133%;
   color: #264A51;
   margin-bottom: 15px;
-letter-spacing: 4.5%;
+letter-spacing: 2px;
 }
 
 .description .text span:nth-child(1) {
@@ -1948,7 +1948,7 @@ letter-spacing: 4.5%;
 .copyright-bar .text {
   font-weight: 400;
   font-size: 10px;
-  letter-spacing: 4.5%;
+  letter-spacing: 1px;
   color: #335E74;
   display: flex;
   align-items: center;
