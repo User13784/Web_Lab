@@ -27,14 +27,21 @@ body {
   font-weight: 600;
 }
 
-.hero-button { font-weight: 600; }
-.feature-text p { font-family: 'Dosis', sans-serif; font-weight: 500; }
-.header2-text { font-family: 'Dosis', sans-serif; font-weight: 600; }
-.menu-text span { font-weight: 400; }
-.corner-badges, .main-picture { font-family: 'Mukta', sans-serif; font-weight: 500; }
+.hero-button 
+{ font-weight: 600; }
+.feature-text p 
+{ font-family: 'Dosis', sans-serif; font-weight: 500; }
+.header2-text 
+{ font-family: 'Dosis', sans-serif; font-weight: 600; }
+.menu-text span 
+{ font-weight: 400; }
+.corner-badges, .main-picture 
+{ font-family: 'Mukta', sans-serif; font-weight: 500; }
 
-.image-container .text-overlay h1 { font-family: 'Dosis', sans-serif; font-weight: 800; }
-.image-container .text-overlay h2 { font-family: 'Dosis', sans-serif; font-weight: 600; }
+.image-container .text-overlay h1 
+{ font-family: 'Dosis', sans-serif; font-weight: 800; }
+.image-container .text-overlay h2 
+{ font-family: 'Dosis', sans-serif; font-weight: 600; }
 .image-container .text-overlay p 
 { font-family: 'Mukta', sans-serif; 
   font-weight: 400; 
@@ -96,10 +103,14 @@ body {
   font-weight: 600;
 }
 
-.subscribe .content5 h2 { font-family: 'Dosis', sans-serif; font-weight: 600; }
-.subscribe .content5 p { font-family: 'Mukta', sans-serif; font-weight: 400; }
-.subscribe .content5 input { font-family: 'Mukta', sans-serif; font-weight: 400; }
-.subscribe .content5 button { font-family: 'Mukta', sans-serif; font-weight: 500; }
+.subscribe .content5 h2 
+{ font-family: 'Dosis', sans-serif; font-weight: 600; }
+.subscribe .content5 p 
+{ font-family: 'Mukta', sans-serif; font-weight: 400; }
+.subscribe .content5 input 
+{ font-family: 'Mukta', sans-serif; font-weight: 400; }
+.subscribe .content5 button 
+{ font-family: 'Mukta', sans-serif; font-weight: 500; }
 
 .content6 h3 { font-family: 'Mukta', sans-serif; font-weight: 700; }
 .hours-row .day { font-weight: 600; }
@@ -218,8 +229,10 @@ body {
   height: auto;
 }
 
-.menu-item:hover img { transform: scale(1.1); }
-.menu-item:hover span { color: #ffffff; }
+.menu-item:hover img 
+{ transform: scale(1.1); }
+.menu-item:hover span 
+{ color: #ffffff; }
 
 .hero-section,
 .gallery-block,
@@ -658,11 +671,6 @@ body {
   margin-left: 90px;
   z-index: 10;
 }
-
-
-
-
-
 
 .product-card:nth-child(4) img {
   height: 150px;  
@@ -1430,12 +1438,12 @@ margin-left: 10px;
   letter-spacing: 1px;
   transition: all 0.3s ease;
   cursor: pointer;
-  position: relative;  /* для работы z-index */
-  padding: 8px 12px;    /* увеличиваем область клика */
-  background-color: rgba(255, 255, 255, 0.01); /* невидимый фон для клика */
-  z-index: 10;          /* поднимаем выше других элементов */
+  position: relative;  
+  padding: 8px 12px;    
+  background-color: rgba(255, 255, 255, 0.01); 
+  z-index: 10;          
   white-space: nowrap;
-  margin-bottom: -4px;  /* текст в одну строку */
+  margin-bottom: -4px;  
   
 }
 
