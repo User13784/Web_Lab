@@ -219,7 +219,7 @@ body {
 .feature-arrow {
     position: relative;
     top: -268px;    
-    left: -326px;  
+   right: 28.1%;
 }
 
 .menu-item a {
@@ -271,6 +271,8 @@ body {
     align-items: center;
 }
 
+
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -285,6 +287,8 @@ body {
     margin-bottom: 310px;
     margin-left: 45px;
 }
+
+
 
 .nav-left .nav-item-with-icon:nth-child(1) { 
     margin-top: 12px;
@@ -365,6 +369,7 @@ body {
 .hero-content {
     flex: 1;
     min-width: 300px;
+    
 }
 
 .hero-small {
@@ -450,7 +455,7 @@ body {
     font-size: 16px;
         position: relative;
     top: -357px;    
-    left: -248px;  
+    right: 21.7%;
     letter-spacing: 0.3px;
 }
 
@@ -727,28 +732,28 @@ body {
 
 
 .picture1 {
-    transform: translate(2px, -3px);
+    transform: translate(-8px, -3px);
  
 }
 
 .picture2 {
-    transform: translate(-10px, -8px);
+    transform: translate(-16px, -8px);
 }
 
 .picture3 {
-    transform: translate(20px, 0);
+    transform: translate(16px, 1px);
 }
 
 .picture4 {
-    transform: translate(-15px, 12px);
+    transform: translate(-26px, 12px);
 }
 
 .picture5 {
-    transform: translate(0, -15px);
+    transform: translate(-7px, -15px);
 }
 
 .picture6 {
-    transform: translate(10px, -10px);
+    transform: translate(6px, -10px);
 }
 
 
@@ -1056,7 +1061,7 @@ body {
 
 
 .product-info-1 {
-    transform: translate(0, 0); 
+    transform: translate(-3px, 0); 
 }
 .title-1 {
     transform: translate(4px, -15px);
@@ -1070,7 +1075,7 @@ body {
 }
 
 .product-info-2 {
-    transform: translate(0, 0);
+    transform: translate(-1px, 0);
 }
 .title-2 {
     transform: translate(1px, -15px);
@@ -1084,7 +1089,7 @@ body {
 }
 
 .product-info-3 {
-    transform: translate(0, 0);
+    transform: translate(3px, 0);
 }
 .title-3 {
     transform: translate(-2px, -15px);
@@ -1098,7 +1103,7 @@ body {
 }
 
 .product-info-4 {
-    transform: translate(0, 0);
+    transform: translate(-3px, 0);
 }
 .title-4 {
     transform: translate(4px, -88px);
@@ -1112,7 +1117,7 @@ body {
 }
 
 .product-info-5 {
-    transform: translate(0, 0);
+    transform: translate(-1px, 0);
 }
 .title-5 {
     transform: translate(1px, -88px);
@@ -1126,7 +1131,8 @@ body {
 }
 
 .product-info-6 {
-    transform: translate(0, 0);
+         transform: translate(3px, 0);
+
 }
 .title-6 {
     transform: translate(-2px, -88px);
@@ -1319,25 +1325,31 @@ body {
     letter-spacing: 2.5px;
     color: #F3B705;
     opacity: 0.8;
-    transform: translate(278px, 95px); 
+  margin-left: 54%; 
+    margin-top: 18%; 
+white-space: nowrap;
 }
+    
 
 .text-overlay h2 {
         width: 700px; 
     font-size: 60px;
     color: #264A51;
-    transform: translate(178px, 104px);
+        margin-left: 34%; 
+    margin-top: 2%; 
     letter-spacing: 2.5px;
 }
 
 .text-overlay p {
     color: #335E74;
-    max-width: 430px;
-        transform: translate(250px, 99px);
-        letter-spacing: 0.9px;
-        text-align: center;
-        font-size: 15px;
-        line-height: 173%;
+    width: 80%; 
+    max-width: 600px; 
+    margin-left: 49%;
+transform: translateY(-3px); 
+    letter-spacing: 0.9px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 173%;
 }
 
 .text-overlay button {
@@ -1347,8 +1359,10 @@ body {
     background: transparent;
     color: #264A51;
     cursor: pointer;
-     transform: translate(386px, 130px);
+       margin-left: 74%; 
+    margin-top: 5%; 
      letter-spacing: 1px;
+      white-space: nowrap;
 }
 
 .image-container2,
@@ -1565,19 +1579,9 @@ letter-spacing: 0.3px;
     z-index: 2;
 }
 
-.content5 h2 {
-    font-size: 46px;
-    color: #264A51;
-    margin-bottom: 20px;
-    margin-top: 80px; 
-}
 
-.content5 p {
-    font-size: 15px;
-    color: white;
-    margin-bottom: 30px;
-    margin-top: 30px; 
-}
+
+
 
 .content5 .input {
     display: flex;
@@ -1710,19 +1714,20 @@ letter-spacing: 0.3px;
     color: #264A51;
     margin-bottom: 20px;
     position: relative;
-    left: -516px;  
+    margin-left: -68px;
     top: 160px;
     letter-spacing: 1px;
     white-space: nowrap;
-    margin-right: 50px; 
 }
+
+
 
 .number2 {
     font-size: 25px;
     color: #264A51;
     margin-bottom: 20px;
     position: relative;
-    left: 685px;  
+    left: 228.5%;  
     top: 35px;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -1734,12 +1739,13 @@ letter-spacing: 0.3px;
     color: #264A51;
     margin-bottom: 20px;
     position: relative;
-    left: 636px;  
+    left: 212%;  
     top: 35px;
     letter-spacing: 1px;
     white-space: nowrap;
     margin-right: 50px;  
 }
+
 
 .circle {
     list-style: none;
@@ -1887,11 +1893,13 @@ letter-spacing: 0.3px;
     flex-direction: column;
     gap: 15px;
     position: relative;
-    left: 979px;    
+    left: 326%;    
     top: -70px;    
     width: 238px;  
     height: 135px;
 }
+
+
 
 .hours-row:first-child {
     margin-top: 4px;  
@@ -2054,3 +2062,33 @@ letter-spacing: 0.3px;
     margin-bottom: -10px;
 }
 
+.image-container5 .content4 button:hover {
+    background-color: #264A51;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-circle:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.circle li:nth-child(1) .social-circle:hover {
+    transform: scale(1.1);
+}
+
+.circle li:nth-child(2) .social-circle:hover {
+    transform: scale(1.1);
+}
+
+.circle li:nth-child(3) .social-circle:hover {
+    transform: scale(1.1);
+}
+
+.circle li:nth-child(4) .social-circle:hover {
+    transform: scale(1.1);
+}
+
+.social-circle {
+    transition: all 0.3s ease;
+}
