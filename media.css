@@ -1,0 +1,450 @@
+@media (max-width: 1300px) {
+    .living-badge,
+    .living-badge2,
+    .living-badge3,
+    .living-badge4 {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1169px) {
+    .feature-text-container {
+        display: none !important;
+    }
+    
+    .feature-arrow {
+        display: none !important;
+    }
+    
+    .feature-text {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container, .container2 {
+        max-width: 960px;
+        padding: 0 20px;
+    }
+    
+    .hero-section .container {
+        margin-left: 20px;
+    }
+    
+    .hero-content p:nth-child(1) { top: 100px; left: 0; }
+    .hero-content p:nth-child(2) { top: 95px; left: 0; }
+    .hero-content p:nth-child(3) { top: 105px; left: 0; }
+    .hero-content p:nth-child(4) { top: 85px; left: 0; }
+    .hero-content a:nth-child(5) { top: 70px; left: 0; }
+    
+    .feature-text {
+        top: -300px;
+        right: 10%;
+    }
+    
+    .feature-arrow {
+        top: -220px;
+        right: 20%;
+    }
+    
+    .gallery-block {
+        margin-top: -200px;
+    }
+    
+    .gallery-block .container {
+        justify-content: center;
+    }
+    
+    .gallery-block img:nth-child(1) { margin-left: 0; }
+    .gallery-block img:nth-child(2) { margin-left: 20px; }
+    .gallery-block img:nth-child(3) { margin-left: 20px; }
+    .gallery-block img:nth-child(4) { margin-left: 20px; }
+    .gallery-block img:nth-child(5) { margin-left: 20px; }
+    .gallery-block img:nth-child(6) { margin-left: 20px; }
+    
+    .menu-text .sofa,
+    .menu-text .room,
+    .menu-text .kitchen,
+    .menu-text .bed-room,
+    .menu-text .bath-room,
+    .menu-text .decorations,
+    .menu-text .Ceramics {
+        transform: translate(0, 6px);
+    }
+    
+    .main-picture {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+        gap: 20px;
+    }
+    
+    .picture1, .picture2, .picture3, .picture4, .picture5, .picture6 {
+        left: 0;
+        top: 0;
+        transform: none;
+    }
+    
+    .product-info-4, .product-info-5, .product-info-6 {
+        transform: none;
+    }
+    
+    .title-4, .price-4, .rating-4,
+    .title-5, .price-5, .rating-5,
+    .title-6, .price-6, .rating-6 {
+        transform: none;
+        margin: 5px 0;
+    }
+    
+    .image-container {
+        margin-left: 0;
+        width: 100%;
+        min-height: auto;
+        position: relative;
+    }
+    
+    .image-container img {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 600px;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .text-overlay h1 {
+        margin-left: 0;
+        font-size: 60px;
+        white-space: normal;
+    }
+    
+    .text-overlay h2 {
+        margin-left: 0;
+        font-size: 40px;
+        width: auto;
+        white-space: normal;
+    }
+    
+    .text-overlay p {
+        margin-left: 0;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 10px;
+        transform: none;
+    }
+    
+    .text-overlay button {
+        margin-left: 0;
+        margin-top: 20px;
+        white-space: normal;
+    }
+    
+    .image-container2 img,
+    .image-container3 img,
+    .image-container4 img,
+    .image-container5 img {
+        transform: none;
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .image-container2 .content,
+    .image-container3 .content2,
+    .image-container4 .content3,
+    .image-container5 .content4 {
+        text-align: center;
+    }
+    
+    .content-title, .content-text, .content-button,
+    .image-container3 .content2 h2,
+    .image-container3 .content2 p,
+    .image-container3 .content2 button,
+    .image-container4 .content3 h2,
+    .image-container4 .content3 p,
+    .image-container4 .content3 button,
+    .image-container5 .content4 h2,
+    .image-container5 .content4 p,
+    .image-container5 .content4 button {
+        transform: none;
+        width: 100%;
+    }
+    
+    .badge-out {
+        font-size: 13px !important;
+        padding: 5px 9.5px !important;
+        width: auto !important;
+        height: auto !important;
+        min-width: auto !important;
+        min-height: auto !important;
+        border-radius: 3px !important;
+        background-color: #264A51 !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    
+    .subscribe {
+        margin-left: 0;
+        width: 100%;
+        position: relative;
+        min-height: auto;
+        overflow: hidden;
+    }
+    
+    .subscribe > img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+        top: 0;
+    }
+    
+    .subscribe::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(93, 155, 201, 0.7);
+        z-index: 2;
+        pointer-events: none;
+    }
+    
+    .content5 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 600px;
+        padding: 40px 20px;
+        text-align: center;
+        z-index: 10;
+    }
+    
+    .content5 h2 {
+        margin-top: 0;
+        font-size: 36px;
+        color: #264A51;
+    }
+    
+    .content5 p {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        color: white;
+    }
+    
+    .content5 .input {
+        max-width: 400px;
+        margin: 20px auto 0;
+    }
+    
+    .footer-bottom {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .content6 {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .content6 img {
+        transform: none;
+        margin: 0 auto;
+        position: static;
+    }
+    
+    .content6 p {
+        transform: none;
+        margin: 20px auto;
+        width: 90%;
+        max-width: 400px;
+        position: static;
+    }
+    
+    .circle {
+        transform: none;
+        left: auto;
+        top: auto;
+        justify-content: center;
+        margin: 20px auto;
+        position: static;
+    }
+    
+    .number1, .number2, .number3 {
+        transform: none;
+        left: auto;
+        top: auto;
+        margin: 20px auto 10px;
+        text-align: center;
+        position: static;
+        white-space: normal;
+    }
+    
+    .description, .description2 {
+        transform: none;
+        left: auto;
+        top: auto;
+        text-align: center;
+        position: static;
+    }
+    
+    .description .text {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .service-hours-box {
+        transform: none;
+        left: auto;
+        top: auto;
+        margin: 20px auto;
+        position: static;
+    }
+    
+    .copyright-bar {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .main-content main .container,
+    .main-content main .container2,
+    .main-content main .text-overlay,
+    .main-content main .image-container2,
+    .main-content main .image-container3,
+    .main-content main .image-container4,
+    .main-content main .image-container5,
+    .main-content main .content5,
+    .main-content main .bottom-design {
+        margin-left: 0 !important;
+    }
+
+    .content6 .footer-col:nth-child(2) {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .content6 .footer-col:nth-child(2) h3 {
+        transform: none !important;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .content6 .footer-col:nth-child(2) .footer-links {
+        transform: none !important;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-links span {
+        text-align: center;
+        display: block;
+        margin: 8px 0;
+    }
+    
+    .content6 .footer-col:nth-child(3),
+    .content6 .footer-col:nth-child(4) {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .content6 .footer-col:nth-child(3) h3,
+    .content6 .footer-col:nth-child(4) h3 {
+        transform: none !important;
+        text-align: center;
+    }
+    
+    .content6 .footer-col:nth-child(3) .footer-contact {
+        transform: none !important;
+        text-align: center;
+    }
+    
+    .content6 .footer-col:nth-child(4) .service-hours-box {
+        transform: none !important;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        margin-top: -130px;
+        position: relative;
+        z-index: 5;
+        background: transparent; 
+    }
+    
+    .bottom-design {
+        background: transparent;
+    }
+    
+   .copyright-bar {
+        background: #D3E2EF; 
+        margin-top: -30px;
+        position: relative;
+        z-index: 5;
+    }
+
+    .gallery-block {
+        margin-top: -282px; 
+        position: relative;
+        z-index: 10;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        left: 0;
+        transform: none;
+        overflow-x: auto;
+        padding: 95px 0;
+    }
+    
+    .gallery-block .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: max-content;
+        min-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .gallery-block img {
+        flex-shrink: 0;
+        margin: 0 !important;
+    }
+    
+    .gallery-block img:nth-child(1) { 
+        margin-left: 0 !important;
+        height: 80px;
+    }
+    .gallery-block img:nth-child(2) { 
+        margin-left: 20px !important;
+        height: 100px;
+    }
+    .gallery-block img:nth-child(3) { 
+        margin-left: 20px !important;
+        height: 60px;
+    }
+    .gallery-block img:nth-child(4) { 
+        margin-left: 20px !important;
+        height: 110px;
+    }
+    .gallery-block img:nth-child(5) { 
+        margin-left: 20px !important;
+        height: 70px;
+    }
+    .gallery-block img:nth-child(6) { 
+        margin-left: 20px !important;
+        height: 100px;
+    }
+    
+}
