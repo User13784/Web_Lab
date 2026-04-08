@@ -1,4 +1,3 @@
-price, rating, inStock, description, image, oldPrice
 const products = [
     { id: 1, name: "Элитный диван", category: "sofa", price: 899, rating: 5, inStock: true, description: "Роскошный диван из велюра премиум-класса", image: "c1.jpg", oldPrice: 1120 },
     { id: 2, name: "Современный диван", category: "sofa", price: 650, rating: 4, inStock: true, description: "Диван для гостиной в современном стиле", image: "c2.jpg", oldPrice: 780 },
@@ -33,7 +32,6 @@ let currentCategory = "all";
 let currentSearchTerm = "";
 let currentSortMethod = "default";
 let originalProducts = [...products];
-
 
 function getCategoryLabel(categoryValue) {
     const cat = categories.find(c => c.value === categoryValue);
@@ -79,7 +77,7 @@ function renderProducts() {
     if (currentCategory !== 'all') {
         filtered = filtered.filter(p => p.category === currentCategory);
     }
- 
+    
     if (currentSearchTerm.trim() !== '') {
         const term = currentSearchTerm.toLowerCase();
         filtered = filtered.filter(p => 
@@ -140,6 +138,34 @@ function renderProducts() {
 }
 
 
+function applyMap() {
+    originalProducts = originalProducts.map(product => ({
+        ...product,
+        price: +(product.price * 1.1).toFixed(2)
+    }));
+    renderProducts();
+    showMessage('✅ map() - Цены увеличены на 10%');
+}
+
+function applyFilter() {
+    const inStockOnly = products.filter(p => p.inStock);
+    originalProducts = [...inStockOnly];
+    renderProducts();
+    showMessage(`✅ filter() - Показано только ${inStockOnly.length} товаров в наличии`);
+}
+
+function applyReduce() {
+    const totalValue = products.reduce((sum, product) => sum + product.price, 0);
+    showMessage(`💰 reduce() - Общая стоимость всех товаров: £${totalValue.toFixed(2)}`);
+}
+
+function applyIndexOf() {
+    const userInput = prompt("🔍 Введите название товара для поиска:", "Элитный диван");
+    
+    if (!userInput || userInput.trim() === "") {
+        showMessage("⚠️ Поиск отменён или введено пустое значение");
+        return;
+    }
     
     const searchName = userInput.trim();
     const index = products.findIndex(p => p.name.toLowerCase() === searchName.toLowerCase());
@@ -147,7 +173,6 @@ function renderProducts() {
     if (index !== -1) {
         showMessage(`🔍 indexOf() - Товар "${products[index].name}" найден на позиции ${index + 1} (индекс ${index})`);
     } else {
-        // Показываем похожие товары, если точное совпадение не найдено
         const similar = products.filter(p => p.name.toLowerCase().includes(searchName.toLowerCase()));
         if (similar.length > 0) {
             showMessage(`❌ Товар "${searchName}" не найден. Возможно, вы искали: ${similar.map(p => p.name).join(", ")}`);
@@ -157,7 +182,47 @@ function renderProducts() {
     }
 }
 
+function applyFind() {
+    const expensiveProduct = products.find(p => p.price > 800);
+    if (expensiveProduct) {
+        showMessage(`🔍 find() - Найден дорогой товар: "${expensiveProduct.name}" за £${expensiveProduct.price}`);
+    } else {
+        showMessage('🔍 find() - Товаров дороже £800 не найдено');
+    }
+}
 
+function applySome() {
+    const hasExpensive = products.some(p => p.price > 500);
+    showMessage(`❓ some() - ${hasExpensive ? 'Есть' : 'Нет'} товары дороже £500`);
+}
+
+function applyEvery() {
+    const allInStock = products.every(p => p.inStock);
+    showMessage(`❓ every() - ${allInStock ? 'Все' : 'Не все'} товары в наличии`);
+}
+
+function applyForEach() {
+    let namesList = '';
+    products.forEach((p, index) => {
+        namesList += `${index + 1}. ${p.name}\n`;
+    });
+    showMessage(`📝 forEach() - Список товаров:\n${namesList}`);
+    alert(`Список всех товаров:\n${namesList}`);
+}
+
+function applySlice() {
+    const top3 = products.slice(0, 3);
+    originalProducts = top3;
+    renderProducts();
+    showMessage('🎯 slice() - Показаны первые 3 товара');
+}
+
+function applyValues() {
+    const valuesArray = [...products.values()];
+    const productNames = valuesArray.map(p => p.name).join(', ');
+    showMessage(`💎 values() - Всего товаров: ${valuesArray.length}\nПервые 5: ${valuesArray.slice(0, 5).map(p => p.name).join(', ')}${valuesArray.length > 5 ? '...' : ''}`);
+    alert(`Все товары в каталоге (${valuesArray.length} шт.):\n${productNames}`);
+}
 
 function resetToOriginal() {
     originalProducts = [...products];
@@ -174,7 +239,6 @@ function resetToOriginal() {
     
     document.getElementById('searchInput').value = '';
     
-    // Сбрасываем select
     document.getElementById('sortSelect').value = 'default';
     
     renderProducts();
@@ -182,8 +246,6 @@ function resetToOriginal() {
 }
 
 
-
-// Поисковая строка - динамическое обновление при вводе
 function initSearchListener() {
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
@@ -207,7 +269,6 @@ function initSortListener() {
 function initCategoryListeners() {
     const categoryContainer = document.getElementById('categoryFilter');
     if (categoryContainer) {
-        // Очищаем и добавляем кнопки категорий
         categoryContainer.innerHTML = '';
         categories.forEach(cat => {
             const btn = document.createElement('button');
