@@ -1,0 +1,356 @@
+/* 1. АНИМАЦИЯ ИСЧЕЗНОВЕНИЯ
+   логотип в левом меню */
+@keyframes fadeInOut {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.logo-container img {
+    animation: fadeInOut 4s ease-in-out infinite;
+}
+
+
+/* 2. АНИМАЦИЯ ПЕРЕМЕЩЕНИЯ ПО ГОРИЗОНТАЛИ
+   иконки социальных сетей при наведении */
+@keyframes slidePulse {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+.social-circle:hover {
+    animation: slidePulse 0.6s ease-in-out;
+}
+
+
+/* 3. АНИМАЦИЯ МАСШТАБИРОВАНИЯ
+   квадратные кнопки на карточках товаров */
+@keyframes scalePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.square {
+    transition: all 0.3s ease;
+}
+
+.square:hover {
+    animation: scalePulse 0.5s ease-in-out;
+}
+
+
+/* 4. АНИМАЦИЯ ВРАЩЕНИЯ
+   иконки в боковом меню при наведении */
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.menu-item img {
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover img {
+    animation: rotateSlow 0.8s ease-in-out;
+}
+
+
+/* 5. АНИМАЦИЯ ИЗМЕНЕНИЯ ВЫСОТЫ
+    индикатор активного пункта меню */
+@keyframes heightPulse {
+    0% { height: 3px; }
+    50% { height: 8px; }
+    100% { height: 3px; }
+}
+
+.active-indicator {
+    transition: all 0.3s ease;
+}
+
+.home-item:hover .active-indicator {
+    animation: heightPulse 0.6s ease-in-out;
+}
+
+
+/* 6. АНИМАЦИЯ С КРИВОЙ БЕЗЬЕ - ИЗМЕНЕНИЕ ШИРИНЫ
+    линия стрелки в feature секции */
+@keyframes customWidth {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.feature-arrow path:first-child {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: customWidth 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+
+/* 7. АНИМАЦИЯ ПОЯВЛЕНИЯ - Fade In Up
+   карточки товаров при загрузке страницы */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card {
+    animation: fadeInUp 0.6s ease-in-out backwards;
+}
+
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+.product-card:nth-child(5) { animation-delay: 0.5s; }
+.product-card:nth-child(6) { animation-delay: 0.6s; }
+
+
+
+/* 8. АНИМАЦИЯ ФОНА 
+   фоновые блоки картинок товаров */
+@keyframes bgColorShift {
+    0% { background-color: #F1F6F9; }
+    50% { background-color: #D2E2EE; }
+    100% { background-color: #F1F6F9; }
+}
+
+.picture1, .picture2, .picture3,
+.picture4, .picture5, .picture6 {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .picture1,
+.product-card:hover .picture2,
+.product-card:hover .picture3,
+.product-card:hover .picture4,
+.product-card:hover .picture5,
+.product-card:hover .picture6 {
+    animation: bgColorShift 1s ease-in;
+}
+
+
+
+/* 9. АНИМАЦИЯ ТОЛЩИНЫ ГРАНИЦЫ 
+   Используется для: пункты меню категорий */
+@keyframes borderPulse {
+    0% { border-width: 2px; }
+    50% { border-width: 6px; }
+    100% { border-width: 2px; }
+}
+
+.menu-text .sofa span {
+    transition: all 0.3s ease;
+}
+
+.menu-text div:hover span {
+    animation: borderPulse 0.5s ease-in-out;
+}
+
+
+/* 10. АНИМАЦИЯ ПРОЗРАЧНОСТИ И ПОЗИЦИИ
+   текст в hero-секции */
+@keyframes fadeMove {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-content p {
+    animation: fadeMove 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
+}
+
+.hero-content p:nth-child(1) { animation-delay: 0.1s; }
+.hero-content p:nth-child(2) { animation-delay: 0.2s; }
+.hero-content p:nth-child(3) { animation-delay: 0.3s; }
+.hero-content p:nth-child(4) { animation-delay: 0.4s; }
+.hero-content a:nth-child(5) { animation-delay: 0.5s; }
+
+
+
+/* 11. АНИМАЦИЯ ТЕНИ
+   кнопка Explore More */
+@keyframes shadowPulse {
+    0% { box-shadow: 0 0 0 0 rgba(113, 179, 198, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(113, 179, 198, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(113, 179, 198, 0); }
+}
+
+.hero-button {
+    animation: shadowPulse 2s ease-in infinite;
+}
+
+
+/* 12. АНИМАЦИЯ ДЛЯ КНОПОК */
+button, .hero-button, .content-button {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+button:hover, .hero-button:hover, .content-button:hover {
+    background-color: #264A51;
+    color: white;
+    box-shadow: 0 5px 15px rgba(8, 208, 244, 0.4);
+}
+
+/* 13. АНИМАЦИЯ ВРАЩЕНИЯ + МАСШТАБ ДЛЯ ИКОНОК СОЦСЕТЕЙ */
+.social-circle {
+    transition: all 0.3s ease;
+}
+
+.social-circle:hover {
+    transform: rotate(360deg) scale(1.1);
+    background-color: #71B3C6;
+}
+
+/* 14. АНИМАЦИЯ ПОДЪЕМА ДЛЯ КАРТОЧЕК ТОВАРОВ */
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* 15. АНИМАЦИЯ ПУЛЬСАЦИИ ДЛЯ ТОЧЕК СЛАЙДЕРА */
+@keyframes dotPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+.dot {
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    animation: dotPulse 0.5s ease-in-out;
+    background-color: #71B3C6;
+}
+
+/* 16. АНИМАЦИЯ СМЕЩЕНИЯ ДЛЯ НАВИГАЦИОННЫХ ССЫЛОК */
+.nav-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #71B3C6;
+    transform: translateX(5px);
+}
+
+/* 17. АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ ПРОКРУТКЕ ДЛЯ СЕКЦИЙ */
+@keyframes scrollReveal {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-container2,
+.image-container3,
+.image-container4,
+.image-container5 {
+    animation: scrollReveal 0.8s ease-out backwards;
+}
+
+.image-container2 { animation-delay: 0.1s; }
+.image-container3 { animation-delay: 0.2s; }
+.image-container4 { animation-delay: 0.3s; }
+.image-container5 { animation-delay: 0.4s; }
+
+
+/* 18. АНИМАЦИЯ ДЛЯ КНОПОК VIEW ITEMS И READ MORE */
+
+.image-container .text-overlay button,
+.image-container2 .content button,
+.image-container3 .content2 button,
+.image-container4 .content3 button,
+.image-container5 .content4 button,
+.image-container2 .content-button {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.image-container .text-overlay button:hover,
+.image-container2 .content button:hover,
+.image-container3 .content2 button:hover,
+.image-container4 .content3 button:hover,
+.image-container5 .content4 button:hover,
+.image-container2 .content-button:hover {
+    background-color: #264A51;
+    color: white;
+    border: 2px solid #71B3C6;
+    letter-spacing: 1px;
+}
+
+@keyframes btnPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(38, 74, 81, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(38, 74, 81, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(38, 74, 81, 0);
+    }
+}
+
+.image-container .text-overlay button:hover,
+.image-container2 .content button:hover,
+.image-container3 .content2 button:hover,
+.image-container4 .content3 button:hover,
+.image-container5 .content4 button:hover,
+.image-container2 .content-button:hover {
+    animation: btnPulse 0.8s ease-out;
+}
+
+.image-container .text-overlay button::after,
+.image-container2 .content button::after,
+.image-container3 .content2 button::after,
+.image-container4 .content3 button::after,
+.image-container5 .content4 button::after,
+.image-container2 .content-button::after {
+    content: '→';
+    position: absolute;
+    right: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-10px);
+}
+
+.image-container .text-overlay button:hover::after,
+.image-container2 .content button:hover::after,
+.image-container3 .content2 button:hover::after,
+.image-container4 .content3 button:hover::after,
+.image-container5 .content4 button:hover::after,
+.image-container2 .content-button:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.image-container .text-overlay button:hover,
+.image-container2 .content button:hover,
+.image-container3 .content2 button:hover,
+.image-container4 .content3 button:hover,
+.image-container5 .content4 button:hover,
+.image-container2 .content-button:hover {
+    padding-right: 35px;
+}

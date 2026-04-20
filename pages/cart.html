@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Greenery</title>
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+    <div class="vertical-line">
+        <div class="logo-container">
+            <img src="../assets/icons/logo.png" alt="logo">
+        </div>
+        <nav class="menu-container">
+            <div class="menu-item home-item">
+                <a href="../index.html">
+                    <img src="../assets/icons/home.png" alt="home">
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="menu-item shop-item">
+                <a href="catalog.html">
+                    <img src="../assets/icons/shop.png" alt="shop">
+                    <span>Shop</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="favorites.html">
+                    <img src="../assets/icons/heart.png" alt="favorites">
+                    <span>Favorites</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <div class="active-indicator"></div>
+                <a href="cart.html">
+                    <img src="../assets/icons/cart.png" alt="cart">
+                    <span>Cart</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="catalog-header">
+            <h1>🛒 Корзина покупок</h1>
+            <p>Ваши выбранные товары</p>
+            <a href="catalog.html" class="back-link">← Вернуться в каталог</a>
+        </div>
+
+        <div class="cart-container">
+            <div id="cartContent"></div>
+        </div>
+    </div>
+
+    <script src="../js/cart.js"></script>
+</body>
+</html>
