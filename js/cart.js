@@ -149,3 +149,75 @@ document.addEventListener('DOMContentLoaded', () => {
 window.updateQuantity = updateQuantity;
 window.removeFromCart = removeFromCart;
 window.checkout = checkout;
+
+
+// Добавьте эту функцию в cart.js
+async function checkout() {
+    try {
+        const response = await fetch(`${API_URL}/cart`);
+        const cartItems = await response.json();
+        
+        if (cartItems.length === 0) {
+            showMessage('Корзина пуста', true);
+            return;
+        }
+        
+        // Получаем текущего пользователя
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        
+        if (!currentUser) {
+            showMessage('Пожалуйста, войдите в систему для оформления заказа', true);
+            setTimeout(() => {
+                window.location.href = 'register.html';
+            }, 2000);
+            return;
+        }
+        
+        // Создаем заказ
+        const order = {
+            id: Date.now(),
+            userId: currentUser.id,
+            userName: `${currentUser.firstName} ${currentUser.lastName}`,
+            items: cartItems.map(item => ({
+                productId: item.productId,
+                name: item.name,
+                price: item.price,
+                quantity: item.quantity
+            })),
+            total: cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+            status: 'pending',
+            createdAt: new Date().toISOString()
+        };
+        
+        // Сохраняем заказ
+        await fetch(`${API_URL}/orders`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(order)
+        });
+        
+        // Обновляем количество товаров
+        for (const item of cartItems) {
+            const productResponse = await fetch(`${API_URL}/products/${item.productId}`);
+            const product = await productResponse.json();
+            
+            await fetch(`${API_URL}/products/${item.productId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ inStock: false })
+            });
+        }
+        
+        // Очищаем корзину
+        for (const item of cartItems) {
+            await fetch(`${API_URL}/cart/${item.id}`, { method: 'DELETE' });
+        }
+        
+        showMessage(`✅ Заказ №${order.id} успешно оформлен! Сумма: £${order.total.toFixed(2)}`);
+        loadCart();
+        
+    } catch (error) {
+        console.error('Ошибка:', error);
+        showMessage('Ошибка оформления заказа', true);
+    }
+}

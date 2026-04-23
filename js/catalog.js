@@ -25,30 +25,20 @@ const api = {
         const total = response.headers.get('X-Total-Count');
         let products = await response.json();
         
-        console.log('Полученные данные:', products);
-        console.log('Тип данных:', typeof products);
-        console.log('Это массив?', Array.isArray(products));
-        
         if (!Array.isArray(products)) {
             if (products && products.data && Array.isArray(products.data)) {
                 products = products.data;
-                console.log('Используем products.data');
             } else if (products && typeof products === 'object') {
                 const possibleArrays = Object.values(products).filter(v => Array.isArray(v));
                 if (possibleArrays.length > 0) {
                     products = possibleArrays[0];
-                    console.log('Найден массив в объекте');
                 } else {
                     products = [];
-                    console.log('Не удалось найти массив, используем пустой');
                 }
             } else {
                 products = [];
-                console.log('Неизвестный формат, используем пустой массив');
             }
         }
-        
-        console.log('Итоговый массив товаров:', products.length);
         
         return { 
             products: products, 
@@ -163,20 +153,71 @@ let state = {
     }
 };
 
-const categories = [
-    { value: "all", label: "Все" },
-    { value: "sofa", label: "Диваны" },
-    { value: "living", label: "Гостиная" },
-    { value: "kitchen", label: "Кухня" },
-    { value: "bedroom", label: "Спальня" },
-    { value: "bathroom", label: "Ванная" },
-    { value: "decor", label: "Декор" },
-    { value: "ceramics", label: "Керамика" }
-];
+async function loadCategories() {
+    try {
+        const response = await fetch(`${API_URL}/products`);
+        const products = await response.json();
+        
+        const uniqueCategories = [...new Set(products.map(product => product.category))];
+        
+        console.log('Уникальные категории из Set:', uniqueCategories);
+        
+        uniqueCategories.sort();
+        
+        const categoryContainer = document.getElementById('categoryFilter');
+        if (!categoryContainer) return;
+        
+        categoryContainer.innerHTML = '';
+        
+        const allButton = document.createElement('button');
+        allButton.className = `category-btn ${state.filters.category === 'all' ? 'active' : ''}`;
+        allButton.dataset.category = 'all';
+        allButton.textContent = 'Все';
+        allButton.addEventListener('click', () => {
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            allButton.classList.add('active');
+            state.filters.category = 'all';
+            applyFilters();
+        });
+        categoryContainer.appendChild(allButton);
+        
+        uniqueCategories.forEach(category => {
+            const button = document.createElement('button');
+            button.className = `category-btn ${state.filters.category === category ? 'active' : ''}`;
+            button.dataset.category = category;
+            
+            const categoryLabel = getCategoryLabel(category);
+            button.textContent = categoryLabel;
+            
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                state.filters.category = category;
+                applyFilters();
+            });
+            
+            categoryContainer.appendChild(button);
+        });
+        
+        console.log(`Загружено ${uniqueCategories.length} категорий`);
+        
+    } catch (error) {
+        console.error('Ошибка загрузки категорий:', error);
+        showMessage('Ошибка загрузки категорий', true);
+    }
+}
 
 function getCategoryLabel(categoryValue) {
-    const cat = categories.find(c => c.value === categoryValue);
-    return cat ? cat.label : categoryValue;
+    const categoriesMap = {
+        'sofa': 'Диваны',
+        'living': 'Гостиная',
+        'kitchen': 'Кухня',
+        'bedroom': 'Спальня',
+        'bathroom': 'Ванная',
+        'decor': 'Декор',
+        'ceramics': 'Керамика'
+    };
+    return categoriesMap[categoryValue] || categoryValue;
 }
 
 function generateStars(rating) {
@@ -232,12 +273,8 @@ async function loadProducts() {
         
         const result = await api.getProducts(params);
         
-        console.log('Результат getProducts:', result);
-        
         let products = Array.isArray(result.products) ? result.products : [];
         let total = result.total || 0;
-        
-        console.log('После защиты - товаров:', products.length, 'Всего:', total);
         
         const favorites = await api.getFavorites();
         const favoriteIds = favorites.map(f => f.productId);
@@ -336,7 +373,7 @@ function renderProducts() {
                 </button>
             </div>
             <div class="card-info">
-                <h3 class="card-title">${product.name}</h3>
+                <h3 class="card-title">${escapeHtml(product.name)}</h3>
                 <div class="card-category">${getCategoryLabel(product.category)}</div>
                 <div class="card-price">£${product.price.toFixed(2)}</div>
                 <div class="card-rating">${generateStars(product.rating)}</div>
@@ -392,6 +429,12 @@ function changePage(page) {
 function applyFilters() {
     state.currentPage = 1;
     loadProducts();
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 let allProductsCache = [];
@@ -586,24 +629,6 @@ function initFilters() {
         });
     }
     
-    const categoryContainer = document.getElementById('categoryFilter');
-    if (categoryContainer) {
-        categoryContainer.innerHTML = '';
-        categories.forEach(cat => {
-            const btn = document.createElement('button');
-            btn.className = `category-btn ${cat.value === 'all' ? 'active' : ''}`;
-            btn.dataset.category = cat.value;
-            btn.textContent = cat.label;
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                state.filters.category = cat.value;
-                applyFilters();
-            });
-            categoryContainer.appendChild(btn);
-        });
-    }
-    
     const minPriceInput = document.getElementById('minPrice');
     const maxPriceInput = document.getElementById('maxPrice');
     if (minPriceInput) minPriceInput.addEventListener('input', (e) => { state.filters.minPrice = e.target.value; applyFilters(); });
@@ -613,11 +638,14 @@ function initFilters() {
     if (stockSelect) stockSelect.addEventListener('change', (e) => { state.filters.inStock = e.target.value; applyFilters(); });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     console.log('Каталог загружен, инициализация...');
     initFilters();
     initMethodButtons();
-    loadProducts();
+    
+    await loadCategories();
+    
+    await loadProducts();
 });
 
 window.toggleFavorite = toggleFavorite;

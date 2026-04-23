@@ -182,5 +182,8 @@
     }
   ],
   "favorites": [],
-  "cart": []
+  "cart": [],
+  "users": [],
+  "feedback": [],
+  "orders": []
 }
