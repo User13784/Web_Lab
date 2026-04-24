@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Отзывы - Greenery</title>
+    <link rel="stylesheet" href="../css/feedback.css">
+</head>
+<body>
+    <div class="vertical-line">
+        <div class="logo-container">
+            <img src="../assets/icons/logo.png" alt="logo">
+        </div>
+        <nav class="menu-container">
+            <div class="menu-item home-item">
+                <a href="../index.html">
+                    <img src="../assets/icons/home.png" alt="home">
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="menu-item shop-item">
+                <a href="catalog.html">
+                    <img src="../assets/icons/shop.png" alt="shop">
+                    <span>Shop</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="favorites.html">
+                    <img src="../assets/icons/heart.png" alt="favorites">
+                    <span>Favorites</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <div class="active-indicator"></div>
+                <a href="feedback.html">
+                    <img src="../assets/icons/blog.png" alt="reviews">
+                    <span>Reviews</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="cart.html">
+                    <img src="../assets/icons/cart.png" alt="cart">
+                    <span>Cart</span>
+                </a>
+            </div>
+            <div class="menu-item" id="adminMenuItem" style="display: none;">
+                <a href="admin.html">
+                    <img src="../assets/icons/admin.png" alt="admin">
+                    <span>Admin</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="catalog-header">
+            <h1>⭐ Отзывы покупателей</h1>
+            <p>Поделитесь своим мнением о товарах</p>
+            <a href="catalog.html" class="back-link">← Вернуться в каталог</a>
+        </div>
+
+        <div class="feedback-container">
+            <div class="feedback-form-container" id="feedbackFormContainer">
+                <h2>📝 Оставить отзыв</h2>
+                <div id="authRequired" class="auth-required" style="display: none;">
+                    <p>🔒 Для добавления отзыва необходимо <a href="register.html">войти в аккаунт</a></p>
+                </div>
+                <div id="feedbackForm" style="display: none;">
+                    <div class="form-group">
+                        <label class="required-label">Выберите товар</label>
+                        <select id="productSelect" class="product-select">
+                            <option value="">-- Выберите товар --</option>
+                        </select>
+                        <div class="error-message" id="productError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required-label">Рейтинг</label>
+                        <div class="rating-input">
+                            <span class="rating-star" data-rating="1">☆</span>
+                            <span class="rating-star" data-rating="2">☆</span>
+                            <span class="rating-star" data-rating="3">☆</span>
+                            <span class="rating-star" data-rating="4">☆</span>
+                            <span class="rating-star" data-rating="5">☆</span>
+                        </div>
+                        <input type="hidden" id="ratingValue" value="0">
+                        <div class="error-message" id="ratingError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required-label">Ваш отзыв</label>
+                        <textarea id="reviewText" rows="5" placeholder="Расскажите о своем опыте использования товара..."></textarea>
+                        <div class="char-counter">
+                            <span id="charCount">0</span> / <span id="minCharCount">50</span> символов (минимум)
+                        </div>
+                        <div class="error-message" id="reviewError"></div>
+                    </div>
+
+                    <button type="button" class="submit-btn" id="submitReviewBtn" disabled>Отправить отзыв</button>
+                </div>
+            </div>
+
+            <div class="reviews-list">
+                <h2>📖 Отзывы покупателей</h2>
+                <div class="reviews-filter">
+                    <select id="filterProduct" class="filter-select">
+                        <option value="all">Все товары</option>
+                    </select>
+                    <select id="filterRating" class="filter-select">
+                        <option value="all">Все рейтинги</option>
+                        <option value="5">★★★★★ (5)</option>
+                        <option value="4">★★★★☆ (4+)</option>
+                        <option value="3">★★★☆☆ (3+)</option>
+                        <option value="2">★★☆☆☆ (2+)</option>
+                        <option value="1">★☆☆☆☆ (1+)</option>
+                    </select>
+                </div>
+                <div id="reviewsContainer" class="reviews-container">
+                    <div class="loading">Загрузка отзывов...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/feedback.js"></script>
+</body>
+</html>

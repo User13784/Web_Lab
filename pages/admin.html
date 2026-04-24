@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Админ-панель - Greenery</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="vertical-line">
+        <div class="logo-container">
+            <img src="../assets/icons/logo.png" alt="logo">
+        </div>
+        <nav class="menu-container">
+            <div class="menu-item home-item">
+                <a href="../index.html">
+                    <img src="../assets/icons/home.png" alt="home">
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="menu-item shop-item">
+                <a href="catalog.html">
+                    <img src="../assets/icons/shop.png" alt="shop">
+                    <span>Shop</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="favorites.html">
+                    <img src="../assets/icons/heart.png" alt="favorites">
+                    <span>Favorites</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="feedback.html">
+                    <img src="../assets/icons/blog.png" alt="reviews">
+                    <span>Reviews</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="cart.html">
+                    <img src="../assets/icons/cart.png" alt="cart">
+                    <span>Cart</span>
+                </a>
+            </div>
+
+            <div class="menu-item" id="adminMenuItem" style="display: none;">
+                <div class="active-indicator"></div>
+                <a href="admin.html">
+                    <img src="../assets/icons/admin.png" alt="admin">
+                    <span>Admin</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="catalog-header">
+            <h1>👑 Админ-панель</h1>
+            <p>Управление товарами и отзывами</p>
+            <a href="catalog.html" class="back-link">← Вернуться в каталог</a>
+        </div>
+
+        <div id="accessDenied" class="access-denied" style="display: none;">
+            <h2>⛔ Доступ запрещен</h2>
+            <p>Эта страница доступна только администраторам.</p>
+            <a href="catalog.html" class="back-link">Вернуться в каталог</a>
+        </div>
+
+        <div id="adminContent" style="display: none;">
+            <div class="admin-section">
+                <h2>📦 Управление товарами</h2>
+                
+                <div class="product-form-container">
+                    <h3 id="formTitle">Добавить товар</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="required-label">Название товара</label>
+                            <input type="text" id="productName" placeholder="Введите название">
+                            <div class="error-message" id="productNameError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="required-label">Категория</label>
+                            <select id="productCategory">
+                                <option value="">-- Выберите категорию --</option>
+                                <option value="sofa">Диваны</option>
+                                <option value="living">Гостиная</option>
+                                <option value="kitchen">Кухня</option>
+                                <option value="bedroom">Спальня</option>
+                                <option value="bathroom">Ванная</option>
+                                <option value="decor">Декор</option>
+                                <option value="ceramics">Керамика</option>
+                            </select>
+                            <div class="error-message" id="productCategoryError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="required-label">Цена (£)</label>
+                            <input type="number" id="productPrice" placeholder="0.00" step="0.01">
+                            <div class="error-message" id="productPriceError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="required-label">Рейтинг</label>
+                            <select id="productRating">
+                                <option value="5">★★★★★ (5)</option>
+                                <option value="4.5">★★★★☆ (4.5)</option>
+                                <option value="4">★★★★☆ (4)</option>
+                                <option value="3.5">★★★☆☆ (3.5)</option>
+                                <option value="3">★★★☆☆ (3)</option>
+                                <option value="2.5">★★☆☆☆ (2.5)</option>
+                                <option value="2">★★☆☆☆ (2)</option>
+                                <option value="1.5">★☆☆☆☆ (1.5)</option>
+                                <option value="1">★☆☆☆☆ (1)</option>
+                            </select>
+                            <div class="error-message" id="productRatingError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="required-label">Наличие</label>
+                            <select id="productStock">
+                                <option value="true">В наличии</option>
+                                <option value="false">Нет в наличии</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Старая цена (£)</label>
+                            <input type="number" id="productOldPrice" placeholder="0.00" step="0.01">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required-label">Описание</label>
+                        <textarea id="productDescription" rows="3" placeholder="Введите описание товара..."></textarea>
+                        <div class="error-message" id="productDescriptionError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required-label">URL изображения</label>
+                        <input type="text" id="productImage" placeholder="../assets/icons/settings.png">
+                        <div class="error-message" id="productImageError"></div>
+                    </div>
+
+                    <input type="hidden" id="editProductId" value="">
+
+                    <div class="form-buttons">
+                        <button type="button" id="saveProductBtn" class="submit-btn" disabled>💾 Сохранить</button>
+                        <button type="button" id="cancelEditBtn" class="cancel-btn" style="display: none;">❌ Отмена</button>
+                    </div>
+                </div>
+
+                <div class="products-list">
+                    <h3>Список товаров</h3>
+                    <div class="search-box">
+                        <input type="text" id="searchProduct" placeholder="🔍 Поиск товаров...">
+                    </div>
+                    <div id="productsContainer" class="products-table-container">
+                        <div class="loading">Загрузка товаров...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <h2>💬 Управление отзывами</h2>
+                
+                <div class="reviews-filters">
+                    <div class="form-group">
+                        <label>Фильтр по товару</label>
+                        <select id="adminFilterProduct">
+                            <option value="all">Все товары</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Фильтр по пользователю</label>
+                        <select id="adminFilterUser">
+                            <option value="all">Все пользователи</option>
+                        </select>
+                    </div>
+                    <button id="applyFiltersBtn" class="filter-btn">🔍 Применить фильтры</button>
+                </div>
+
+                <div id="reviewsContainer" class="reviews-list-container">
+                    <div class="loading">Загрузка отзывов...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

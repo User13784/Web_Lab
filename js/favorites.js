@@ -159,3 +159,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.removeFromFavorites = removeFromFavorites;
+
+function checkAdminAccessForMenu() {
+    const savedUser = localStorage.getItem('currentUser');
+    const adminMenuItem = document.getElementById('adminMenuItem');
+    const profileMenuItem = document.getElementById('profileMenuItem');
+    
+    if (savedUser) {
+        const user = JSON.parse(savedUser);
+        if (user.role === 'admin') {
+            if (adminMenuItem) adminMenuItem.style.display = 'block';
+            if (profileMenuItem) profileMenuItem.style.display = 'none';
+        } else {
+            if (adminMenuItem) adminMenuItem.style.display = 'none';
+            if (profileMenuItem) profileMenuItem.style.display = 'block';
+        }
+    } else {
+        if (adminMenuItem) adminMenuItem.style.display = 'none';
+        if (profileMenuItem) profileMenuItem.style.display = 'block';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    checkAdminAccessForMenu();
+    loadFavorites();
+});

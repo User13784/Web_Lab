@@ -183,7 +183,115 @@
   ],
   "favorites": [],
   "cart": [],
-  "users": [],
-  "feedback": [],
-  "orders": []
+  "users": [
+    {
+      "id": 1,
+      "phone": "+375291234567",
+      "email": "admin@example.com",
+      "birthDate": "1990-01-01",
+      "firstName": "Admin",
+      "lastName": "Adminov",
+      "patronymic": "",
+      "nickname": "admin",
+      "password": "Admin123!@#",
+      "role": "admin",
+      "agreementAccepted": true,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 1776977592547,
+      "phone": "+375291234567",
+      "email": "testuser2024@gmail.com",
+      "birthDate": "2003-05-23",
+      "firstName": "Иван",
+      "lastName": "below",
+      "patronymic": "",
+      "nickname": "IvaB211Star",
+      "password": "!!ARaUf!a31j",
+      "role": "user",
+      "agreementAccepted": true,
+      "createdAt": "2026-04-23T20:53:12.547Z"
+    },
+    {
+      "id": 1777038977348,
+      "phone": "+375291234567",
+      "email": "testuser2024@gmail.c",
+      "birthDate": "2005-01-24",
+      "firstName": "iban",
+      "lastName": "Белов",
+      "patronymic": "Спро",
+      "nickname": "IB261Ultra",
+      "password": "A!Fad!K1aBB%1",
+      "role": "user",
+      "agreementAccepted": true,
+      "createdAt": "2026-04-24T13:56:17.348Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1746977592547,
+      "userId": 1776977592547,
+      "userNickname": "IvaB211Star",
+      "userEmail": "testuser2024@gmail.com",
+      "items": [
+        {
+          "productId": 2,
+          "name": "Современный диван",
+          "price": 650,
+          "quantity": 1,
+          "image": "assets/images/c2.jpg"
+        },
+        {
+          "productId": 4,
+          "name": "Журнальный столик",
+          "price": 250,
+          "quantity": 1,
+          "image": "assets/images/c4.jpg"
+        }
+      ],
+      "totalAmount": 900,
+      "status": "completed",
+      "createdAt": "2026-04-24T10:30:00.000Z"
+    },
+    {
+      "id": 1777040387580,
+      "userId": 1777038977348,
+      "userNickname": "IB261Ultra",
+      "userEmail": "testuser2024@gmail.c",
+      "items": [
+        {
+          "productId": 4,
+          "name": "Журнальный столик",
+          "price": 250,
+          "quantity": 1,
+          "image": "assets/images/c4.jpg"
+        }
+      ],
+      "totalAmount": 250,
+      "status": "completed",
+      "createdAt": "2026-04-24T14:19:47.580Z"
+    }
+  ],
+  "feedback": [
+    {
+      "id": 1746977600000,
+      "userId": 1776977592547,
+      "userNickname": "IvaB211Star",
+      "productId": 2,
+      "productName": "Современный диван",
+      "rating": 5,
+      "text": "Отличный диван! Очень удобный и качественный. Рекомендую всем!",
+      "createdAt": "2026-04-24T11:00:00.000Z"
+    },
+    {
+      "id": 1777040411134,
+      "userId": 1777038977348,
+      "userNickname": "IB261Ultra",
+      "productId": 4,
+      "productName": "Журнальный столик",
+      "rating": 5,
+      "text": "Отличный диван! Очень удобный и качественный. Рекомендую всем! супер",
+      "createdAt": "2026-04-24T14:20:11.134Z"
+    }
+  ]
 }

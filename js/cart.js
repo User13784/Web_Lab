@@ -124,36 +124,17 @@ async function removeFromCart(cartId) {
 
 async function checkout() {
     try {
-        const response = await fetch(`${API_URL}/cart`);
-        const cartItems = await response.json();
-        
-        for (const item of cartItems) {
-            await fetch(`${API_URL}/cart/${item.id}`, { 
-                method: 'DELETE' 
-            });
+        const savedUser = localStorage.getItem('currentUser');
+        if (!savedUser) {
+            showMessage('Для оформления заказа необходимо войти в аккаунт', true);
+            setTimeout(() => {
+                window.location.href = 'register.html';
+            }, 1500);
+            return;
         }
         
-        showMessage('✅ Заказ успешно оформлен! Спасибо за покупку!');
-        loadCart();
-    } catch (error) {
-        console.error('Ошибка:', error);
-        showMessage('Ошибка оформления заказа', true);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Страница корзины загружена');
-    loadCart();
-});
-
-window.updateQuantity = updateQuantity;
-window.removeFromCart = removeFromCart;
-window.checkout = checkout;
-
-
-// Добавьте эту функцию в cart.js
-async function checkout() {
-    try {
+        const currentUser = JSON.parse(savedUser);
+        
         const response = await fetch(`${API_URL}/cart`);
         const cartItems = await response.json();
         
@@ -162,62 +143,77 @@ async function checkout() {
             return;
         }
         
-        // Получаем текущего пользователя
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const totalAmount = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         
-        if (!currentUser) {
-            showMessage('Пожалуйста, войдите в систему для оформления заказа', true);
-            setTimeout(() => {
-                window.location.href = 'register.html';
-            }, 2000);
-            return;
-        }
-        
-        // Создаем заказ
-        const order = {
+        const orderData = {
             id: Date.now(),
             userId: currentUser.id,
-            userName: `${currentUser.firstName} ${currentUser.lastName}`,
+            userNickname: currentUser.nickname || `${currentUser.firstName} ${currentUser.lastName}`,
+            userEmail: currentUser.email,
             items: cartItems.map(item => ({
                 productId: item.productId,
                 name: item.name,
                 price: item.price,
-                quantity: item.quantity
+                quantity: item.quantity,
+                image: item.image
             })),
-            total: cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0),
-            status: 'pending',
+            totalAmount: totalAmount,
+            status: 'completed',
             createdAt: new Date().toISOString()
         };
         
-        // Сохраняем заказ
-        await fetch(`${API_URL}/orders`, {
+        const orderResponse = await fetch(`${API_URL}/orders`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(order)
+            body: JSON.stringify(orderData)
         });
         
-        // Обновляем количество товаров
+        if (!orderResponse.ok) throw new Error('Ошибка сохранения заказа');
+        
         for (const item of cartItems) {
-            const productResponse = await fetch(`${API_URL}/products/${item.productId}`);
-            const product = await productResponse.json();
-            
-            await fetch(`${API_URL}/products/${item.productId}`, {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ inStock: false })
+            await fetch(`${API_URL}/cart/${item.id}`, { 
+                method: 'DELETE' 
             });
         }
         
-        // Очищаем корзину
-        for (const item of cartItems) {
-            await fetch(`${API_URL}/cart/${item.id}`, { method: 'DELETE' });
-        }
+        showMessage(`✅ Заказ успешно оформлен! Сумма: £${totalAmount.toFixed(2)}. Спасибо за покупку!`);
         
-        showMessage(`✅ Заказ №${order.id} успешно оформлен! Сумма: £${order.total.toFixed(2)}`);
-        loadCart();
+        setTimeout(() => {
+            window.location.href = 'feedback.html';
+        }, 2000);
         
     } catch (error) {
         console.error('Ошибка:', error);
         showMessage('Ошибка оформления заказа', true);
     }
 }
+
+function checkAdminAccessForMenu() {
+    const savedUser = localStorage.getItem('currentUser');
+    const adminMenuItem = document.getElementById('adminMenuItem');
+    const profileMenuItem = document.getElementById('profileMenuItem');
+    
+    if (savedUser) {
+        const user = JSON.parse(savedUser);
+        if (user.role === 'admin') {
+            if (adminMenuItem) adminMenuItem.style.display = 'block';
+            if (profileMenuItem) profileMenuItem.style.display = 'none';
+        } else {
+            if (adminMenuItem) adminMenuItem.style.display = 'none';
+            if (profileMenuItem) profileMenuItem.style.display = 'block';
+        }
+    } else {
+        if (adminMenuItem) adminMenuItem.style.display = 'none';
+        if (profileMenuItem) profileMenuItem.style.display = 'block';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Страница корзины загружена');
+    checkAdminAccessForMenu();
+    loadCart();
+});
+
+window.updateQuantity = updateQuantity;
+window.removeFromCart = removeFromCart;
+window.checkout = checkout;

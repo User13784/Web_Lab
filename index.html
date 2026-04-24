@@ -3,60 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css\media.css">
-    <link rel="stylesheet" href="css\animations.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/animations.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenery</title>
 </head>
 <body>
 <div class="vertical-line">
     <div class="logo-container">
-        <img src="assets\icons\logo.png" alt="logo">
+        <img src="assets/icons/logo.png" alt="logo">
     </div>
 
     <nav class="menu-container" aria-label="Sidebar navigation">
         <div class="menu-item home-item">
             <div class="active-indicator"></div>
             <a href="#">
-                <img src="assets\icons\home.png" alt="home">
+                <img src="assets/icons/home.png" alt="home">
                 <span>Home</span>
             </a>
         </div>
 
         <div class="menu-item shop-item">
             <a href="pages/catalog.html">
-                <img src="assets\icons\shop.png" alt="shop">
+                <img src="assets/icons/shop.png" alt="shop">
                 <span>Shop</span>
             </a>
         </div>
 
         <div class="menu-item blog-item">
             <a href="#">
-                <img src="assets\icons\shop.png" alt="blog">
+                <img src="assets/icons/blog.png" alt="blog">
                 <span>Blog</span>
             </a>
         </div>
 
         <div class="menu-item about-item">
             <a href="#">
-                <img src="assets\icons\about_us.png" alt="about us">
+                <img src="assets/icons/about_us.png" alt="about us">
                 <span>About Us</span>
             </a>
         </div>
 
         <div class="menu-item gallery-item">
             <a href="#">
-                <img src="assets\icons\gallery.png" alt="gallery">
+                <img src="assets/icons/gallery.png" alt="gallery">
                 <span>Gallery</span>
             </a>
         </div>
 
         <div class="menu-item location-item">
             <a href="#">
-                <img src="assets\icons\location.png" alt="location">
+                <img src="assets/icons/location.png" alt="location">
                 <span>Location</span>
             </a>
         </div>
+        
+       
     </nav>
 </div>
 
@@ -66,30 +68,30 @@
             <div class="header-line">
                 <div class="nav-left">
                     <div class="nav-item-with-icon">
-                        <a class="nav-item" href="#">LOGIN</a>
-                        <img src="assets\icons\human.png" alt="user" class="nav-icon">
+                        <a class="nav-item" href="pages/register.html">LOGIN</a>
+                        <img src="assets/icons/human.png" alt="user" class="nav-icon">
                     </div>
 
                     <div class="nav-item-with-icon">
-                        <a class="nav-item" href="#">SING UP</a>
-                        <img src="assets\icons\door.png" alt="door" class="nav-icon">
+                        <a class="nav-item" href="pages/register.html">SIGN UP</a>
+                        <img src="assets/icons/door.png" alt="door" class="nav-icon">
                     </div>
                 </div>
 
                 <div class="nav-right">
                     <div class="nav-item-with-icon">
-                        <img src="assets\icons\email.png" alt="email" class="nav-icon">
+                        <img src="assets/icons/email.png" alt="email" class="nav-icon">
                         <a class="nav-item" href="#">MAILING LIST</a>
                     </div>
 
                     <div class="nav-item-with-icon">
-                        <img src="assets\icons\symbol.png" alt="share" class="nav-icon">
+                        <img src="assets/icons/symbol.png" alt="share" class="nav-icon">
                         <a class="nav-item" href="#">SHARE <span class="red-badge">12K</span></a>
                     </div>
 
                     <div class="nav-item-with-icon">
-                        <img src="assets\icons\cart.png" alt="cart" class="nav-icon">
-                        <a class="nav-item" href="#">CART <span class="red-badge">0</span></a>
+                        <img src="assets/icons/cart.png" alt="cart" class="nav-icon">
+                        <a class="nav-item" href="pages/cart.html">CART <span class="red-badge" id="cartCount">0</span></a>
                     </div>
                 </div>
             </div>
@@ -99,7 +101,7 @@
                 <p class="hero-medium">Awesome design</p>
                 <p class="hero-large furniture-line">Best Furniture For</p>
                 <p class="hero-large interior-line">Your Interior.</p>
-                <a href="#" class="hero-button">Explore More</a>
+                <a href="pages/catalog.html" class="hero-button">Explore More</a>
             </div>
 
             <div class="feature-text-container">
@@ -133,12 +135,12 @@
     <main>
         <section class="gallery-block" aria-label="Brand gallery">
             <div class="container">
-                <img src="assets\images\photo1.png" alt="photo 1">
-                <img src="assets\images\photo2.png" alt="photo 2">
-                <img src="assets\images\photo3.png" alt="photo 3">
-                <img src="assets\images\photo4.png" alt="photo 4">
-                <img src="assets\images\photo5.png" alt="photo 5">
-                <img src="assets\images\photo6.png" alt="photo 6">
+                <img src="assets/images/photo1.png" alt="photo 1">
+                <img src="assets/images/photo2.png" alt="photo 2">
+                <img src="assets/images/photo3.png" alt="photo 3">
+                <img src="assets/images/photo4.png" alt="photo 4">
+                <img src="assets/images/photo5.png" alt="photo 5">
+                <img src="assets/images/photo6.png" alt="photo 6">
             </div>
         </section>
 
@@ -158,179 +160,179 @@
             </nav>
 
             <div class="main-picture">
-    <!-- Карточка 1 -->
-    <article class="product-card">
-        <div class="picture1">
-            <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-                <div class="badge badge-new">New</div>
-                <div class="badge badge-out">Out of stock</div>
-            </div>
-            <img src="assets\images\chair.png" alt="chair">
-            <div class="bottom-element">
-                <div class="square"><img src="assets\icons\search.png" alt="search"></div>
-                <div class="square"><img src="assets\icons\diagram.png" alt="diagram"></div>
-                <div class="square"><img src="assets\icons\heart.png" alt="heart"></div>
-                <div class="square"><img src="assets\icons\store.png" alt="store"></div>
-            </div>
-        </div>
-        <div class="product-info product-info-1">
-            <h2 class="product-title title-1">Single Sofa</h2>
-            <p class="product-price price-1">£423.00</p>
-            <div class="product-rating rating-1">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">☆</span>
-            </div>
-        </div>
-    </article>
+                <!-- Карточка 1 -->
+                <article class="product-card">
+                    <div class="picture1">
+                        <div class="corner-badges">
+                            <div class="badge badge-discount">-20%</div>
+                            <div class="badge badge-new">New</div>
+                            <div class="badge badge-out">Out of stock</div>
+                        </div>
+                        <img src="assets/images/chair.png" alt="chair">
+                        <div class="bottom-element">
+                            <div class="square"><img src="assets/icons/search.png" alt="search"></div>
+                            <div class="square"><img src="assets/icons/diagram.png" alt="diagram"></div>
+                            <div class="square"><img src="assets/icons/heart.png" alt="heart"></div>
+                            <div class="square"><img src="assets/icons/store.png" alt="store"></div>
+                        </div>
+                    </div>
+                    <div class="product-info product-info-1">
+                        <h2 class="product-title title-1">Single Sofa</h2>
+                        <p class="product-price price-1">£423.00</p>
+                        <div class="product-rating rating-1">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">☆</span>
+                        </div>
+                    </div>
+                </article>
 
-    <!-- Карточка 2 -->
-    <article class="product-card">
-        <div class="picture2">
-            <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-            </div>
-            <img src="assets\images\chair2.png" alt="chair2">
-            <div class="bottom-element2">
-                <div class="square"><img src="assets\icons\search.png" alt="search"></div>
-                <div class="square"><img src="assets\icons\diagram.png" alt="diagram"></div>
-                <div class="square"><img src="assets\icons\heart.png" alt="heart"></div>
-                <div class="square"><img src="assets\icons\store.png" alt="store"></div>
-            </div>
-        </div>
-        <div class="product-info product-info-2">
-            <h2 class="product-title title-2">Single Sofa</h2>
-            <p class="product-price price-2">£423.00</p>
-            <div class="product-rating rating-2">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">☆</span>
-            </div>
-        </div>
-    </article>
+                <!-- Карточка 2 -->
+                <article class="product-card">
+                    <div class="picture2">
+                        <div class="corner-badges">
+                            <div class="badge badge-discount">-20%</div>
+                        </div>
+                        <img src="assets/images/chair2.png" alt="chair2">
+                        <div class="bottom-element2">
+                            <div class="square"><img src="assets/icons/search.png" alt="search"></div>
+                            <div class="square"><img src="assets/icons/diagram.png" alt="diagram"></div>
+                            <div class="square"><img src="assets/icons/heart.png" alt="heart"></div>
+                            <div class="square"><img src="assets/icons/store.png" alt="store"></div>
+                        </div>
+                    </div>
+                    <div class="product-info product-info-2">
+                        <h2 class="product-title title-2">Single Sofa</h2>
+                        <p class="product-price price-2">£423.00</p>
+                        <div class="product-rating rating-2">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">☆</span>
+                        </div>
+                    </div>
+                </article>
 
-    <!-- Карточка 3 -->
-    <article class="product-card">
-        <div class="picture3">
-            <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-                <div class="badge badge-new">New</div>
-            </div>
-            <img src="assets\images\chair3.png" alt="chair3">
-            <div class="bottom-element3">
-                <div class="square"><img src="assets\icons\search.png" alt="search"></div>
-                <div class="square"><img src="assets\icons\diagram.png" alt="diagram"></div>
-                <div class="square"><img src="assets\icons\heart.png" alt="heart"></div>
-                <div class="square"><img src="assets\icons\store.png" alt="store"></div>
-            </div>
-        </div>
-        <div class="product-info product-info-3">
-            <h2 class="product-title title-3">Single Sofa</h2>
-            <p class="product-price price-3">£423.00</p>
-            <div class="product-rating rating-3">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-            </div>
-        </div>
-    </article>
+                <!-- Карточка 3 -->
+                <article class="product-card">
+                    <div class="picture3">
+                        <div class="corner-badges">
+                            <div class="badge badge-discount">-20%</div>
+                            <div class="badge badge-new">New</div>
+                        </div>
+                        <img src="assets/images/chair3.png" alt="chair3">
+                        <div class="bottom-element3">
+                            <div class="square"><img src="assets/icons/search.png" alt="search"></div>
+                            <div class="square"><img src="assets/icons/diagram.png" alt="diagram"></div>
+                            <div class="square"><img src="assets/icons/heart.png" alt="heart"></div>
+                            <div class="square"><img src="assets/icons/store.png" alt="store"></div>
+                        </div>
+                    </div>
+                    <div class="product-info product-info-3">
+                        <h2 class="product-title title-3">Single Sofa</h2>
+                        <p class="product-price price-3">£423.00</p>
+                        <div class="product-rating rating-3">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                </article>
 
-    <!-- Карточка 4 -->
-    <article class="product-card">
-        <div class="picture4">
-            <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-                <div class="badge badge-new">New</div>
-                <div class="badge badge-out">Out of stock</div>
-            </div>
-            <img src="assets\images\chair4.png" alt="chair4">
-            <div class="bottom-element4">
-                <div class="square"><img src="assets\icons\search.png" alt="search"></div>
-                <div class="square"><img src="assets\icons\diagram.png" alt="diagram"></div>
-                <div class="square"><img src="assets\icons\heart.png" alt="heart"></div>
-                <div class="square"><img src="assets\icons\store.png" alt="store"></div>
-            </div>
-        </div>
-        <div class="product-info product-info-4">
-            <h2 class="product-title title-4">Single Sofa</h2>
-            <p class="product-price price-4">£423.00</p>
-            <div class="product-rating rating-4">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-            </div>
-        </div>
-    </article>
+                <!-- Карточка 4 -->
+                <article class="product-card">
+                    <div class="picture4">
+                        <div class="corner-badges">
+                            <div class="badge badge-discount">-20%</div>
+                            <div class="badge badge-new">New</div>
+                            <div class="badge badge-out">Out of stock</div>
+                        </div>
+                        <img src="assets/images/chair4.png" alt="chair4">
+                        <div class="bottom-element4">
+                            <div class="square"><img src="assets/icons/search.png" alt="search"></div>
+                            <div class="square"><img src="assets/icons/diagram.png" alt="diagram"></div>
+                            <div class="square"><img src="assets/icons/heart.png" alt="heart"></div>
+                            <div class="square"><img src="assets/icons/store.png" alt="store"></div>
+                        </div>
+                    </div>
+                    <div class="product-info product-info-4">
+                        <h2 class="product-title title-4">Single Sofa</h2>
+                        <p class="product-price price-4">£423.00</p>
+                        <div class="product-rating rating-4">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                </article>
 
-    <!-- Карточка 5 -->
-    <article class="product-card">
-        <div class="picture5">
-            <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-                <div class="badge badge-new">New</div>
-            </div>
-            <img src="assets\images\chair5.png" alt="chair5">
-            <div class="bottom-element5">
-                <div class="square"><img src="assets\icons\search.png" alt="search"></div>
-                <div class="square"><img src="assets\icons\diagram.png" alt="diagram"></div>
-                <div class="square"><img src="assets\icons\heart.png" alt="heart"></div>
-                <div class="square"><img src="assets\icons\store.png" alt="store"></div>
-            </div>
-        </div>
-        <div class="product-info product-info-5">
-            <h2 class="product-title title-5">Single Sofa</h2>
-            <p class="product-price price-5">£423.00</p>
-            <div class="product-rating rating-5">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-            </div>
-        </div>
-    </article>
+                <!-- Карточка 5 -->
+                <article class="product-card">
+                    <div class="picture5">
+                        <div class="corner-badges">
+                            <div class="badge badge-discount">-20%</div>
+                            <div class="badge badge-new">New</div>
+                        </div>
+                        <img src="assets/images/chair5.png" alt="chair5">
+                        <div class="bottom-element5">
+                            <div class="square"><img src="assets/icons/search.png" alt="search"></div>
+                            <div class="square"><img src="assets/icons/diagram.png" alt="diagram"></div>
+                            <div class="square"><img src="assets/icons/heart.png" alt="heart"></div>
+                            <div class="square"><img src="assets/icons/store.png" alt="store"></div>
+                        </div>
+                    </div>
+                    <div class="product-info product-info-5">
+                        <h2 class="product-title title-5">Single Sofa</h2>
+                        <p class="product-price price-5">£423.00</p>
+                        <div class="product-rating rating-5">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                </article>
 
-    <!-- Карточка 6 -->
-    <article class="product-card">
-        <div class="picture6">
-            <div class="corner-badges">
-                <div class="badge badge-discount">-20%</div>
-                <div class="badge badge-new">New</div>
+                <!-- Карточка 6 -->
+                <article class="product-card">
+                    <div class="picture6">
+                        <div class="corner-badges">
+                            <div class="badge badge-discount">-20%</div>
+                            <div class="badge badge-new">New</div>
+                        </div>
+                        <img src="assets/images/chair6.png" alt="chair6">
+                        <div class="bottom-element6">
+                            <div class="square"><img src="assets/icons/search.png" alt="search"></div>
+                            <div class="square"><img src="assets/icons/diagram.png" alt="diagram"></div>
+                            <div class="square"><img src="assets/icons/heart.png" alt="heart"></div>
+                            <div class="square"><img src="assets/icons/store.png" alt="store"></div>
+                        </div>
+                    </div>
+                    <div class="product-info product-info-6">
+                        <h2 class="product-title title-6">Single Sofa</h2>
+                        <p class="product-price price-6">£423.00</p>
+                        <div class="product-rating rating-6">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <img src="assets\images\chair6.png" alt="chair6">
-            <div class="bottom-element6">
-                <div class="square"><img src="assets\icons\search.png" alt="search"></div>
-                <div class="square"><img src="assets\icons\diagram.png" alt="diagram"></div>
-                <div class="square"><img src="assets\icons\heart.png" alt="heart"></div>
-                <div class="square"><img src="assets\icons\store.png" alt="store"></div>
-            </div>
-        </div>
-        <div class="product-info product-info-6">
-            <h2 class="product-title title-6">Single Sofa</h2>
-            <p class="product-price price-6">£423.00</p>
-            <div class="product-rating rating-6">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-            </div>
-        </div>
-    </article>
-</div>
         </section>
 
         <section class="image-container" aria-label="Promotion 50% off">
-            <img src="assets\images\bg2.jpg" alt="Background">
+            <img src="assets/images/bg2.jpg" alt="Background">
             <div class="text-overlay">
                 <h1>50% OFF</h1>
                 <h2>Weekend Trendy Sofa</h2>
@@ -340,11 +342,11 @@
         </section>
 
         <section class="image-container2" aria-label="Living room items">
-            <img src="assets\images\bg3.jpg" alt="Living Room">
+            <img src="assets/images/bg3.jpg" alt="Living Room">
             <div class="content">
-      <h2 class="content-title">Living Room Items</h2>
-    <p class="content-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45  professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.</p>
-    <button class="content-button">Read More</button>
+                <h2 class="content-title">Living Room Items</h2>
+                <p class="content-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45  professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.</p>
+                <button class="content-button">Read More</button>
             </div>
             <div class="living-badge">
                 <span>Living</span>
@@ -352,7 +354,7 @@
         </section>
 
         <section class="image-container3" aria-label="Trendy dining table">
-            <img src="assets\images\bg4.jpg" alt="Dining Table">
+            <img src="assets/images/bg4.jpg" alt="Dining Table">
             <div class="content2">
                 <h2>Trendy Dining Table</h2>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin.</p>
@@ -364,7 +366,7 @@
         </section>
 
         <section class="image-container4" aria-label="Modern bed">
-            <img src="assets\images\bg5.jpg" alt="Modern Bed">
+            <img src="assets/images/bg5.jpg" alt="Modern Bed">
             <div class="content3">
                 <h2>Modern Bed</h2>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin.</p>
@@ -376,7 +378,7 @@
         </section>
 
         <section class="image-container5" aria-label="Popular kitchen items">
-            <img src="assets\images\bg6.jpg" alt="Kitchen">
+            <img src="assets/images/bg6.jpg" alt="Kitchen">
             <div class="content4">
                 <h2>Populer kitchen Items</h2>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin.</p>
@@ -389,13 +391,13 @@
     </main>
 
     <footer class="subscribe">
-        <img src="assets\images\bg7.jpg" alt="Subscribe Background">
+        <img src="assets/images/bg7.jpg" alt="Subscribe Background">
         <div class="content5">
             <h2>Get 30% Off</h2>
             <p>Contrary to popular belief, Lorem Ipsum is not simply years old. Richard McClintock, a Latin.</p>
             <div class="input">
                 <span>Enter Your Email</span>
-                <button>Subscrive</button>
+                <button>Subscribe</button>
             </div>
         </div>
     </footer>
@@ -403,58 +405,55 @@
     <footer class="footer-bottom">
         <div class="bottom-design">
             <div class="content6">
+                <div class="footer-col logo-col">
+                    <img src="assets/images/photo7.png" alt="Logo">
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply years old Latin.</p>
+                    <ul class="circle">
+                        <li><div class="social-circle"><img src="assets/icons/facebook.png" alt=""></div></li>
+                        <li><div class="social-circle"><img src="assets/icons/instagram.png" alt=""></div></li>
+                        <li><div class="social-circle"><img src="assets/icons/twitter.png" alt=""></div></li>
+                        <li><div class="social-circle"><img src="assets/icons/youtube.png" alt=""></div></li>
+                    </ul>
+                </div>
 
-    <div class="footer-col logo-col">
-        <img src="assets\images\photo7.png" alt="Logo">
-        <p>Contrary to popular belief, Lorem Ipsum is not simply years old Latin.</p>
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <div class="footer-links">
+                        <span>About Us</span>
+                        <span>Services</span>
+                        <span>Our Team</span>
+                        <span>Trendy</span>
+                        <span>Gallery</span>
+                    </div>
+                </div>
 
-        <ul class="circle">
-            <li><div class="social-circle"><img src="assets\icons\facebook.png" alt=""></div></li>
-            <li><div class="social-circle"><img src="assets\icons\instagram.png" alt=""></div></li>
-            <li><div class="social-circle"><img src="assets\icons\twitter.png" alt=""></div></li>
-            <li><div class="social-circle"><img src="assets\icons\youtube.png" alt=""></div></li>
-        </ul>
-    </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact">
+                        <p>45 Tooring High SL London SA17 United Kingdom</p>
+                        <p>018123456789</p>
+                        <p>petroger456@gmail.com</p>
+                    </div>
+                </div>
 
-    <div class="footer-col">
-        <h3>Explore</h3>
-        <div class="footer-links">
-            <span>About Us</span>
-            <span>Services</span>
-            <span>Our Team</span>
-            <span>Trendy</span>
-            <span>Gallery</span>
-        </div>
-    </div>
-
-    <div class="footer-col">
-        <h3>Contact Us</h3>
-        <div class="footer-contact">
-            <p>45 Tooring High SL London SA17 United Kingdom</p>
-            <p>018123456789</p>
-            <p>petroger456@gmail.com</p>
-        </div>
-    </div>
-
-    <div class="footer-col">
-        <h3>Service Hours</h3>
-        <div class="service-hours-box">
-            <div class="hours-row">
-                <span class="day">Mon-Fri:</span>
-                <span class="time">09.00am - 19.00pm</span>
+                <div class="footer-col">
+                    <h3>Service Hours</h3>
+                    <div class="service-hours-box">
+                        <div class="hours-row">
+                            <span class="day">Mon-Fri:</span>
+                            <span class="time">09.00am - 19.00pm</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Saturday:</span>
+                            <span class="time">10.00am - 18.00pm</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Sunday:</span>
+                            <span class="time">We are Closed</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="hours-row">
-                <span class="day">Saturday:</span>
-                <span class="time">10.00am - 18.00pm</span>
-            </div>
-            <div class="hours-row">
-                <span class="day">Sunday:</span>
-                <span class="time">We are Closed</span>
-            </div>
-        </div>
-    </div>
-
-</div>
         </div>
     </footer>
 
@@ -462,6 +461,50 @@
         <span class="text">2021 Greenery. All Right Reserved</span>
     </div>
 </div>
+
+<script>
+    async function updateCartCount() {
+        try {
+            const response = await fetch('http://localhost:3000/cart');
+            const cartItems = await response.json();
+            const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            const cartBadge = document.getElementById('cartCount');
+            if (cartBadge) {
+                cartBadge.textContent = cartCount;
+            }
+        } catch (error) {
+            console.error('Ошибка загрузки корзины:', error);
+        }
+    }
+    
+    function checkAuth() {
+        const savedUser = localStorage.getItem('currentUser');
+        const loginLink = document.querySelector('.nav-left .nav-item-with-icon:first-child a');
+        const signupLink = document.querySelector('.nav-left .nav-item-with-icon:last-child a');
+        
+        if (savedUser) {
+            const user = JSON.parse(savedUser);
+            if (loginLink) {
+                loginLink.textContent = user.nickname;
+                loginLink.href = "#";
+            }
+            if (signupLink) {
+                signupLink.textContent = "LOGOUT";
+                signupLink.href = "#";
+                signupLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem('currentUser');
+                    window.location.reload();
+                });
+            }
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        updateCartCount();
+        checkAuth();
+    });
+</script>
 
 </body>
 </html>

@@ -2187,3 +2187,10 @@ background-image: url(../assets/icons/footer_symbol.png);
     color: #335E74;
 }
 
+
+#adminMenuItem img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+

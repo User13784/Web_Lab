@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Регистрация / Авторизация - Greenery</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <div class="vertical-line">
+        <div class="logo-container">
+            <img src="../assets/icons/logo.png" alt="logo">
+        </div>
+        <nav class="menu-container">
+            <div class="menu-item home-item">
+                <a href="../index.html">
+                    <img src="../assets/icons/home.png" alt="home">
+                    <span>Home</span>
+                </a>
+            </div>
+            <div class="menu-item shop-item">
+                <a href="catalog.html">
+                    <img src="../assets/icons/shop.png" alt="shop">
+                    <span>Shop</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="favorites.html">
+                    <img src="../assets/icons/heart.png" alt="favorites">
+                    <span>Favorites</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="feedback.html">
+                    <img src="../assets/icons/blog.png" alt="reviews">
+                    <span>Reviews</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="cart.html">
+                    <img src="../assets/icons/cart.png" alt="cart">
+                    <span>Cart</span>
+                </a>
+            </div>
+            <div class="menu-item" id="adminMenuItem" style="display: none;">
+                <a href="admin.html">
+                    <img src="../assets/icons/settings.png" alt="admin">
+                    <span>Admin</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="catalog-header">
+            <h1>🔐 Аккаунт</h1>
+            <p>Войдите или создайте новый аккаунт</p>
+            <a href="catalog.html" class="back-link">← Вернуться в каталог</a>
+        </div>
+
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="loginTab">Вход</button>
+                <button class="tab-btn" id="registerTab">Регистрация</button>
+            </div>
+            
+            <div id="loginForm" class="auth-form">
+                <form id="loginFormContent">
+                    <div class="form-group">
+                        <label class="required-label">Email</label>
+                        <input type="email" id="loginEmail" placeholder="example@mail.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required-label">Пароль</label>
+                        <div class="password-group">
+                            <input type="password" id="loginPassword" placeholder="Введите пароль">
+                            <button type="button" class="password-toggle" onclick="togglePasswordVisibility('loginPassword', this)">👁️</button>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Войти</button>
+                </form>
+            </div>
+            
+            <div id="registerForm" class="auth-form" style="display: none;">
+                <form id="registerFormContent">
+                    <div class="form-group">
+                        <label class="required-label">Номер телефона (РБ)</label>
+                        <input type="tel" id="regPhone" placeholder="+375291234567">
+                        <div class="error-message" id="phoneError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required-label">Email</label>
+                        <input type="email" id="regEmail" placeholder="example@mail.com">
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required-label">Дата рождения</label>
+                        <input type="date" id="regBirthDate">
+                        <div class="error-message" id="birthError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required-label">Имя</label>
+                        <input type="text" id="regFirstName" placeholder="Иван">
+                        <div class="error-message" id="firstNameError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required-label">Фамилия</label>
+                        <input type="text" id="regLastName" placeholder="Петров">
+                        <div class="error-message" id="lastNameError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Отчество (необязательно)</label>
+                        <input type="text" id="regPatronymic" placeholder="Иванович">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required-label">Никнейм</label>
+                        <div class="nickname-wrapper">
+                            <input type="text" id="regNickname" readonly placeholder="Будет сгенерирован автоматически">
+                            <button type="button" class="generate-btn" id="generateNicknameBtn">🎲 Сгенерировать</button>
+                        </div>
+                        <div class="attempts-info" id="attemptsInfo">Осталось попыток генерации: 5</div>
+                        <div class="error-message" id="nicknameError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Способ задания пароля</label>
+                        <div class="password-method">
+                            <label><input type="radio" name="passwordMethod" value="auto" checked> Автоматически</label>
+                            <label><input type="radio" name="passwordMethod" value="manual"> Самостоятельно</label>
+                        </div>
+                    </div>
+                    
+                    <div id="autoPasswordGroup">
+                        <div class="form-group">
+                            <label>Сгенерированный пароль</label>
+                            <div class="password-group">
+                                <input type="text" id="autoPassword" readonly>
+                            </div>
+                            <div class="password-hint">Сохраните этот пароль в надежном месте</div>
+                        </div>
+                    </div>
+                    
+                    <div id="manualPasswordGroup" style="display: none;">
+                        <div class="form-group">
+                            <label class="required-label">Пароль</label>
+                            <div class="password-group">
+                                <input type="password" id="regPassword" placeholder="Введите пароль">
+                                <button type="button" class="password-toggle" onclick="togglePasswordVisibility('regPassword', this)">👁️</button>
+                            </div>
+                            <div class="password-hint">Пароль должен содержать: минимум 8 символов, заглавную и строчную буквы, цифру и спецсимвол</div>
+                            <div class="error-message" id="passwordError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="required-label">Подтверждение пароля</label>
+                            <div class="password-group">
+                                <input type="password" id="regConfirmPassword" placeholder="Повторите пароль">
+                                <button type="button" class="password-toggle" onclick="togglePasswordVisibility('regConfirmPassword', this)">👁️</button>
+                            </div>
+                            <div class="error-message" id="confirmError"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="agreement">
+                        <label>
+                            <input type="checkbox" id="agreement">
+                            Я принимаю <a href="#">Соглашение пользователя</a>
+                        </label>
+                        <div class="error-message" id="agreementError"></div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="registerSubmitBtn" disabled>Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+</body>
+</html>

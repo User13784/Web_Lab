@@ -153,6 +153,29 @@ let state = {
     }
 };
 
+function checkAdminAccessForMenu() {
+    const savedUser = localStorage.getItem('currentUser');
+    const adminMenuItem = document.getElementById('adminMenuItem');
+    const profileMenuItem = document.getElementById('profileMenuItem');
+    
+    if (savedUser) {
+        const user = JSON.parse(savedUser);
+        if (user.role === 'admin') {
+            if (adminMenuItem) adminMenuItem.style.display = 'block';
+            if (profileMenuItem) profileMenuItem.style.display = 'none';
+            console.log('Админ авторизован, отображаем админ-панель');
+        } else {
+            if (adminMenuItem) adminMenuItem.style.display = 'none';
+            if (profileMenuItem) profileMenuItem.style.display = 'block';
+            console.log('Обычный пользователь, скрываем админ-панель');
+        }
+    } else {
+        if (adminMenuItem) adminMenuItem.style.display = 'none';
+        if (profileMenuItem) profileMenuItem.style.display = 'block';
+        console.log('Пользователь не авторизован');
+    }
+}
+
 async function loadCategories() {
     try {
         const response = await fetch(`${API_URL}/products`);
@@ -640,11 +663,13 @@ function initFilters() {
 
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('Каталог загружен, инициализация...');
+    
+    checkAdminAccessForMenu();
+    
     initFilters();
     initMethodButtons();
     
     await loadCategories();
-    
     await loadProducts();
 });
 
