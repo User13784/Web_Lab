@@ -1,6 +1,5 @@
 const API_URL = 'http://localhost:3000';
 let currentUser = null;
-let editMode = false;
 
 function showMessage(message, type = 'info') {
     const existingMsg = document.querySelector('.message-popup');
@@ -47,7 +46,7 @@ async function loadProducts() {
         if (!container) return;
         
         if (products.length === 0) {
-            container.innerHTML = '<div class="no-data">📦 Нет товаров</div>';
+            container.innerHTML = '<div class="no-data">Нет товаров</div>';
             return;
         }
         
@@ -63,12 +62,12 @@ async function loadProducts() {
                             <td><img src="../${product.image}" class="product-image" onerror="this.src='../assets/images/chair.png'"></td>
                             <td>${escapeHtml(product.name)}</td>
                             <td>${getCategoryLabel(product.category)}</td>
-                            <td>£${product.price}</td>
-                            <td>${product.inStock ? '✅ В наличии' : '❌ Нет'}</td>
+                            <td>${product.price} £</td>
+                            <td>${product.inStock ? 'В наличии' : 'Нет в наличии'}</td>
                             <td>
                                 <div class="action-buttons">
-                                    <button class="edit-btn" onclick="editProduct(${product.id})">✏️ Ред.</button>
-                                    <button class="delete-btn" onclick="deleteProduct(${product.id})">🗑️ Удал.</button>
+                                    <button class="edit-btn" onclick="openEditProductModal(${product.id})">Редактировать</button>
+                                    <button class="delete-btn" onclick="openDeleteProductModal(${product.id}, '${escapeHtml(product.name)}')">Удалить</button>
                                 </div>
                             </td>
                         </tr>
@@ -135,7 +134,7 @@ async function loadReviews() {
         if (!container) return;
         
         if (reviews.length === 0) {
-            container.innerHTML = '<div class="no-data">💬 Нет отзывов</div>';
+            container.innerHTML = '<div class="no-data">Нет отзывов</div>';
             return;
         }
         
@@ -143,16 +142,16 @@ async function loadReviews() {
             <div class="review-card" data-id="${review.id}">
                 <div class="review-header">
                     <div>
-                        <span class="review-user">👤 ${escapeHtml(review.userNickname)}</span>
-                        <span class="review-product">📦 ${escapeHtml(review.productName)}</span>
+                        <span class="review-user">${escapeHtml(review.userNickname)}</span>
+                        <span class="review-product">${escapeHtml(review.productName)}</span>
                     </div>
                     <div>
                         <span class="review-rating">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</span>
-                        <button class="delete-review-btn" onclick="deleteReview(${review.id})">🗑️ Удалить</button>
+                        <button class="delete-review-btn" onclick="deleteReview(${review.id})">Удалить</button>
                     </div>
                 </div>
                 <div class="review-text">${escapeHtml(review.text)}</div>
-                <div class="review-date">📅 ${formatDate(review.createdAt)}</div>
+                <div class="review-date">${formatDate(review.createdAt)}</div>
             </div>
         `).join('');
     } catch (error) {
@@ -161,247 +160,221 @@ async function loadReviews() {
     }
 }
 
-function validateProductForm() {
-    const name = document.getElementById('productName').value;
-    const category = document.getElementById('productCategory').value;
-    const price = document.getElementById('productPrice').value;
-    const description = document.getElementById('productDescription').value;
-    const image = document.getElementById('productImage').value;
-    
-    let isValid = true;
-    
-    const nameError = document.getElementById('productNameError');
-    if (!name.trim()) {
-        nameError.textContent = 'Введите название товара';
-        nameError.classList.add('show');
-        document.getElementById('productName').classList.add('error');
-        isValid = false;
-    } else if (name.length < 3) {
-        nameError.textContent = 'Название должно содержать минимум 3 символа';
-        nameError.classList.add('show');
-        document.getElementById('productName').classList.add('error');
-        isValid = false;
-    } else {
-        nameError.classList.remove('show');
-        document.getElementById('productName').classList.remove('error');
+window.openAddProductModal = () => {
+    if (window.modalManager) {
+        window.modalManager.openFormModal(
+            'Добавление товара',
+            [
+                { name: 'name', label: 'Название товара', type: 'text', required: true, placeholder: 'Введите название' },
+                { name: 'price', label: 'Цена (£)', type: 'number', required: true, placeholder: '0.00' },
+                { 
+                    name: 'category', 
+                    label: 'Категория', 
+                    type: 'select', 
+                    required: true,
+                    options: [
+                        { value: 'sofa', text: 'Диваны' },
+                        { value: 'living', text: 'Гостиная' },
+                        { value: 'kitchen', text: 'Кухня' },
+                        { value: 'bedroom', text: 'Спальня' },
+                        { value: 'bathroom', text: 'Ванная' },
+                        { value: 'decor', text: 'Декор' },
+                        { value: 'ceramics', text: 'Керамика' }
+                    ]
+                },
+                { name: 'description', label: 'Описание', type: 'textarea', required: true, placeholder: 'Введите описание товара...' },
+                { name: 'image', label: 'URL изображения', type: 'text', required: true, placeholder: 'assets/images/chair.png' },
+                { 
+                    name: 'stock', 
+                    label: 'Наличие', 
+                    type: 'select', 
+                    required: true,
+                    options: [
+                        { value: 'true', text: 'В наличии' },
+                        { value: 'false', text: 'Нет в наличии' }
+                    ]
+                },
+                { 
+                    name: 'rating', 
+                    label: 'Рейтинг', 
+                    type: 'select', 
+                    required: false,
+                    value: '5',
+                    options: [
+                        { value: '5', text: '★★★★★ (5)' },
+                        { value: '4.5', text: '★★★★☆ (4.5)' },
+                        { value: '4', text: '★★★★☆ (4)' },
+                        { value: '3.5', text: '★★★☆☆ (3.5)' },
+                        { value: '3', text: '★★★☆☆ (3)' },
+                        { value: '2.5', text: '★★☆☆☆ (2.5)' },
+                        { value: '2', text: '★★☆☆☆ (2)' },
+                        { value: '1.5', text: '★☆☆☆☆ (1.5)' },
+                        { value: '1', text: '★☆☆☆☆ (1)' }
+                    ]
+                }
+            ],
+            async (data) => {
+                try {
+                    const response = await fetch(`${API_URL}/products`);
+                    const products = await response.json();
+                    const maxId = products.length > 0 ? Math.max(...products.map(p => p.id)) : 0;
+                    
+                    const newProduct = {
+                        id: maxId + 1,
+                        name: data.name,
+                        price: parseFloat(data.price),
+                        category: data.category,
+                        description: data.description,
+                        image: data.image,
+                        inStock: data.stock === 'true',
+                        rating: parseFloat(data.rating) || 5,
+                        isFavorite: false
+                    };
+                    
+                    await fetch(`${API_URL}/products`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(newProduct)
+                    });
+                    
+                    showMessage('Товар успешно добавлен', 'success');
+                    loadProducts();
+                    loadProductsForSelect();
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    showMessage('Ошибка при добавлении товара', 'error');
+                }
+            }
+        );
     }
-    
-    const categoryError = document.getElementById('productCategoryError');
-    if (!category) {
-        categoryError.textContent = 'Выберите категорию';
-        categoryError.classList.add('show');
-        document.getElementById('productCategory').classList.add('error');
-        isValid = false;
-    } else {
-        categoryError.classList.remove('show');
-        document.getElementById('productCategory').classList.remove('error');
-    }
-    
-    const priceError = document.getElementById('productPriceError');
-    if (!price || parseFloat(price) <= 0) {
-        priceError.textContent = 'Введите корректную цену (больше 0)';
-        priceError.classList.add('show');
-        document.getElementById('productPrice').classList.add('error');
-        isValid = false;
-    } else {
-        priceError.classList.remove('show');
-        document.getElementById('productPrice').classList.remove('error');
-    }
-    
-    const descriptionError = document.getElementById('productDescriptionError');
-    if (!description.trim()) {
-        descriptionError.textContent = 'Введите описание товара';
-        descriptionError.classList.add('show');
-        document.getElementById('productDescription').classList.add('error');
-        isValid = false;
-    } else if (description.length < 20) {
-        descriptionError.textContent = 'Описание должно содержать минимум 20 символов';
-        descriptionError.classList.add('show');
-        document.getElementById('productDescription').classList.add('error');
-        isValid = false;
-    } else {
-        descriptionError.classList.remove('show');
-        document.getElementById('productDescription').classList.remove('error');
-    }
-    
-    const imageError = document.getElementById('productImageError');
-    if (!image.trim()) {
-        imageError.textContent = 'Введите URL изображения';
-        imageError.classList.add('show');
-        document.getElementById('productImage').classList.add('error');
-        isValid = false;
-    } else {
-        imageError.classList.remove('show');
-        document.getElementById('productImage').classList.remove('error');
-    }
-    
-    const saveBtn = document.getElementById('saveProductBtn');
-    if (saveBtn) {
-        saveBtn.disabled = !isValid;
-    }
-    
-    return isValid;
-}
+};
 
-async function addProduct() {
-    const isValid = validateProductForm();
-    if (!isValid) return;
-    
-    const products = await fetch(`${API_URL}/products`).then(r => r.json());
-    const maxId = products.length > 0 ? Math.max(...products.map(p => p.id)) : 0;
-    
-    const productData = {
-        id: maxId + 1,
-        name: document.getElementById('productName').value.trim(),
-        category: document.getElementById('productCategory').value,
-        price: parseFloat(document.getElementById('productPrice').value),
-        rating: parseFloat(document.getElementById('productRating').value),
-        inStock: document.getElementById('productStock').value === 'true',
-        description: document.getElementById('productDescription').value.trim(),
-        image: document.getElementById('productImage').value.trim(),
-        oldPrice: document.getElementById('productOldPrice').value ? parseFloat(document.getElementById('productOldPrice').value) : null,
-        isFavorite: false
-    };
-    
+window.openEditProductModal = async (productId) => {
     try {
-        const response = await fetch(`${API_URL}/products`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(productData)
-        });
-        
-        if (!response.ok) throw new Error('Ошибка добавления');
-        
-        showMessage('✅ Товар успешно добавлен', 'success');
-        clearProductForm();
-        loadProducts();
-        loadProductsForSelect();
-    } catch (error) {
-        console.error('Ошибка:', error);
-        showMessage('Ошибка при добавлении товара', 'error');
-    }
-}
-
-async function updateProduct() {
-    const isValid = validateProductForm();
-    if (!isValid) return;
-    
-    const productId = parseInt(document.getElementById('editProductId').value);
-    
-    const productData = {
-        name: document.getElementById('productName').value.trim(),
-        category: document.getElementById('productCategory').value,
-        price: parseFloat(document.getElementById('productPrice').value),
-        rating: parseFloat(document.getElementById('productRating').value),
-        inStock: document.getElementById('productStock').value === 'true',
-        description: document.getElementById('productDescription').value.trim(),
-        image: document.getElementById('productImage').value.trim(),
-        oldPrice: document.getElementById('productOldPrice').value ? parseFloat(document.getElementById('productOldPrice').value) : null
-    };
-    
-    try {
-        const response = await fetch(`${API_URL}/products/${productId}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(productData)
-        });
-        
-        if (!response.ok) throw new Error('Ошибка обновления');
-        
-        showMessage('✅ Товар успешно обновлен', 'success');
-        clearProductForm();
-        loadProducts();
-        loadProductsForSelect();
-    } catch (error) {
-        console.error('Ошибка:', error);
-        showMessage('Ошибка при обновлении товара', 'error');
-    }
-}
-
-async function editProduct(id) {
-    try {
-        const response = await fetch(`${API_URL}/products/${id}`);
+        const response = await fetch(`${API_URL}/products/${productId}`);
         const product = await response.json();
         
-        document.getElementById('formTitle').textContent = '✏️ Редактировать товар';
-        document.getElementById('editProductId').value = product.id;
-        document.getElementById('productName').value = product.name;
-        document.getElementById('productCategory').value = product.category;
-        document.getElementById('productPrice').value = product.price;
-        document.getElementById('productRating').value = product.rating;
-        document.getElementById('productStock').value = product.inStock;
-        document.getElementById('productDescription').value = product.description;
-        document.getElementById('productImage').value = product.image;
-        document.getElementById('productOldPrice').value = product.oldPrice || '';
-        
-        document.getElementById('cancelEditBtn').style.display = 'inline-block';
-        editMode = true;
-        
-        validateProductForm();
-        
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (window.modalManager) {
+            window.modalManager.openFormModal(
+                'Редактирование товара',
+                [
+                    { name: 'name', label: 'Название товара', type: 'text', required: true, value: product.name, placeholder: 'Введите название' },
+                    { name: 'price', label: 'Цена (£)', type: 'number', required: true, value: product.price, placeholder: '0.00' },
+                    { 
+                        name: 'category', 
+                        label: 'Категория', 
+                        type: 'select', 
+                        required: true,
+                        value: product.category,
+                        options: [
+                            { value: 'sofa', text: 'Диваны' },
+                            { value: 'living', text: 'Гостиная' },
+                            { value: 'kitchen', text: 'Кухня' },
+                            { value: 'bedroom', text: 'Спальня' },
+                            { value: 'bathroom', text: 'Ванная' },
+                            { value: 'decor', text: 'Декор' },
+                            { value: 'ceramics', text: 'Керамика' }
+                        ]
+                    },
+                    { name: 'description', label: 'Описание', type: 'textarea', required: true, value: product.description, placeholder: 'Введите описание товара...' },
+                    { name: 'image', label: 'URL изображения', type: 'text', required: true, value: product.image, placeholder: 'assets/images/chair.png' },
+                    { 
+                        name: 'stock', 
+                        label: 'Наличие', 
+                        type: 'select', 
+                        required: true,
+                        value: product.inStock ? 'true' : 'false',
+                        options: [
+                            { value: 'true', text: 'В наличии' },
+                            { value: 'false', text: 'Нет в наличии' }
+                        ]
+                    },
+                    { 
+                        name: 'rating', 
+                        label: 'Рейтинг', 
+                        type: 'select', 
+                        required: false,
+                        value: product.rating,
+                        options: [
+                            { value: '5', text: '★★★★★ (5)' },
+                            { value: '4.5', text: '★★★★☆ (4.5)' },
+                            { value: '4', text: '★★★★☆ (4)' },
+                            { value: '3.5', text: '★★★☆☆ (3.5)' },
+                            { value: '3', text: '★★★☆☆ (3)' },
+                            { value: '2.5', text: '★★☆☆☆ (2.5)' },
+                            { value: '2', text: '★★☆☆☆ (2)' },
+                            { value: '1.5', text: '★☆☆☆☆ (1.5)' },
+                            { value: '1', text: '★☆☆☆☆ (1)' }
+                        ]
+                    }
+                ],
+                async (data) => {
+                    try {
+                        await fetch(`${API_URL}/products/${productId}`, {
+                            method: 'PUT',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                ...product,
+                                name: data.name,
+                                price: parseFloat(data.price),
+                                category: data.category,
+                                description: data.description,
+                                image: data.image,
+                                inStock: data.stock === 'true',
+                                rating: parseFloat(data.rating) || product.rating
+                            })
+                        });
+                        
+                        showMessage('Товар успешно обновлен', 'success');
+                        loadProducts();
+                        loadProductsForSelect();
+                    } catch (error) {
+                        console.error('Ошибка:', error);
+                        showMessage('Ошибка при обновлении товара', 'error');
+                    }
+                }
+            );
+        }
     } catch (error) {
         console.error('Ошибка:', error);
         showMessage('Ошибка загрузки товара для редактирования', 'error');
     }
-}
+};
 
-async function deleteProduct(id) {
-    if (!confirm('Вы уверены, что хотите удалить этот товар?')) return;
-    
-    try {
-        const response = await fetch(`${API_URL}/products/${id}`, {
-            method: 'DELETE'
-        });
-        
-        if (!response.ok) throw new Error('Ошибка удаления');
-        
-        showMessage('✅ Товар успешно удален', 'success');
-        loadProducts();
-        loadProductsForSelect();
-    } catch (error) {
-        console.error('Ошибка:', error);
-        showMessage('Ошибка при удалении товара', 'error');
+window.openDeleteProductModal = (productId, productName) => {
+    if (window.modalManager) {
+        window.modalManager.openConfirmModal(
+            'Подтверждение удаления',
+            `Вы уверены, что хотите удалить товар "${productName}"? Это действие нельзя отменить.`,
+            async () => {
+                try {
+                    await fetch(`${API_URL}/products/${productId}`, {
+                        method: 'DELETE'
+                    });
+                    
+                    showMessage(`Товар "${productName}" успешно удален`, 'success');
+                    loadProducts();
+                    loadProductsForSelect();
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    showMessage('Ошибка при удалении товара', 'error');
+                }
+            }
+        );
     }
-}
+};
 
 async function deleteReview(id) {
-    if (!confirm('Вы уверены, что хотите удалить этот отзыв?')) return;
-    
-    try {
-        const response = await fetch(`${API_URL}/feedback/${id}`, {
-            method: 'DELETE'
-        });
-        
-        if (!response.ok) throw new Error('Ошибка удаления');
-        
-        showMessage('✅ Отзыв успешно удален', 'success');
-        loadReviews();
-    } catch (error) {
-        console.error('Ошибка:', error);
-        showMessage('Ошибка при удалении отзыва', 'error');
+    if (confirm('Вы уверены, что хотите удалить этот отзыв?')) {
+        try {
+            await fetch(`${API_URL}/feedback/${id}`, { method: 'DELETE' });
+            showMessage('Отзыв успешно удален', 'success');
+            loadReviews();
+        } catch (error) {
+            console.error('Ошибка:', error);
+            showMessage('Ошибка при удалении отзыва', 'error');
+        }
     }
-}
-
-function clearProductForm() {
-    document.getElementById('formTitle').textContent = 'Добавить товар';
-    document.getElementById('editProductId').value = '';
-    document.getElementById('productName').value = '';
-    document.getElementById('productCategory').value = '';
-    document.getElementById('productPrice').value = '';
-    document.getElementById('productRating').value = '5';
-    document.getElementById('productStock').value = 'true';
-    document.getElementById('productDescription').value = '';
-    document.getElementById('productImage').value = '';
-    document.getElementById('productOldPrice').value = '';
-    
-    document.getElementById('cancelEditBtn').style.display = 'none';
-    editMode = false;
-    
-    document.querySelectorAll('.error-message').forEach(el => el.classList.remove('show'));
-    document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(el => el.classList.remove('error'));
-    
-    validateProductForm();
 }
 
 function getCategoryLabel(categoryValue) {
@@ -435,22 +408,6 @@ function formatDate(dateString) {
 }
 
 function initEventListeners() {
-    const saveBtn = document.getElementById('saveProductBtn');
-    if (saveBtn) {
-        saveBtn.addEventListener('click', () => {
-            if (editMode) {
-                updateProduct();
-            } else {
-                addProduct();
-            }
-        });
-    }
-    
-    const cancelBtn = document.getElementById('cancelEditBtn');
-    if (cancelBtn) {
-        cancelBtn.addEventListener('click', clearProductForm);
-    }
-    
     const searchInput = document.getElementById('searchProduct');
     if (searchInput) {
         searchInput.addEventListener('input', () => loadProducts());
@@ -461,14 +418,10 @@ function initEventListeners() {
         applyFiltersBtn.addEventListener('click', loadReviews);
     }
     
-    const fields = ['productName', 'productCategory', 'productPrice', 'productDescription', 'productImage'];
-    fields.forEach(fieldId => {
-        const field = document.getElementById(fieldId);
-        if (field) {
-            field.addEventListener('input', () => validateProductForm());
-            field.addEventListener('change', () => validateProductForm());
-        }
-    });
+    const addProductBtn = document.getElementById('openAddProductModalBtn');
+    if (addProductBtn) {
+        addProductBtn.addEventListener('click', () => openAddProductModal());
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -479,34 +432,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-window.editProduct = editProduct;
-window.deleteProduct = deleteProduct;
 window.deleteReview = deleteReview;
-window.clearProductForm = clearProductForm;
-
-function checkAdminMenu() {
-    const savedUser = localStorage.getItem('currentUser');
-    const adminMenuItem = document.getElementById('adminMenuItem');
-    const profileMenuItem = document.getElementById('profileMenuItem');
-    
-    if (savedUser) {
-        const user = JSON.parse(savedUser);
-        if (user.role === 'admin') {
-            if (adminMenuItem) adminMenuItem.style.display = 'block';
-            if (profileMenuItem) profileMenuItem.style.display = 'none';
-        } else {
-            if (adminMenuItem) adminMenuItem.style.display = 'none';
-            if (profileMenuItem) profileMenuItem.style.display = 'block';
-        }
-    } else {
-        if (adminMenuItem) adminMenuItem.style.display = 'none';
-        if (profileMenuItem) profileMenuItem.style.display = 'block';
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    checkAdminMenu();
-    if (checkAdminAccess()) {
-        initEventListeners();
-    }
-});

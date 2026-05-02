@@ -5,10 +5,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_ключ&lang=ru_RU"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenery</title>
 </head>
 <body>
+
 <div class="vertical-line">
     <div class="logo-container">
         <img src="assets/icons/logo.png" alt="logo">
@@ -17,7 +21,7 @@
     <nav class="menu-container" aria-label="Sidebar navigation">
         <div class="menu-item home-item">
             <div class="active-indicator"></div>
-            <a href="#">
+            <a href="#hero" data-section="hero">
                 <img src="assets/icons/home.png" alt="home">
                 <span>Home</span>
             </a>
@@ -31,39 +35,37 @@
         </div>
 
         <div class="menu-item blog-item">
-            <a href="#">
+            <a href="#products" data-section="products">
                 <img src="assets/icons/blog.png" alt="blog">
-                <span>Blog</span>
+                <span>Products</span>
             </a>
         </div>
 
         <div class="menu-item about-item">
-            <a href="#">
+            <a href="#about" data-section="about">
                 <img src="assets/icons/about_us.png" alt="about us">
-                <span>About Us</span>
+                <span>About</span>
             </a>
         </div>
 
         <div class="menu-item gallery-item">
-            <a href="#">
+            <a href="#gallery" data-section="gallery">
                 <img src="assets/icons/gallery.png" alt="gallery">
                 <span>Gallery</span>
             </a>
         </div>
 
         <div class="menu-item location-item">
-            <a href="#">
+            <a href="#map-section" data-section="map-section">
                 <img src="assets/icons/location.png" alt="location">
                 <span>Location</span>
             </a>
         </div>
-        
-       
     </nav>
 </div>
 
 <div class="main-content">
-    <header class="hero-section">
+    <header class="hero-section" id="hero">
         <div class="container">
             <div class="header-line">
                 <div class="nav-left">
@@ -144,7 +146,28 @@
             </div>
         </section>
 
-        <section class="container2" aria-label="Our products">
+        <section class="counters-section fade-on-scroll" id="about">
+            <div class="counters-container">
+                <div class="counter-item">
+                    <div class="counter-number" data-target="5000">0</div>
+                    <div class="counter-label">Счастливых клиентов</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="1200">0</div>
+                    <div class="counter-label">Проданных товаров</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="150">0</div>
+                    <div class="counter-label">Наград</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="24">0</div>
+                    <div class="counter-label">Лет опыта</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container2" aria-label="Our products" id="products">
             <div class="header2-text">
                 <h1>Our Products</h1>
             </div>
@@ -160,8 +183,8 @@
             </nav>
 
             <div class="main-picture">
-                <!-- Карточка 1 -->
-                <article class="product-card">
+                <!-- Карточки товаров 1-6 -->
+                <article class="product-card" data-id="1">
                     <div class="picture1">
                         <div class="corner-badges">
                             <div class="badge badge-discount">-20%</div>
@@ -189,8 +212,7 @@
                     </div>
                 </article>
 
-                <!-- Карточка 2 -->
-                <article class="product-card">
+                <article class="product-card" data-id="2">
                     <div class="picture2">
                         <div class="corner-badges">
                             <div class="badge badge-discount">-20%</div>
@@ -216,8 +238,7 @@
                     </div>
                 </article>
 
-                <!-- Карточка 3 -->
-                <article class="product-card">
+                <article class="product-card" data-id="3">
                     <div class="picture3">
                         <div class="corner-badges">
                             <div class="badge badge-discount">-20%</div>
@@ -244,8 +265,7 @@
                     </div>
                 </article>
 
-                <!-- Карточка 4 -->
-                <article class="product-card">
+                <article class="product-card" data-id="4">
                     <div class="picture4">
                         <div class="corner-badges">
                             <div class="badge badge-discount">-20%</div>
@@ -273,8 +293,7 @@
                     </div>
                 </article>
 
-                <!-- Карточка 5 -->
-                <article class="product-card">
+                <article class="product-card" data-id="5">
                     <div class="picture5">
                         <div class="corner-badges">
                             <div class="badge badge-discount">-20%</div>
@@ -301,8 +320,7 @@
                     </div>
                 </article>
 
-                <!-- Карточка 6 -->
-                <article class="product-card">
+                <article class="product-card" data-id="6">
                     <div class="picture6">
                         <div class="corner-badges">
                             <div class="badge badge-discount">-20%</div>
@@ -328,6 +346,82 @@
                         </div>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <section class="parallax-section">
+            <div class="parallax-layer layer-1"></div>
+            <div class="parallax-layer layer-2"></div>
+            <div class="parallax-layer layer-3"></div>
+            <div class="parallax-content">
+                <h2>Создайте уют в своем доме</h2>
+                <p>Качественная мебель от лучших производителей</p>
+            </div>
+        </section>
+
+        <section class="video-promo-section fade-on-scroll">
+            <div class="video-promo-container">
+                <h2 class="video-promo-title">🎬 Видео-презентация</h2>
+                <p class="video-promo-subtitle">Посмотрите нашу новую коллекцию мебели 2024 года</p>
+                <div class="video-wrapper" id="videoWrapper">
+                    <div class="video-thumbnail" id="videoThumbnail">
+                        <div class="video-badge">
+                            <span>📹 ВИДЕО</span>
+                        </div>
+                        <img src="assets/images/c1.jpg" alt="Видео-презентация" onerror="this.src='assets/images/chair.png'">
+                        <div class="video-play-overlay">
+                            <div class="play-large-btn" id="mainVideoPlayBtn">
+                                <div class="play-symbol">▶</div>
+                            </div>
+                        </div>
+                        <div class="video-duration">
+                            🎥 0:11 мин
+                        </div>
+                    </div>
+                </div>
+                <p style="color: white; margin-top: 20px; opacity: 0.7; font-size: 14px;">👆 Нажмите на кнопку воспроизведения, чтобы посмотреть видео</p>
+            </div>
+        </section>
+
+        <section class="media-gallery fade-on-scroll" id="gallery">
+            <h2 style="font-size: 36px; color: #264A51; margin-bottom: 20px; text-align: center;">🎵 Медиагалерея</h2>
+            <p style="color: #5a7c85; margin-bottom: 30px; text-align: center;">Нажмите на кнопки, чтобы менять изображения и слушать звуки</p>
+            <div class="gallery-container">
+                <div class="gallery-main">
+                    <img id="galleryMainImage" class="gallery-main-image" src="assets/images/c1.jpg" alt="Gallery image" onerror="this.src='assets/images/chair.png'">
+                </div>
+                <div class="gallery-controls">
+                    <button class="gallery-btn" id="prevImageBtn">◀ Предыдущее</button>
+                    <button class="gallery-btn" id="randomImageBtn">🎲 Случайное</button>
+                    <button class="gallery-btn" id="nextImageBtn">Следующее ▶</button>
+                </div>
+                <div id="currentMusicInfo" style="text-align: center; margin: 10px 0; font-size: 14px; color: #71B3C6; font-weight: 500;"></div>
+                <div class="gallery-audio">
+                    <button class="audio-play-btn" id="audioPlayBtn">▶</button>
+                    <div id="audioPlayingIndicator" class="audio-playing-indicator" style="display: none;">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="volume-control">
+                        <span>🔊</span>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                    </div>
+                </div>
+                <div class="gallery-thumbnails" id="galleryThumbnails"></div>
+            </div>
+        </section>
+
+        <section class="photo-gallery-section fade-on-scroll">
+            <div class="photo-gallery-container">
+                <h2 class="photo-gallery-title">📷 Галерея товаров</h2>
+                <p class="photo-gallery-subtitle">Листайте фото, чтобы посмотреть наши товары</p>
+                
+                <div class="photo-grid" id="photoGrid"></div>
+                
+                <div class="photo-nav">
+                    <button class="photo-nav-btn" id="prevPhotoBtn">◀ Назад</button>
+                    <button class="photo-nav-btn" id="nextPhotoBtn">Вперед ▶</button>
+                </div>
+                <div class="photo-indicator" id="photoIndicator"></div>
             </div>
         </section>
 
@@ -386,6 +480,12 @@
             </div>
             <div class="living-badge4">
                 <span>Kitchen</span>
+            </div>
+        </section>
+
+        <section class="map-section fade-on-scroll" id="map-section">
+            <div class="map-container">
+                <div id="map"></div>
             </div>
         </section>
     </main>
@@ -462,6 +562,7 @@
     </div>
 </div>
 
+<script src="js/features.js"></script>
 <script>
     async function updateCartCount() {
         try {
@@ -469,9 +570,7 @@
             const cartItems = await response.json();
             const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
             const cartBadge = document.getElementById('cartCount');
-            if (cartBadge) {
-                cartBadge.textContent = cartCount;
-            }
+            if (cartBadge) cartBadge.textContent = cartCount;
         } catch (error) {
             console.error('Ошибка загрузки корзины:', error);
         }

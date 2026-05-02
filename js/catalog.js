@@ -676,3 +676,110 @@ document.addEventListener('DOMContentLoaded', async () => {
 window.toggleFavorite = toggleFavorite;
 window.addToCart = addToCart;
 window.changePage = changePage;
+
+// Открытие модального окна с деталями товара при клике на карточку
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const cards = document.querySelectorAll('.catalog-card');
+        cards.forEach(card => {
+            card.addEventListener('click', async (e) => {
+                if (e.target.classList.contains('add-to-cart-btn') || 
+                    e.target.classList.contains('favorite-btn') ||
+                    e.target.closest('.add-to-cart-btn') ||
+                    e.target.closest('.favorite-btn')) {
+                    return;
+                }
+                
+                const productId = parseInt(card.dataset.id);
+                if (productId && window.modalManager) {
+                    try {
+                        const response = await fetch(`http://localhost:3000/products/${productId}`);
+                        const product = await response.json();
+                        window.modalManager.openProductDetail(product);
+                    } catch (error) {
+                        console.error('Ошибка загрузки товара:', error);
+                    }
+                }
+            });
+        });
+    }, 500);
+});
+
+window.openAddProductModal = () => {
+    if (window.modalManager) {
+        window.modalManager.openFormModal(
+            'Добавление товара',
+            [
+                { name: 'name', label: 'Название товара', type: 'text', required: true, placeholder: 'Введите название' },
+                { name: 'price', label: 'Цена (£)', type: 'number', required: true, placeholder: '0.00' },
+                { name: 'category', label: 'Категория', type: 'select', required: true },
+                { name: 'description', label: 'Описание', type: 'textarea', required: true, placeholder: 'Введите описание' },
+                { name: 'image', label: 'URL изображения', type: 'text', required: true, placeholder: '../assets/images/chair.png' },
+                { name: 'stock', label: 'В наличии', type: 'select', required: true }
+            ],
+            async (data) => {
+                try {
+                    const response = await fetch('http://localhost:3000/products');
+                    const products = await response.json();
+                    const maxId = Math.max(...products.map(p => p.id), 0);
+                    
+                    const newProduct = {
+                        id: maxId + 1,
+                        name: data.name,
+                        price: parseFloat(data.price),
+                        category: data.category,
+                        description: data.description,
+                        image: data.image,
+                        inStock: data.stock === 'true',
+                        rating: 5,
+                        isFavorite: false
+                    };
+                    
+                    await fetch('http://localhost:3000/products', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(newProduct)
+                    });
+                    
+                    ToastManager.show('Товар успешно добавлен', 'success');
+                    location.reload();
+                } catch (error) {
+                    ToastManager.show('Ошибка добавления товара', 'error');
+                }
+            }
+        );
+    }
+};
+
+window.openEditProductModal = (product) => {
+    if (window.modalManager) {
+        window.modalManager.openFormModal(
+            'Редактирование товара',
+            [
+                { name: 'name', label: 'Название товара', type: 'text', required: true, value: product.name },
+                { name: 'price', label: 'Цена (£)', type: 'number', required: true, value: product.price },
+                { name: 'description', label: 'Описание', type: 'textarea', required: true, value: product.description },
+                { name: 'image', label: 'URL изображения', type: 'text', required: true, value: product.image }
+            ],
+            async (data) => {
+                try {
+                    await fetch(`http://localhost:3000/products/${product.id}`, {
+                        method: 'PATCH',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: data.name,
+                            price: parseFloat(data.price),
+                            description: data.description,
+                            image: data.image
+                        })
+                    });
+                    
+                    ToastManager.show('Товар успешно обновлен', 'success');
+                    location.reload();
+                } catch (error) {
+                    ToastManager.show('Ошибка обновления', 'error');
+                }
+            }
+        );
+    }
+};

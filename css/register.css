@@ -229,7 +229,6 @@ body {
     display: block;
 }
 
-/* Подсказка возраста */
 .age-hint {
     font-size: 12px;
     margin-top: 5px;
@@ -261,7 +260,6 @@ body {
     font-size: 14px;
 }
 
-/* Генерация никнейма */
 .nickname-wrapper {
     display: flex;
     gap: 10px;
@@ -299,7 +297,6 @@ body {
     margin-top: 5px;
 }
 
-/* Группа пароля */
 .password-group {
     position: relative;
 }

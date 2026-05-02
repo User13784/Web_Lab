@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Админ-панель - Greenery</title>
+    <link rel="stylesheet" href="../css/features.css">
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
 </head>
 <body>
     <div class="vertical-line">
@@ -43,7 +45,7 @@
                 </a>
             </div>
 
-            <div class="menu-item" id="adminMenuItem" style="display: none;">
+            <div class="menu-item" id="adminMenuItem" style="display: block;">
                 <div class="active-indicator"></div>
                 <a href="admin.html">
                     <img src="../assets/icons/admin.png" alt="admin">
@@ -68,87 +70,9 @@
 
         <div id="adminContent" style="display: none;">
             <div class="admin-section">
-                <h2>📦 Управление товарами</h2>
-                
-                <div class="product-form-container">
-                    <h3 id="formTitle">Добавить товар</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="required-label">Название товара</label>
-                            <input type="text" id="productName" placeholder="Введите название">
-                            <div class="error-message" id="productNameError"></div>
-                        </div>
-                        <div class="form-group">
-                            <label class="required-label">Категория</label>
-                            <select id="productCategory">
-                                <option value="">-- Выберите категорию --</option>
-                                <option value="sofa">Диваны</option>
-                                <option value="living">Гостиная</option>
-                                <option value="kitchen">Кухня</option>
-                                <option value="bedroom">Спальня</option>
-                                <option value="bathroom">Ванная</option>
-                                <option value="decor">Декор</option>
-                                <option value="ceramics">Керамика</option>
-                            </select>
-                            <div class="error-message" id="productCategoryError"></div>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="required-label">Цена (£)</label>
-                            <input type="number" id="productPrice" placeholder="0.00" step="0.01">
-                            <div class="error-message" id="productPriceError"></div>
-                        </div>
-                        <div class="form-group">
-                            <label class="required-label">Рейтинг</label>
-                            <select id="productRating">
-                                <option value="5">★★★★★ (5)</option>
-                                <option value="4.5">★★★★☆ (4.5)</option>
-                                <option value="4">★★★★☆ (4)</option>
-                                <option value="3.5">★★★☆☆ (3.5)</option>
-                                <option value="3">★★★☆☆ (3)</option>
-                                <option value="2.5">★★☆☆☆ (2.5)</option>
-                                <option value="2">★★☆☆☆ (2)</option>
-                                <option value="1.5">★☆☆☆☆ (1.5)</option>
-                                <option value="1">★☆☆☆☆ (1)</option>
-                            </select>
-                            <div class="error-message" id="productRatingError"></div>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="required-label">Наличие</label>
-                            <select id="productStock">
-                                <option value="true">В наличии</option>
-                                <option value="false">Нет в наличии</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Старая цена (£)</label>
-                            <input type="number" id="productOldPrice" placeholder="0.00" step="0.01">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="required-label">Описание</label>
-                        <textarea id="productDescription" rows="3" placeholder="Введите описание товара..."></textarea>
-                        <div class="error-message" id="productDescriptionError"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="required-label">URL изображения</label>
-                        <input type="text" id="productImage" placeholder="../assets/icons/settings.png">
-                        <div class="error-message" id="productImageError"></div>
-                    </div>
-
-                    <input type="hidden" id="editProductId" value="">
-
-                    <div class="form-buttons">
-                        <button type="button" id="saveProductBtn" class="submit-btn" disabled>💾 Сохранить</button>
-                        <button type="button" id="cancelEditBtn" class="cancel-btn" style="display: none;">❌ Отмена</button>
-                    </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 15px;">
+                    <h2>📦 Управление товарами</h2>
+                    <button class="add-product-btn" id="openAddProductModalBtn">➕ Добавить товар</button>
                 </div>
 
                 <div class="products-list">
@@ -188,6 +112,7 @@
         </div>
     </div>
 
+    <script src="../js/features.js"></script>
     <script src="../js/admin.js"></script>
 </body>
 </html>

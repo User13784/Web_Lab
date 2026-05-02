@@ -169,7 +169,6 @@
       "isFavorite": false
     },
     {
-      "id": 15,
       "name": "Пуф мягкий",
       "category": "living",
       "price": 75,
@@ -178,7 +177,7 @@
       "description": "Мягкий пуф для отдыха в гостиной",
       "image": "assets/images/c15.jpg",
       "oldPrice": 95,
-      "isFavorite": false
+      "id": 15
     }
   ],
   "favorites": [],
@@ -225,6 +224,20 @@
       "role": "user",
       "agreementAccepted": true,
       "createdAt": "2026-04-24T13:56:17.348Z"
+    },
+    {
+      "id": 1777458659031,
+      "phone": "+375291234565",
+      "email": "testu3ser2024@gmail.com",
+      "birthDate": "2001-06-29",
+      "firstName": "Петр",
+      "lastName": "Петров",
+      "patronymic": "",
+      "nickname": "PP995Mega1",
+      "password": "AaJHc4t8j1!3",
+      "role": "user",
+      "agreementAccepted": true,
+      "createdAt": "2026-04-29T10:30:59.031Z"
     }
   ],
   "orders": [
@@ -270,6 +283,24 @@
       "totalAmount": 250,
       "status": "completed",
       "createdAt": "2026-04-24T14:19:47.580Z"
+    },
+    {
+      "id": 1777458829752,
+      "userId": 1777458659031,
+      "userNickname": "PP995Mega1",
+      "userEmail": "testu3ser2024@gmail.com",
+      "items": [
+        {
+          "productId": 1,
+          "name": "Элитный диван",
+          "price": 899,
+          "quantity": 1,
+          "image": "assets/images/c1.jpg"
+        }
+      ],
+      "totalAmount": 899,
+      "status": "completed",
+      "createdAt": "2026-04-29T10:33:49.752Z"
     }
   ],
   "feedback": [
